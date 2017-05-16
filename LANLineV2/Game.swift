@@ -14,7 +14,7 @@ enum SerializationError: Error
 }
 // write throws after the parentheses for error handleing 
 
-public struct Game
+class Game
 {
   let id: Int
   let name: String
@@ -27,6 +27,21 @@ public struct Game
     self.coverUrl = coverUrl
   }
 
+  init(gameDictionary: [String:Any])
+  {
+    self.id = gameDictionary["id"] as! Int
+    self.name = gameDictionary["name"] as! String
+    self.coverUrl = gameDictionary["cover"] as! String
+  }
+  
+  init(dictionary: NSDictionary)
+  {
+    id = dictionary["id"] as! Int
+    name = dictionary["name"] as! String
+    coverUrl = dictionary["url"] as! String
+  }
+
+  
   static func gamesWithJSON(json results: [Any]) -> [Game]
   {
     var games = [Game]()

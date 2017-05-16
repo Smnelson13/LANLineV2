@@ -24,6 +24,9 @@ class APIController
   {
     self.delegate = delegate
   }
+  
+  
+
 
   func getGameInfo(searchTerm: String)
   { // to get more from this call add something after the name separated by a comma 
@@ -38,11 +41,11 @@ class APIController
       } else {
         if let array = self.parseJSON(data!)
         {
-          for i in array
+          for gameDictionary in array
           {
-            if let game = array[String] as? String
+            if let aGame = Game(id: id!, name: name!, coverUrl: coverURL!)
             {
-              games.append(game)
+              games.append(aGame)
             }
           }
         }
