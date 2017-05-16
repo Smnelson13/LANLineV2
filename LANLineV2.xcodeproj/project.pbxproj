@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
-		90B52C271ECAA0A1008AF6E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C261ECAA0A1008AF6E2 /* ViewController.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
 		90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */; };
 		90B52C3A1ECAA0A1008AF6E2 /* LANLineV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C391ECAA0A1008AF6E2 /* LANLineV2Tests.swift */; };
 		90B52C451ECAA0A1008AF6E2 /* LANLineV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C441ECAA0A1008AF6E2 /* LANLineV2UITests.swift */; };
+		90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */; };
+		90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */; };
+		90B52C571ECAA2A2008AF6E2 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C561ECAA2A2008AF6E2 /* Games.swift */; };
+		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90B52C261ECAA0A1008AF6E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90B52C2E1ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		90B52C401ECAA0A1008AF6E2 /* LANLineV2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LANLineV2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C441ECAA0A1008AF6E2 /* LANLineV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LANLineV2UITests.swift; sourceTree = "<group>"; };
 		90B52C461ECAA0A1008AF6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchGameTVC.swift; path = ../SearchGameTVC.swift; sourceTree = "<group>"; };
+		90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedGameCell.swift; sourceTree = "<group>"; };
+		90B52C561ECAA2A2008AF6E2 /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
-				90B52C261ECAA0A1008AF6E2 /* ViewController.swift */,
+				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
+				90B52C561ECAA2A2008AF6E2 /* Games.swift */,
+				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
+				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
@@ -262,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B52C271ECAA0A1008AF6E2 /* ViewController.swift in Sources */,
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
+				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
+				90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */,
+				90B52C571ECAA2A2008AF6E2 /* Games.swift in Sources */,
+				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
