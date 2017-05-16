@@ -11,11 +11,12 @@ import Foundation
 
 protocol APIControllerProtocol
 {
-  func didRecieve(results: Any)
+  func didReceive(results: Any)
 }
 
 class APIController
 {
+  var games = [Game]()
   let defaultSession = URLSession.shared
   var delegate: APIControllerProtocol?
   
@@ -35,21 +36,32 @@ class APIController
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else {
+        if let array = self.parseJSON(data!)
+        {
+          for i in array
+          {
+            if let game = array[String] as? String
+            {
+              games.append(game)
+            }
+          }
+        }
         
       }
     }
     task.resume()
+    print(request)
   }
   
-  func parseJSON(_ data: Data) -> [String: Any]?
+  func parseJSON(_ data: Data) -> [[String: Any]]?
   {
     do
     {
       let json = try JSONSerialization.jsonObject(with: data, options: [])
-      if let dictionary = json as? [String: Any]
+      if let array = json as? [[String: Any]]
       {
-        print(dictionary)
-        return dictionary
+        print(array)
+        return array
       }
       else
       {

@@ -38,7 +38,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   var games = [Game]()
   let searchController = UISearchController(searchResultsController: nil)
   var searchDebouncer: Debouncer!
-  var searchedGames = [Game]()
+  //var searchedGames = [Game]()
+  var apiController: APIController!
 
   override func viewDidLoad()
   {
@@ -48,7 +49,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.dimsBackgroundDuringPresentation = false
     definesPresentationContext = true
     searchController.searchBar.delegate = self
-    
+    //didRecieve(results: searchBar.text)
+    apiController = APIController(delegate: self)
   
   }
 
@@ -96,26 +98,29 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     
   }
 
-  func didRecieve(results: Any)
+  func didReceive(results: Any)
   {
     let queue = DispatchQueue.main
     queue.async {
       self.games = Game.gamesWithJSON(json: [results])
       self.tableView.reloadData()
+    }
   }
 
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
     if searchBar.text != ""
     {
-     
+      apiController.getGameInfo(searchTerm: searchBar.text!)
     }
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
     let aGame = games[indexPath.row]
+    cell.gameTitleLabel.text = aGame.name
+    
 
     
     
@@ -167,8 +172,5 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       // Pass the selected object to the new view controller.
   }
   */
-
-}
-
 
 }
