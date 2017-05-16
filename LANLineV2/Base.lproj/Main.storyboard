@@ -19,7 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Z02-cY-72s" kind="relationship" relationship="viewControllers" id="Gr4-Bq-ifX"/>
+                        <segue destination="efB-M7-SWt" kind="relationship" relationship="viewControllers" id="Gr4-Bq-ifX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3l7-so-hrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -64,11 +64,30 @@
                             <outlet property="delegate" destination="Z02-cY-72s" id="bkd-Yc-qYl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="3N9-Pw-HXO"/>
+                    <navigationItem key="navigationItem" id="q1j-4B-e5K"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AM-vc-6AF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="388" y="141"/>
+            <point key="canvasLocation" x="1142" y="140"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zJf-wf-v1c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="efB-M7-SWt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="3N9-Pw-HXO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xca-Dn-Mnc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z02-cY-72s" kind="relationship" relationship="rootViewController" id="h1E-DW-JmD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHF-Xb-6DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="140.77961019490255"/>
         </scene>
     </scenes>
 </document>

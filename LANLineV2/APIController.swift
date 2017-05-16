@@ -9,50 +9,62 @@
 import Foundation
 
 
-class APIController
+protocol APIControllerProtocol
 {
-  @nonobjc static var shared = APIController()
-  var baseURL = "https://igdbcom-internet-game-database-v1.p.mashape.com/"
-  var headers: [String: String] = [
-    "X-Mashape-Key": "O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o"
-  ]
-
- 
-  
-  
-  
-  
-  
+  func didRecieve(results: Any)
 }
 
+class APIController
+{
+  let defaultSession = URLSession.shared
+  var delegate: APIControllerProtocol?
+  
+  init(delegate: APIControllerProtocol)
+  {
+    self.delegate = delegate
+  }
 
-//
-//func request(_ method: HTTPMethod, route: String, parameters: [String: Any] = [:], completion:@escaping (_ result: JSON?, _ error: JSON?) -> Void) -> Alamofire.Request
-//{
-//  let request = Alamofire.request(
-//    baseURL + route,
-//    method: method,
-//    parameters: parameters,
-//    encoding: method == .get ? URLEncoding.default : JSONEncoding.default,
-//    headers: self.headers
-//    //parameters: [String: Any]
-//  )
-//  print(request)
-//  
-//  request.responseJSON { response in
-//    debugPrint(response)
-//    if let value = response.value
-//    {
-//      completion(JSON(value), nil)
-//    } else if let error = response.error
-//    {
-//      completion(nil, JSON(error))
-//    } else {
-//      completion(nil, nil)
-//    }
-//  }
-//  
-//  
-//  return request
+  func getGameInfo(searchTerm: String)
+  { // to get more from this call add something after the name separated by a comma 
+    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm)")
 
+    var request = URLRequest(url: gameSearchURL!)
+    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
+    
+    let task = defaultSession.dataTask(with: request) { data, response, error in
+      if let error = error {
+        print( "DataTask Error: " + error.localizedDescription + "\n")
+      } else {
+        
+      }
+    }
+    task.resume()
+  }
+  
+  func parseJSON(_ data: Data) -> [String: Any]?
+  {
+    do
+    {
+      let json = try JSONSerialization.jsonObject(with: data, options: [])
+      if let dictionary = json as? [String: Any]
+      {
+        print(dictionary)
+        return dictionary
+      }
+      else
+      {
+        return nil
+      }
+    }
+    catch
+    {
+      print(error)
+      return nil
+    }
+  }
+
+
+  
+
+}
 

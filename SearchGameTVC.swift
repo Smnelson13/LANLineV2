@@ -32,10 +32,12 @@ class Debouncer
 }
 
 
-class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
+class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, APIControllerProtocol
 {
-   let searchController = UISearchController(searchResultsController: nil)
-   var searchDebouncer: Debouncer!
+  
+  var games = [Game]()
+  let searchController = UISearchController(searchResultsController: nil)
+  var searchDebouncer: Debouncer!
   var searchedGames = [Game]()
 
   override func viewDidLoad()
@@ -46,6 +48,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.dimsBackgroundDuringPresentation = false
     definesPresentationContext = true
     searchController.searchBar.delegate = self
+    
   
   }
 
@@ -60,13 +63,13 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   override func numberOfSections(in tableView: UITableView) -> Int
   {
       // #warning Incomplete implementation, return the number of sections
-      return 0
+      return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
       // #warning Incomplete implementation, return the number of rows
-      return 0
+      return games.count
   }
 
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
@@ -93,18 +96,32 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     
   }
 
-
-
-
-  /*
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-      // Configure the cell...
-
-      return cell
+  func didRecieve(results: Any)
+  {
+    let queue = DispatchQueue.main
+    queue.async {
+      self.games = Game.gamesWithJSON(json: [results])
+      self.tableView.reloadData()
   }
-  */
+
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+  {
+    if searchBar.text != ""
+    {
+     
+    }
+  }
+
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+  {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath)
+    let aGame = games[indexPath.row]
+
+    
+    
+    return cell
+  }
+  
 
   /*
   // Override to support conditional editing of the table view.
@@ -150,5 +167,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       // Pass the selected object to the new view controller.
   }
   */
+
+}
+
 
 }
