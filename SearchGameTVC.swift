@@ -37,7 +37,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   var games = [Game]()
   let searchController = UISearchController(searchResultsController: nil)
   var searchDebouncer: Debouncer!
-  //var searchedGames = [Game]()
   var apiController: APIController!
 
   override func viewDidLoad()
@@ -103,7 +102,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   }
   
-  func search() {
+  func search()
+  {
     if let text = searchController.searchBar.text, text != ""
     {
       apiController.getGameInfo(searchTerm: text)

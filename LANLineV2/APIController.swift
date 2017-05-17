@@ -26,10 +26,8 @@ class APIController
   }
   
   
-
-
   func getGameInfo(searchTerm: String)
-  { // to get more from this call add something after the name separated by a comma 
+  { // to get more from this call add something after the name separated by a comma/ change release_date.date to popularity or others
     let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
 
     var request = URLRequest(url: gameSearchURL!)
@@ -53,7 +51,7 @@ class APIController
         
       } else {
         
-        // really generic network error
+        print("requestError")
       }
     }
     task.resume()
