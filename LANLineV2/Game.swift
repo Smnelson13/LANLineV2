@@ -18,6 +18,8 @@ class Game
   let id: Int
   let name: String
   var coverUrl: String = ""
+  var screenShotUrl: String = ""
+  let firstUrl = [URL]()
   
   init(gameDictionary: [String: Any])
   {
@@ -31,6 +33,11 @@ class Game
         coverUrl = "https:" + url
         coverUrl = coverUrl.replacingOccurrences(of: "thumb", with: "cover_small_2x")
       }
+    }
+    
+    if let screenShotDictionary = gameDictionary["screenshots"] as? [String: Any]
+    {
+      if let url = screenShotDictionary
     }
   }
   
