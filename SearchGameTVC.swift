@@ -125,19 +125,20 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     cell.gameTitleLabel.text = aGame.name
     cell.gameCoverImage.image = #imageLiteral(resourceName: "blank-66")
     
-    if let img  = imageCache[(aGame.cover?.url)!]
+    
+    if let img  = imageCache[aGame.coverUrl]
     {
       cell.gameCoverImage.image = img
     }
     else
     {
-      let request = URLRequest(url: URL(string: (aGame.cover?.url)!)!)
+      let request = URLRequest(url: URL(string: aGame.coverUrl)!)
       URLSession.shared.dataTask(with: request) {
         data, response,error in
         if error == nil
         {
           let image = UIImage(data: data!)
-          self.imageCache[(aGame.cover?.url)!] = image
+          self.imageCache[(aGame.coverUrl)] = image
           DispatchQueue.main.async {
             cell.gameCoverImage.image = image
           }
