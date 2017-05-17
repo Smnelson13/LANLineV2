@@ -28,7 +28,7 @@ class APIController
   
   func getGameInfo(searchTerm: String)
   { // to get more from this call add something after the name separated by a comma/ change release_date.date to popularity or others
-    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
+    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
 
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
@@ -37,17 +37,28 @@ class APIController
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
-        if let array = self.parseJSON(data)
+        if let httpResponse = response as? HTTPURLResponse
         {
-          var games = [Game]()
-          for gameDictionary in array
+          if httpResponse.statusCode == 200 // Ok
           {
-            let game = Game(gameDictionary: gameDictionary)
-            games.append(game)
+            if let array = self.parseJSON(data)
+            {
+              var games = [Game]()
+              for gameDictionary in array
+              {
+                let game = Game(gameDictionary: gameDictionary)
+                games.append(game)
+              }
+              
+              self.delegate?.didReceiveGameInfo(results: games)
+            }
           }
-          
-          self.delegate?.didReceiveGameInfo(results: games)
+          else if httpResponse.statusCode == 429 // Rate limit reached
+          {
+            print("Rate Limit Reached")
+          }
         }
+        
         
       } else {
         

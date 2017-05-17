@@ -32,7 +32,6 @@ class Game
         coverUrl = coverUrl.replacingOccurrences(of: "thumb", with: "cover_small_2x")
       }
     }
-    
   }
   
   convenience init(dictionary: NSDictionary)

@@ -86,12 +86,13 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchBar.text = nil
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
+    //tableView.reloadData()
   }
 
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
   {
     print("searchText \(searchText)")
-    searchDebouncer.call()
+   // searchDebouncer.call()
   }
   
   func updateSearchResults(for searchController: UISearchController)
@@ -101,6 +102,15 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
+    if let text = searchController.searchBar.text, text != ""
+    {
+      apiController.getGameInfo(searchTerm: text)
+    }
+    else
+    {
+      games.removeAll()
+      tableView.reloadData()
+    }
 
   }
   
@@ -132,18 +142,21 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     }
     else
     {
-      let request = URLRequest(url: URL(string: aGame.coverUrl)!)
-      URLSession.shared.dataTask(with: request) {
-        data, response,error in
-        if error == nil
-        {
-          let image = UIImage(data: data!)
-          self.imageCache[(aGame.coverUrl)] = image
-          DispatchQueue.main.async {
-            cell.gameCoverImage.image = image
+      if let url = URL(string: aGame.coverUrl)
+      {
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) {
+          data, response,error in
+          if error == nil
+          {
+            let image = UIImage(data: data!)
+            self.imageCache[(aGame.coverUrl)] = image
+            DispatchQueue.main.async {
+              cell.gameCoverImage.image = image
+            }
           }
-        }
-      }.resume()
+        }.resume()
+      }
     }
 
 
