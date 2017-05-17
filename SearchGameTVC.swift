@@ -33,7 +33,7 @@ class Debouncer
 
 class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
 {
-  
+  var imageCache = [String: UIImage]()
   var games = [Game]()
   let searchController = UISearchController(searchResultsController: nil)
   var searchDebouncer: Debouncer!
@@ -41,6 +41,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
+    self.tableView.separatorColor = UIColor.black
+    
     super.viewDidLoad()
     tableView.tableHeaderView = searchController.searchBar
     searchController.searchResultsUpdater = self
@@ -117,16 +119,35 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
+       
     let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
     let aGame = games[indexPath.row]
     cell.gameTitleLabel.text = aGame.name
     cell.gameCoverImage.image = #imageLiteral(resourceName: "blank-66")
     
+    if let img  = imageCache[(aGame.cover?.url)!]
+    {
+      cell.gameCoverImage.image = img
+    }
+    else
+    {
+      let request = URLRequest(url: URL(string: (aGame.cover?.url)!)!)
+      URLSession.shared.dataTask(with: request) {
+        data, response,error in
+        if error == nil
+        {
+          let image = UIImage(data: data!)
+          self.imageCache[(aGame.cover?.url)!] = image
+          DispatchQueue.main.async {
+            cell.gameCoverImage.image = image
+          }
+        }
+      }.resume()
+    }
 
 
-    
     return cell
-  }
+}
   
 
   /*
