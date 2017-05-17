@@ -77,12 +77,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
   {
-    func getDetailInfo()
-    {
-      let aGame = games[indexPath.row]
-      
-      let url = URL(string: aGame.)
-    }
+    
   }
   
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
@@ -137,6 +132,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     }
   }
 
+  //Displays the title and a image
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
        

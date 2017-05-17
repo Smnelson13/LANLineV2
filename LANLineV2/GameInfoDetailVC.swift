@@ -10,6 +10,10 @@ import UIKit
 
 class GameInfoDetailVC: UIViewController
 {
+  var games = [Game]()
+  //let aGame = games[indexPath.row]
+  
+  @IBOutlet weak var screenshotImage: UIImageView!
   @IBAction func doneButton(_ sender: Any)
   {
     self.dismiss(animated: true, completion: nil)
@@ -18,8 +22,11 @@ class GameInfoDetailVC: UIViewController
   override func viewDidLoad()
   {
       super.viewDidLoad()
+    
+    
+    
 
-      // Do any additional setup after loading the view.
+    
   }
 
   override func didReceiveMemoryWarning()

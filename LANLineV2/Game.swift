@@ -18,13 +18,14 @@ class Game
   let id: Int
   let name: String
   var coverUrl: String = ""
-  var screenShotUrl: String = ""
-  let firstUrl = [URL]()
+  var screenshotUrls = [String]()
+  
   
   init(gameDictionary: [String: Any])
   {
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
+//    self.screenShotUrl = gameDictionary["screenshots"] as! String
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
@@ -35,9 +36,17 @@ class Game
       }
     }
     
-    if let screenShotDictionary = gameDictionary["screenshots"] as? [String: Any]
+    if let screenShotDictionary = gameDictionary["screenshots"] as? [[String: Any]]
     {
-      if let url = screenShotDictionary
+      for urlDictionary in screenShotDictionary
+      {
+        if let theUrl = urlDictionary["url"] as? String
+        {
+          var aScreenShotUrl = "https:" + theUrl
+          aScreenShotUrl = aScreenShotUrl.replacingOccurrences(of: "thumb", with: "screenshot_med")
+          screenshotUrls.append(aScreenShotUrl)
+        }
+      }
     }
   }
   
@@ -48,26 +57,6 @@ class Game
   }
 
 }
-
-//extension Game
-//{
-//  struct Cover
-//  {
-//    var cloudinary_id: String
-//    var height: Int
-//    var width: Int
-//    var url: String
-//    
-//    init(coverDictionary: [String: Any])
-//    {
-//      cloudinary_id = coverDictionary["cloudinary_id"] as! String
-//      height = coverDictionary["height"] as! Int
-//      width = coverDictionary["width"] as! Int
-//      url = coverDictionary["url"] as! String
-//    }
-//  }
-//}
-
 
 
 
