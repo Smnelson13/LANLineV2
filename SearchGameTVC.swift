@@ -10,7 +10,6 @@ import UIKit
 
 class Debouncer
 {
-  
   private var delay: TimeInterval
   private var timer: Timer?
   private var callback: () -> Void
@@ -32,7 +31,7 @@ class Debouncer
 }
 
 
-class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating, APIControllerProtocol
+class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
 {
   
   var games = [Game]()
@@ -43,7 +42,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
-      super.viewDidLoad()
+    super.viewDidLoad()
     tableView.tableHeaderView = searchController.searchBar
     searchController.searchResultsUpdater = self
     searchController.dimsBackgroundDuringPresentation = false
@@ -51,7 +50,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.searchBar.delegate = self
     //didRecieve(results: searchBar.text)
     apiController = APIController(delegate: self)
-  
+    
+    searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
   }
 
   override func didReceiveMemoryWarning()
@@ -90,7 +90,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
   {
     print("searchText \(searchText)")
-    
+    searchDebouncer.call()
   }
   
   func updateSearchResults(for searchController: UISearchController)
@@ -98,20 +98,20 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     
   }
 
-  func didReceive(results: Any)
-  {
-    let queue = DispatchQueue.main
-    queue.async {
-      self.games = Game.gamesWithJSON(json: [results])
-      self.tableView.reloadData()
-    }
-  }
-
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
-    if searchBar.text != ""
+
+  }
+  
+  func search() {
+    if let text = searchController.searchBar.text, text != ""
     {
-      apiController.getGameInfo(searchTerm: searchBar.text!)
+      apiController.getGameInfo(searchTerm: text)
+    }
+    else
+    {
+      games.removeAll()
+      tableView.reloadData()
     }
   }
 
@@ -122,7 +122,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     cell.gameTitleLabel.text = aGame.name
     
 
-    
+
     
     return cell
   }
@@ -173,4 +173,14 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   }
   */
 
+}
+
+extension SearchGameTVC: APIControllerProtocol {
+  func didReceiveGameInfo(results: [Game]) {
+    let queue = DispatchQueue.main
+    queue.async {
+      self.games = results
+      self.tableView.reloadData()
+    }
+  }
 }

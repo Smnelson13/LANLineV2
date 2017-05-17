@@ -18,58 +18,70 @@ class Game
 {
   let id: Int
   let name: String
-  let coverUrl: String
+  var cover: Game.Cover?
   
-  init(id: Int, name: String, coverUrl: String)
-  {
-    self.id = id
-    self.name = name
-    self.coverUrl = coverUrl
-  }
-
-  init(gameDictionary: [String:Any])
+  init(gameDictionary: [String: Any])
   {
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
-    self.coverUrl = gameDictionary["cover"] as! String
+    
+    if let coverDictionary = gameDictionary["cover"] as? [String: Any] {
+      self.cover = Game.Cover(coverDictionary: coverDictionary)
+    }
   }
   
-  init(dictionary: NSDictionary)
+  convenience init(dictionary: NSDictionary)
   {
-    id = dictionary["id"] as! Int
-    name = dictionary["name"] as! String
-    coverUrl = dictionary["url"] as! String
+    let dict = dictionary as! [String: Any]
+    self.init(gameDictionary: dict)
   }
 
   
-  static func gamesWithJSON(json results: [Any]) -> [Game]
-  {
-    var games = [Game]()
+//  static func gamesWithJSON(json results: [Any]) -> [Game]
+//  {
+//    var games = [Game]()
+//    
+//    if results.count > 0
+//    {
+//      for results in results
+//      {
+//        if let dictionary = results as? [String: Any]
+//        {
+//          if let id = dictionary["id"] as? Int
+//          {
+//            if let name = dictionary["name"] as? String
+//            {
+//              if let cover = dictionary["cover"] as? [String: Any]
+//              {
+//                if let coverUrl = cover["url"] as? String
+//                {
+//                  let aGame = Game(id: id, name: name, coverUrl: coverUrl)
+//                  games.append(aGame)
+//                }
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//    return games
+//  }
+}
+
+extension Game {
+  struct Cover {
+    var cloudinary_id: String
+    var height: Int
+    var width: Int
+    var url: String
     
-    if results.count > 0
+    init(coverDictionary: [String: Any])
     {
-      for results in results
-      {
-        if let dictionary = results as? [String: Any]
-        {
-          if let id = dictionary["id"] as? Int
-          {
-            if let name = dictionary["name"] as? String
-            {
-              if let cover = dictionary["cover"] as? [String: Any]
-              {
-                if let coverUrl = cover["url"] as? String
-                {
-                  let aGame = Game(id: id, name: name, coverUrl: coverUrl)
-                  games.append(aGame)
-                }
-              }
-            }
-          }
-        }
-      }
+      cloudinary_id = coverDictionary["cloudinary_id"] as! String
+      height = coverDictionary["height"] as! Int
+      width = coverDictionary["width"] as! Int
+      url = coverDictionary["url"] as! String
     }
-    return games
   }
 }
 

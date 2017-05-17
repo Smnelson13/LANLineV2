@@ -11,7 +11,7 @@ import Foundation
 
 protocol APIControllerProtocol
 {
-  func didReceive(results: Any)
+  func didReceiveGameInfo(results: [Game])
 }
 
 class APIController
@@ -30,7 +30,7 @@ class APIController
 
   func getGameInfo(searchTerm: String)
   { // to get more from this call add something after the name separated by a comma 
-    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm)")
+    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
 
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
@@ -38,15 +38,22 @@ class APIController
     let task = defaultSession.dataTask(with: request) { data, response, error in
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
-      } else {
-        if let array = self.parseJSON(data!)
+      } else if let data = data {
+        if let array = self.parseJSON(data)
         {
+          var games = [Game]()
           for gameDictionary in array
           {
-            
+            let game = Game(gameDictionary: gameDictionary)
+            games.append(game)
           }
+          
+          self.delegate?.didReceiveGameInfo(results: games)
         }
         
+      } else {
+        
+        // really generic network error
       }
     }
     task.resume()
