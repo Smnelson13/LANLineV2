@@ -30,7 +30,7 @@ class APIController
 
   func getGameInfo(searchTerm: String)
   { // to get more from this call add something after the name separated by a comma 
-    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm)")
+    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=name,cover&limit=10&offset=0&order=release_dates.date%3Adesc&search=\(searchTerm)")
 
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
@@ -43,10 +43,7 @@ class APIController
         {
           for gameDictionary in array
           {
-            if let aGame = Game(id: id!, name: name!, coverUrl: coverURL!)
-            {
-              games.append(aGame)
-            }
+            
           }
         }
         
