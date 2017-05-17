@@ -17,7 +17,7 @@ class Game
 {
   let id: Int
   let name: String
-  var cover: Game.Cover?
+  var coverUrl: String = ""
   
   init(gameDictionary: [String: Any])
   {
@@ -26,7 +26,11 @@ class Game
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
-      self.cover = Game.Cover(coverDictionary: coverDictionary)
+      if let url = coverDictionary["url"] as? String
+      {
+        coverUrl = "https:" + url
+        coverUrl = coverUrl.replacingOccurrences(of: "thumb", with: "cover_small_2x")
+      }
     }
   }
   
@@ -38,24 +42,24 @@ class Game
 
 }
 
-extension Game
-{
-  struct Cover
-  {
-    var cloudinary_id: String
-    var height: Int
-    var width: Int
-    var url: String
-    
-    init(coverDictionary: [String: Any])
-    {
-      cloudinary_id = coverDictionary["cloudinary_id"] as! String
-      height = coverDictionary["height"] as! Int
-      width = coverDictionary["width"] as! Int
-      url = coverDictionary["url"] as! String
-    }
-  }
-}
+//extension Game
+//{
+//  struct Cover
+//  {
+//    var cloudinary_id: String
+//    var height: Int
+//    var width: Int
+//    var url: String
+//    
+//    init(coverDictionary: [String: Any])
+//    {
+//      cloudinary_id = coverDictionary["cloudinary_id"] as! String
+//      height = coverDictionary["height"] as! Int
+//      width = coverDictionary["width"] as! Int
+//      url = coverDictionary["url"] as! String
+//    }
+//  }
+//}
 
 
 

@@ -17,6 +17,7 @@
 		90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */; };
 		90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C561ECAA2A2008AF6E2 /* Game.swift */; };
 		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
+		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedGameCell.swift; sourceTree = "<group>"; };
 		90B52C561ECAA2A2008AF6E2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
 				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
+				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
+				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
 				90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */,
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
@@ -526,6 +530,7 @@
 				90B52C4B1ECAA0A1008AF6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90B52C4C1ECAA0A1008AF6E2 /* Build configuration list for PBXNativeTarget "LANLineV2Tests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +539,7 @@
 				90B52C4E1ECAA0A1008AF6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90B52C4F1ECAA0A1008AF6E2 /* Build configuration list for PBXNativeTarget "LANLineV2UITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +548,7 @@
 				90B52C511ECAA0A1008AF6E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

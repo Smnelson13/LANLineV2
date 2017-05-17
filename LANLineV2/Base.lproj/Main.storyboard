@@ -30,32 +30,44 @@
         <scene sceneID="eKg-BW-LFw">
             <objects>
                 <tableViewController id="Z02-cY-72s" customClass="SearchGameTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nD3-8K-0iA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" id="nD3-8K-0iA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchedGameCell" id="jSU-zI-hXf" customClass="SearchedGameCell" customModule="LANLineV2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jSU-zI-hXf" id="VbZ-fC-b4h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-7m-Dws">
+                                            <rect key="frame" x="6" y="0.0" width="90" height="127.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="oee-ia-8jT"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-fs-pxM">
-                                            <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="111" y="53" width="249" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="centerY" secondItem="VbZ-fC-b4h" secondAttribute="centerY" id="par-53-zok"/>
-                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="15" id="tbN-ne-4U0"/>
+                                        <constraint firstAttribute="bottom" secondItem="xVl-7m-Dws" secondAttribute="bottom" id="AqD-ph-avT"/>
+                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="leading" secondItem="xVl-7m-Dws" secondAttribute="trailing" constant="15" id="OT6-YO-bzE"/>
+                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="top" secondItem="VbZ-fC-b4h" secondAttribute="top" id="PJZ-fs-Yob"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tf5-fs-pxM" secondAttribute="trailing" constant="15" id="VaO-pk-PSr"/>
+                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="centerY" secondItem="VbZ-fC-b4h" secondAttribute="centerY" id="qaO-Xi-fnj"/>
+                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="6" id="r1x-MM-tDp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="gameCoverImage" destination="xVl-7m-Dws" id="Exp-ox-qXD"/>
                                     <outlet property="gameTitleLabel" destination="Tf5-fs-pxM" id="Z2e-4d-wed"/>
+                                    <segue destination="LI1-cs-iBT" kind="showDetail" id="2v0-PF-Ou5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,7 +80,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AM-vc-6AF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="140"/>
+            <point key="canvasLocation" x="1097" y="140"/>
+        </scene>
+        <!--Game Info DetailVC-->
+        <scene sceneID="OQk-Oc-wtB">
+            <objects>
+                <viewController id="c25-lP-94y" customClass="GameInfoDetailVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wXL-ip-YSr"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmc-PY-7K3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XAz-nD-wRk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4y-Nl-qMU">
+                                <rect key="frame" x="166.5" y="323" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D4y-Nl-qMU" firstAttribute="centerX" secondItem="XAz-nD-wRk" secondAttribute="centerX" id="0zz-7b-FgU"/>
+                            <constraint firstItem="D4y-Nl-qMU" firstAttribute="centerY" secondItem="XAz-nD-wRk" secondAttribute="centerY" id="1jM-Oo-WBN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mNe-lY-aVZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Vbe-3Y-vrN">
+                            <connections>
+                                <action selector="doneButton:" destination="c25-lP-94y" id="Hg9-R1-lUL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S47-bc-631" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zJf-wf-v1c">
@@ -88,6 +137,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHF-Xb-6DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="388" y="140.77961019490255"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nrM-NO-apE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LI1-cs-iBT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nGd-uS-Fu3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c25-lP-94y" kind="relationship" relationship="rootViewController" id="nji-4Z-nL4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzx-3w-b5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="140"/>
         </scene>
     </scenes>
 </document>

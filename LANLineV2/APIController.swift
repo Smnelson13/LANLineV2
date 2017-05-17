@@ -37,17 +37,28 @@ class APIController
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
-        if let array = self.parseJSON(data)
+        if let httpResponse = response as? HTTPURLResponse
         {
-          var games = [Game]()
-          for gameDictionary in array
+          if httpResponse.statusCode == 200 // Ok
           {
-            let game = Game(gameDictionary: gameDictionary)
-            games.append(game)
+            if let array = self.parseJSON(data)
+            {
+              var games = [Game]()
+              for gameDictionary in array
+              {
+                let game = Game(gameDictionary: gameDictionary)
+                games.append(game)
+              }
+              
+              self.delegate?.didReceiveGameInfo(results: games)
+            }
           }
-          
-          self.delegate?.didReceiveGameInfo(results: games)
+          else if httpResponse.statusCode == 429 // Rate limit reached
+          {
+            print("Rate Limit Reached")
+          }
         }
+        
         
       } else {
         
