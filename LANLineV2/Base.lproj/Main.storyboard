@@ -42,28 +42,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-7m-Dws">
+                                            <rect key="frame" x="6" y="0.0" width="90" height="127.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="oee-ia-8jT"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-fs-pxM">
-                                            <rect key="frame" x="15" y="53.5" width="42" height="21"/>
+                                            <rect key="frame" x="111" y="53" width="249" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4rS-s6-EPg">
-                                            <rect key="frame" x="6" y="0.0" width="90" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="90" id="wpK-0B-IK3"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4rS-s6-EPg" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="6" id="8kq-gx-t5p"/>
-                                        <constraint firstItem="4rS-s6-EPg" firstAttribute="top" secondItem="VbZ-fC-b4h" secondAttribute="top" id="9Ne-sl-mdC"/>
-                                        <constraint firstAttribute="bottom" secondItem="4rS-s6-EPg" secondAttribute="bottom" id="h5y-Ht-nnU"/>
-                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="centerY" secondItem="VbZ-fC-b4h" secondAttribute="centerY" id="par-53-zok"/>
-                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="15" id="tbN-ne-4U0"/>
+                                        <constraint firstAttribute="bottom" secondItem="xVl-7m-Dws" secondAttribute="bottom" id="AqD-ph-avT"/>
+                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="leading" secondItem="xVl-7m-Dws" secondAttribute="trailing" constant="15" id="OT6-YO-bzE"/>
+                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="top" secondItem="VbZ-fC-b4h" secondAttribute="top" id="PJZ-fs-Yob"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tf5-fs-pxM" secondAttribute="trailing" constant="15" id="VaO-pk-PSr"/>
+                                        <constraint firstItem="Tf5-fs-pxM" firstAttribute="centerY" secondItem="VbZ-fC-b4h" secondAttribute="centerY" id="qaO-Xi-fnj"/>
+                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="6" id="r1x-MM-tDp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="gameCoverImage" destination="xVl-7m-Dws" id="Exp-ox-qXD"/>
                                     <outlet property="gameTitleLabel" destination="Tf5-fs-pxM" id="Z2e-4d-wed"/>
                                 </connections>
                             </tableViewCell>

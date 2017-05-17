@@ -11,6 +11,7 @@ import UIKit
 class SearchedGameCell: UITableViewCell
 {
   @IBOutlet weak var gameTitleLabel: UILabel!
+  @IBOutlet weak var gameCoverImage: UIImageView!
 
   override func awakeFromNib()
   {
