@@ -169,6 +169,17 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     return cell
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+    if segue.identifier == "ShowGameDetailsSegue"
+    {
+      let gameInfoVC = segue.destination as! GameInfoDetailVC
+      let selectedCell = sender as! SearchedGameCell
+      let indexPath = tableView.indexPath(for: selectedCell)!
+      gameInfoVC.aGame = games[indexPath.row]
+    }
+  }
+  
  
 }
 

@@ -25,7 +25,7 @@ class Game
   {
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
-//    self.screenShotUrl = gameDictionary["screenshots"] as! String
+    self.screenshotUrls = [gameDictionary["screenshots"] as! String]
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {

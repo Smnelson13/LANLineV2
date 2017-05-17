@@ -10,7 +10,7 @@ import UIKit
 
 class GameInfoDetailVC: UIViewController
 {
-  var games = [Game]()
+  var aGame: Game!
   //let aGame = games[indexPath.row]
   
   @IBOutlet weak var screenshotImage: UIImageView!
@@ -23,10 +23,7 @@ class GameInfoDetailVC: UIViewController
   {
       super.viewDidLoad()
     
-    
-    
-
-    
+    screenshotImage.image = aGame.screenshotUrls[0]
   }
 
   override func didReceiveMemoryWarning()
