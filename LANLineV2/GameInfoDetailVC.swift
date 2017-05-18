@@ -52,34 +52,35 @@ class GameInfoDetailVC: UIViewController
               self.coverImage.image = image
             }
           }
-          }.resume()
+        }.resume()
       }
     }
-
-    if let screenshotIMG = imageCache[aGame.screenshotUrls[0]]
+    if aGame.screenshotUrls.count > 0
     {
-      screenshotImage.image = screenshotIMG
-    }
-    else
-    {
-      if let url = URL(string: aGame.screenshotUrls[0])
+      if let screenshotIMG = imageCache[aGame.screenshotUrls[0]]
       {
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) {
-          data, response,error in
-          if error == nil
-          {
-            let image = UIImage(data: data!)
-            self.imageCache[(self.aGame.coverUrl)] = image
-            DispatchQueue.main.async {
-              self.screenshotImage.image = image
-            }
-          }
-          }.resume()
+        screenshotImage.image = screenshotIMG
       }
-    }
+      else
+      {
+        if let url = URL(string: aGame.screenshotUrls[0])
+        {
+          let request = URLRequest(url: url)
+          URLSession.shared.dataTask(with: request) {
+            data, response,error in
+            if error == nil
+            {
+              let image = UIImage(data: data!)
+              self.imageCache[(self.aGame.coverUrl)] = image
+              DispatchQueue.main.async {
+                self.screenshotImage.image = image
+              }
+            }
+          }.resume()
+        }
+      }
 
-    
+    }
     
   }
 
