@@ -141,6 +141,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="coverImage" destination="sHo-eh-YcM" id="42o-Kq-0ct"/>
+                        <outlet property="gameSummary" destination="4Ik-XT-ap2" id="VIM-8R-W4s"/>
+                        <outlet property="gameTitle" destination="Hz3-vj-fYZ" id="cRm-Wh-hZS"/>
                         <outlet property="screenshotImage" destination="Cbr-0R-L3Q" id="6xU-HC-hCa"/>
                     </connections>
                 </viewController>

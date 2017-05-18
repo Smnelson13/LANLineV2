@@ -10,11 +10,15 @@ import UIKit
 
 class GameInfoDetailVC: UIViewController
 {
+  var imageCache = [String: UIImage]()
   var games = [Game]()
   var aGame: Game!
   //let aGame = games[indexPath.row]
   
   @IBOutlet weak var screenshotImage: UIImageView!
+  @IBOutlet weak var coverImage: UIImageView!
+  @IBOutlet weak var gameTitle: UILabel!
+  @IBOutlet weak var gameSummary: UITextView!
  
   @IBAction func doneButton(_ sender: Any)
   {
@@ -22,8 +26,59 @@ class GameInfoDetailVC: UIViewController
   }
 
   override func viewDidLoad()
-  {
-      super.viewDidLoad()
+  { super.viewDidLoad()
+    
+    gameTitle.text = aGame.name
+    gameSummary.text = aGame.summary
+    coverImage.image = #imageLiteral(resourceName: "blank-66")
+    screenshotImage.image = #imageLiteral(resourceName: "blank-66")
+    
+    if let img  = imageCache[aGame.coverUrl]
+    {
+      coverImage.image = img
+    }
+    else
+    {
+      if let url = URL(string: aGame.coverUrl)
+      {
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) {
+          data, response,error in
+          if error == nil
+          {
+            let image = UIImage(data: data!)
+            self.imageCache[(self.aGame.coverUrl)] = image
+            DispatchQueue.main.async {
+              self.coverImage.image = image
+            }
+          }
+          }.resume()
+      }
+    }
+
+    if let screenshotIMG = imageCache[aGame.screenshotUrls[1]]
+    {
+      screenshotImage.image = screenshotIMG
+    }
+    else
+    {
+      if let url = URL(string: aGame.coverUrl)
+      {
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) {
+          data, response,error in
+          if error == nil
+          {
+            let image = UIImage(data: data!)
+            self.imageCache[(self.aGame.coverUrl)] = image
+            DispatchQueue.main.async {
+              self.screenshotImage.image = image
+            }
+          }
+          }.resume()
+      }
+    }
+
     
     
   }

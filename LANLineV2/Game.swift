@@ -19,6 +19,7 @@ class Game
   let name: String
   var coverUrl: String = ""
   var screenshotUrls = [String]()
+  var summary = ""
   
   
   
@@ -26,6 +27,11 @@ class Game
   {
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
+    if let summary = gameDictionary["summary"] as? String
+    {
+      self.summary =  summary
+    }
+    
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
