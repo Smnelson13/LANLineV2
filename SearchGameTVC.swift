@@ -177,6 +177,8 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       let selectedCell = sender as! SearchedGameCell
       let indexPath = tableView.indexPath(for: selectedCell)!
       gameInfoVC.aGame = games[indexPath.row]
+      
+   //   let url request =
     }
   }
   

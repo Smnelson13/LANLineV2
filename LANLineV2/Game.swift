@@ -25,7 +25,6 @@ class Game
   {
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
-    self.screenshotUrls = [gameDictionary["screenshots"] as! String]
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
@@ -36,9 +35,9 @@ class Game
       }
     }
     
-    if let screenShotDictionary = gameDictionary["screenshots"] as? [[String: Any]]
+    if let screenShotArray = gameDictionary["screenshots"] as? [[String: Any]]
     {
-      for urlDictionary in screenShotDictionary
+      for urlDictionary in screenShotArray
       {
         if let theUrl = urlDictionary["url"] as? String
         {

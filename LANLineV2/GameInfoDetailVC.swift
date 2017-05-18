@@ -23,7 +23,7 @@ class GameInfoDetailVC: UIViewController
   {
       super.viewDidLoad()
     
-    screenshotImage.image = aGame.screenshotUrls[0]
+    //screenshotImage.image = aGame.screenshotUrls
   }
 
   override func didReceiveMemoryWarning()
