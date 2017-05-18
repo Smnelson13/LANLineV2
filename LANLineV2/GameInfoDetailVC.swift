@@ -10,10 +10,12 @@ import UIKit
 
 class GameInfoDetailVC: UIViewController
 {
+  var games = [Game]()
   var aGame: Game!
   //let aGame = games[indexPath.row]
   
   @IBOutlet weak var screenshotImage: UIImageView!
+ 
   @IBAction func doneButton(_ sender: Any)
   {
     self.dismiss(animated: true, completion: nil)
@@ -23,24 +25,24 @@ class GameInfoDetailVC: UIViewController
   {
       super.viewDidLoad()
     
-    //screenshotImage.image = aGame.screenshotUrls
+    
   }
 
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+     
   }
   
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
+  
 
 }
+
+//
+//extension GameInfoDetailVC: TappedGameInfoProtocol
+//{
+//  func didRecieveTappedGameInfo(results: [Game])
+//    {
+//      
+//    }
+//}
