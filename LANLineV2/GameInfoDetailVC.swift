@@ -31,7 +31,7 @@ class GameInfoDetailVC: UIViewController
     gameTitle.text = aGame.name
     gameSummary.text = aGame.summary
     coverImage.image = #imageLiteral(resourceName: "blank-66")
-    screenshotImage.image = #imageLiteral(resourceName: "blank-66")
+    screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
     
     if let img  = imageCache[aGame.coverUrl]
     {
@@ -56,13 +56,13 @@ class GameInfoDetailVC: UIViewController
       }
     }
 
-    if let screenshotIMG = imageCache[aGame.screenshotUrls[1]]
+    if let screenshotIMG = imageCache[aGame.screenshotUrls[0]]
     {
       screenshotImage.image = screenshotIMG
     }
     else
     {
-      if let url = URL(string: aGame.coverUrl)
+      if let url = URL(string: aGame.screenshotUrls[0])
       {
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) {
