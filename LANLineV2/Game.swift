@@ -20,6 +20,7 @@ class Game
   var coverUrl: String = ""
   var screenshotUrls = [String]()
   var summary = ""
+ 
   
   
   
