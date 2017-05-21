@@ -42,14 +42,14 @@ class SignInVC: UIViewController, UITextFieldDelegate
       self.userIdTextField.isEnabled = false
       self.nicknameTextField.isEnabled = false
       
-      self.indicatorView.startAnimation()
+    //  self.indicatorView.startAnimation()
       SBDMain.connect(withUserId: trimmedUserId, completionHandler: { (user, error) in
         if error != nil {
           DispatchQueue.main.async {
             self.userIdTextField.isEnabled = true
             self.nicknameTextField.isEnabled = true
             
-            self.indicatorView.stopAnimation()
+       //     self.indicatorView.stopAnimation()
           }
           
           let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
@@ -84,6 +84,35 @@ class SignInVC: UIViewController, UITextFieldDelegate
             
           })
         }
+        
+        SBDMain.updateCurrentUserInfo(withNickname: trimmedNickname, profileUrl: nil, completionHandler: { (error) in
+          DispatchQueue.main.async {
+            self.userIdTextField.isEnabled = true
+            self.nicknameTextField.isEnabled = true
+            
+        //    self.indicatorView.stopAnimation()
+          }
+          
+          if error != nil
+          {
+            let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
+            let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
+            vc.addAction(closeAction)
+            DispatchQueue.main.async {
+              self.present(vc, animated: true, completion: nil)
+            }
+            
+            SBDMain.disconnect(completionHandler: {
+              
+            })
+            
+            return
+            
+          }
+          
+          
+          
+        })
         
       })
     }
