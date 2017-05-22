@@ -9,8 +9,15 @@
 import UIKit
 import SendBirdSDK
 
-class CreateOpenChannelVC: UIViewController, UITextFieldDelegate
+protocol CreateOpenChannelViewControllerDelegate
 {
+  func refreshView(vc: UIViewController)
+}
+
+class CreateOpenChannelVC: UIViewController, UITextFieldDelegate, CreateOpenChannelViewControllerDelegate?
+{
+  weak var delegate: CreateOpenChannelViewControllerDelegate?
+  
   @IBOutlet weak var channelNameTextField: UITextField!
 
   override func viewDidLoad()
@@ -47,14 +54,31 @@ class CreateOpenChannelVC: UIViewController, UITextFieldDelegate
           let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedTitle"), message: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedMessage"), preferredStyle: UIAlertControllerStyle.alert)
           let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
           vc.addAction(closeAction)
-            
-          })
+          DispatchQueue.main.async {
+            self.present(vc, animated: true, completion: nil)
+          }
+         
+          return
+          
         }
+        
+        self.delegate?.refreshView(vc: self)
+        let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedTitle"), message: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedMessage"), preferredStyle: UIAlertControllerStyle.alert)
+        let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: { (action) in
+          self.dismiss(animated: false, completion: nil)
+        })
+        
+        vc.addAction(closeAction)
+        DispatchQueue.main.async {
+          self.present(vc, animated: true, completion: nil)
+        }
+        
       }
-      
-      
     }
+      
+      
   }
+}
   
 
  

@@ -9,7 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class OpenChannelVC: UITableViewController  //, AddOpenChannelVC
+class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDelegate  //, AddOpenChannelVC
 {
 
   private var channels: [SBDOpenChannel] = []
@@ -49,16 +49,61 @@ class OpenChannelVC: UITableViewController  //, AddOpenChannelVC
   {
    
   }
+  
+  private func refreshChannelList()
+  {
+    self.channels.removeAll()
+    
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+    
+    self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
+    self.openChannelListQuery?.limit = 20
+    
+    self.openChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
+      if error != nil
+      {
+        DispatchQueue.main.async {
+          self.refreshControl?.endRefreshing()
+        }
+        
+        let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
+        let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
+        vc.addAction(closeAction)
+        DispatchQueue.main.async {
+          self.present(vc, animated: true, completion: nil)
+        }
+        return
+      }
+      
+      for channel in channels!
+      {
+        self.channels.append(channel)
+      }
+      DispatchQueue.main.async {
+        self.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
+      }
+      
+    })
 
-  /*
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+  
+  func refreshView(vc: UIViewController)
+  {
+    self.refreshChannelList()
+  }
 
-      // Configure the cell...
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+  {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListTableViewCell", for: indexPath) as! OpenChannelListTableViewCell
+
+  
 
       return cell
   }
-  */
+  
 
   /*
   // Override to support conditional editing of the table view.
