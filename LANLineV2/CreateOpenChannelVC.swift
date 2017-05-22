@@ -9,7 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class CreateOpenChannelVC: UIViewController
+class CreateOpenChannelVC: UIViewController, UITextFieldDelegate
 {
   @IBOutlet weak var channelNameTextField: UITextField!
 
@@ -34,10 +34,34 @@ class CreateOpenChannelVC: UIViewController
   
   @IBAction func createButtonTapped(_ sender: Any)
   {
-    
+    func createOpenChannel()
+    {
+      if self.channelNameTextField.text?.characters.count == 0
+      {
+        return
+      }
+      
+      SBDOpenChannel.createChannel(withName: self.channelNameTextField.text, coverUrl: nil, data: nil, operatorUsers: nil) { (channel, error) in
+        if error != nil
+        {
+          let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedTitle"), message: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedMessage"), preferredStyle: UIAlertControllerStyle.alert)
+          let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
+          vc.addAction(closeAction)
+            
+          })
+        }
+      }
+      
+      
+    }
   }
   
 
  
   
-}
+//}
+
+
+
+
+
