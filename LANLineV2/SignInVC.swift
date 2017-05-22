@@ -15,6 +15,12 @@ class SignInVC: UIViewController, UITextFieldDelegate
   @IBOutlet weak var userIdTextField: UITextField!
   @IBOutlet weak var nicknameTextField: UITextField!
   
+  @IBAction func disconnectButtonTapped(_ sender: Any)
+  {
+    SBDMain.disconnect(completionHandler: {
+      // ...
+    })
+  }
 
   override func viewDidLoad()
   {
@@ -31,10 +37,14 @@ class SignInVC: UIViewController, UITextFieldDelegate
   
   @IBAction func connectButtonTapped(_ sender: Any)
   {
-    SBDMain.connect(withUserId: userIdTextField.text!, accessToken: "b0208a8138659ed9a752fa268ab5fdf025d3614a", completionHandler: { (user, error) in
-      // ...
-    })
+    if userIdTextField.text != nil
+    {
+      SBDMain.connect(withUserId: userIdTextField.text!, completionHandler: { (user, error) in
+        
+      })
+    }
   }
-  
+
+
 
 }

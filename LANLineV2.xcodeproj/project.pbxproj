@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4F8EE2BDB575F085B762821E /* Pods_LANLineV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */; };
 		9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925A1ED35C7B003E8019 /* SignInVC.swift */; };
+		9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */; };
+		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
+		907592611ED37627003E8019 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592601ED37627003E8019 /* Bundle.swift */; };
+		907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592621ED37987003E8019 /* OpenChannelListCell.swift */; };
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
@@ -48,6 +52,10 @@
 		6CC4032B67B73723B64BD829 /* Pods-LANLineV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.debug.xcconfig"; sourceTree = "<group>"; };
 		7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9075925A1ED35C7B003E8019 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTVC.swift; sourceTree = "<group>"; };
+		9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
+		907592601ED37627003E8019 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		907592621ED37987003E8019 /* OpenChannelListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListCell.swift; sourceTree = "<group>"; };
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +132,18 @@
 			name = GameSearch;
 			sourceTree = "<group>";
 		};
+		907592641ED37A3B003E8019 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
+				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
+				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
+				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				907592601ED37627003E8019 /* Bundle.swift */,
+			);
+			name = Chatting;
+			sourceTree = "<group>";
+		};
 		90B52C181ECAA0A1008AF6E2 = {
 			isa = PBXGroup;
 			children = (
@@ -149,9 +169,9 @@
 		90B52C231ECAA0A1008AF6E2 /* LANLineV2 */ = {
 			isa = PBXGroup;
 			children = (
-				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
-				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				907592591ED35B78003E8019 /* GameSearch */,
+				907592641ED37A3B003E8019 /* Chatting */,
+				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
@@ -474,11 +494,15 @@
 			files = (
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
+				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
+				907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */,
+				907592611ED37627003E8019 /* Bundle.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
 				90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */,
 				9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */,
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
+				9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
