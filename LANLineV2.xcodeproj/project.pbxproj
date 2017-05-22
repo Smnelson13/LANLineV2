@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		902C35261ED2378000EB12C6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C35251ED2378000EB12C6 /* SignInVC.swift */; };
-		902C35281ED252FB00EB12C6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C35271ED252FB00EB12C6 /* MenuVC.swift */; };
+		9051E5EC1ED26C4C008F5A77 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5EB1ED26C4C008F5A77 /* Bundle.swift */; };
+		9051E5EE1ED271A2008F5A77 /* OpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */; };
+		9051E5F01ED273C1008F5A77 /* AddOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */; };
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
@@ -51,7 +53,9 @@
 		56B8F6A742A2EF95FA199015 /* Pods_LANLineV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5D5941655D3B0314B8C0F9 /* Pods-LANLineV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		902C35251ED2378000EB12C6 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		902C35271ED252FB00EB12C6 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		9051E5EB1ED26C4C008F5A77 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelVC.swift; sourceTree = "<group>"; };
+		9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOpenChannelVC.swift; sourceTree = "<group>"; };
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,8 +153,10 @@
 		90B52C231ECAA0A1008AF6E2 /* LANLineV2 */ = {
 			isa = PBXGroup;
 			children = (
+				9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */,
+				9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */,
 				902C35251ED2378000EB12C6 /* SignInVC.swift */,
-				902C35271ED252FB00EB12C6 /* MenuVC.swift */,
+				9051E5EB1ED26C4C008F5A77 /* Bundle.swift */,
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
@@ -468,11 +474,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
+				9051E5EC1ED26C4C008F5A77 /* Bundle.swift in Sources */,
+				9051E5F01ED273C1008F5A77 /* AddOpenChannelVC.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
 				90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */,
+				9051E5EE1ED271A2008F5A77 /* OpenChannelVC.swift in Sources */,
 				902C35261ED2378000EB12C6 /* SignInVC.swift in Sources */,
-				902C35281ED252FB00EB12C6 /* MenuVC.swift in Sources */,
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
 			);

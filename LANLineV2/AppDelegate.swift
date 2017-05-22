@@ -15,9 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+  {
+  
+    let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
+    UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+    UIApplication.shared.registerForRemoteNotifications()
+
     
-    SBDMain.initWithApplicationId("The-Iron-Yard.LANLineV2")
+    SBDMain.initWithApplicationId("9DA1B1F4-0BE6-4DA8-82C5-2E81DAB56F23")
+    SBDMain.setLogLevel(SBDLogLevel.debug)
+    SBDOptions.setUseMemberAsMessageSender(true)
+
     
     
     // Override point for customization after application launch.
@@ -45,6 +54,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
+
+
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
+  {
+    SBDMain.registerDevicePushToken(deviceToken, unique: true) { (status, error) in
+      if error == nil {
+        if status == SBDPushTokenRegistrationStatus.pending
+        {
+          
+        }
+        else
+        {
+          
+        }
+      }
+      else
+      {
+        
+      }
+    }
+  }
+  
+  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)
+  {
+    
+  }
+
+
+
+
+
 
 
 }

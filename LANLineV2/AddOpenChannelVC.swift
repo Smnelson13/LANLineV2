@@ -1,5 +1,5 @@
 //
-//  MenuVC.swift
+//  AddOpenChannelVC.swift
 //  LANLineV2
 //
 //  Created by Shane Nelson on 5/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuVC: UIViewController
+class AddOpenChannelVC: UIViewController
 {
 
   override func viewDidLoad()
@@ -24,5 +24,11 @@ class MenuVC: UIViewController
       // Dispose of any resources that can be recreated.
   }
   
+
+  @IBAction func doneButtonTapped(_ sender: Any)
+  {
+    self.dismiss(animated: true, completion: nil)
+  }
+ 
 
 }

@@ -25,6 +25,21 @@ class GameInfoDetailVC: UIViewController
     self.navigationController?.popViewController(animated: true)
   }
 
+//  override func viewDidAppear(_ animated: Bool) {
+//    super.viewDidAppear(animated)
+//    
+//    let blurView = UIView(frame: screenshotImage.frame)
+//    blurView.alpha = 0
+//    blurView.backgroundColor = .black
+//    view.addSubview(blurView)
+//    
+//    UIView.animate(withDuration: 0.1)
+//    {
+//      blurView.alpha = 0.6
+//    }
+//  }
+
+  
   override func viewDidLoad()
   { super.viewDidLoad()
     
@@ -32,10 +47,11 @@ class GameInfoDetailVC: UIViewController
     gameSummary.text = aGame.summary
     coverImage.image = #imageLiteral(resourceName: "blank-66")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
-    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: Int(2.5))!)
-    let blurView = UIVisualEffectView(effect: blurEffect)
-    blurView.frame = screenshotImage.bounds
-    screenshotImage.addSubview(blurView)
+    
+//    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: Int(2.5))!)
+//    let blurView = UIVisualEffectView(effect: blurEffect)
+//    blurView.frame = screenshotImage.bounds
+//    screenshotImage.addSubview(blurView)
     
     if let img  = imageCache[aGame.coverUrl]
     {
