@@ -13,14 +13,14 @@ class OpenChannelVC: UITableViewController  //, AddOpenChannelVC
 {
 
   private var channels: [SBDOpenChannel] = []
-  private var openChannelListQuery: SBDOpenChannelListQuery
+  private var openChannelListQuery: SBDOpenChannelListQuery? // ONLY WAY TO GET IT TO STOP THOWING AN ERROR WAS TO UNRWRAP
   
   override func viewDidLoad()
   { super.viewDidLoad()
     
     self.tableView.delegate = self
     self.tableView.dataSource = self
-    self.tableView.addSubview(OpenChannelListTableViewCell.nib(), forCellReuseIdentifier: OpenChannelListTableViewCell.cellReuseIdentifier())
+//    self.tableView.addSubview(OpenChannelListTableViewCell.nib(), forCellReuseIdentifier: OpenChannelListTableViewCell.cellReuseIdentifier())
     
  
   }

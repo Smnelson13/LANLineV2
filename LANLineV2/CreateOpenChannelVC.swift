@@ -1,15 +1,17 @@
 //
-//  AddOpenChannelVC.swift
-//  LANLineV2
+//  CreateOpenChannelVC.swift
+//  
 //
-//  Created by Shane Nelson on 5/21/17.
-//  Copyright © 2017 Shane Nelson. All rights reserved.
+//  Created by Shane Nelson on 5/22/17.
+//
 //
 
 import UIKit
+import SendBirdSDK
 
-class AddOpenChannelVC: UIViewController
+class CreateOpenChannelVC: UIViewController
 {
+  @IBOutlet weak var channelNameTextField: UITextField!
 
   override func viewDidLoad()
   {
@@ -23,12 +25,19 @@ class AddOpenChannelVC: UIViewController
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
   }
-  
-
+ 
   @IBAction func doneButtonTapped(_ sender: Any)
   {
     self.dismiss(animated: true, completion: nil)
   }
- 
+  
+  
+  @IBAction func createButtonTapped(_ sender: Any)
+  {
+    
+  }
+  
 
+ 
+  
 }

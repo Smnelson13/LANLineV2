@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AfJ-DQ-4U0" id="DnD-tq-66K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -116,7 +116,7 @@
         <!--Create open Channel-->
         <scene sceneID="WVC-aY-5CS">
             <objects>
-                <viewController id="9HT-nn-Z4j" customClass="AddOpenChannelVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9HT-nn-Z4j" customClass="CreateOpenChannelVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4fy-uW-7PI"/>
                         <viewControllerLayoutGuide type="bottom" id="u1d-Io-QF6"/>
@@ -135,6 +135,9 @@
                                 <rect key="frame" x="100" y="196" width="175" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="9HT-nn-Z4j" eventType="touchUpInside" id="1iQ-kK-bHw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,10 +153,13 @@
                     <navigationItem key="navigationItem" title="Create open Channel" id="PJ0-Wb-bwm">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="LPv-6F-oLK">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="9HT-nn-Z4j" id="UMO-R4-MgN"/>
+                                <action selector="doneButtonTapped:" destination="9HT-nn-Z4j" id="ewD-FE-9L8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="channelNameTextField" destination="NhX-3Q-BfC" id="zxG-Y6-9s9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7v-zQ-wsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jSU-zI-hXf" id="VbZ-fC-b4h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-7m-Dws">
