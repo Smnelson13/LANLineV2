@@ -11,7 +11,7 @@ import SendBirdSDK
 
 class CreateOpenChannelVC: UIViewController
 {
-  @IBOutlet weak var channelName: UITextField!
+  @IBOutlet weak var channelName: UITextField! // JUST IMAGINE THIS SAYS CHANNELNAMETEXTFIELD.... CARRY ON.
 
 @IBAction func doneButtonTapped(_ sender: Any)
 {
@@ -32,14 +32,20 @@ class CreateOpenChannelVC: UIViewController
   
   @IBAction func createButtonTapped(_ sender: Any)
   {
-    SBDOpenChannel.createChannel(withName: channelName.text, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
-      if error != nil {
-        NSLog("Error: %@", error!)
-        return
-      }
+    if channelName.text != nil
+    {
+      SBDOpenChannel.createChannel(withName: channelName.text, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+        if error != nil {
+          NSLog("Error: %@", error!)
+          return
+        }
+        
+        // ...
+      })
       
-      // ...
-    })
+      self.dismiss(animated: true, completion: nil)
+      
+    }
   }
 
 }

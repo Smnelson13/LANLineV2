@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UIApplication.shared.registerForRemoteNotifications()
 
   
-    SBDMain.initWithApplicationId("9DA1B1F4-0BE6-4DA8-82C5-2E81DAB56F23")
+    SBDMain.initWithApplicationId("83FD6C08-7A4D-47E0-9C02-D039B37CBC98")
     SBDMain.setLogLevel(SBDLogLevel.debug)
     SBDOptions.setUseMemberAsMessageSender(true)
 
