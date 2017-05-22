@@ -11,6 +11,7 @@ import SendBirdSDK
 
 class OpenChannelListTableViewCell: UITableViewCell
 {
+  @IBOutlet weak var channelName: UILabel!
   
   override func awakeFromNib()
   {

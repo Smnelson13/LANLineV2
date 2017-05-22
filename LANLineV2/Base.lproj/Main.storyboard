@@ -84,13 +84,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AfJ-DQ-4U0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AfJ-DQ-4U0" customClass="OpenChannelListTableViewCell" customModule="LANLineV2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AfJ-DQ-4U0" id="DnD-tq-66K">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-qI-cHW">
+                                            <rect key="frame" x="15" y="9.5" width="345" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="EaU-qI-cHW" secondAttribute="trailing" constant="15" id="8ba-CC-5gG"/>
+                                        <constraint firstItem="EaU-qI-cHW" firstAttribute="centerY" secondItem="DnD-tq-66K" secondAttribute="centerY" id="9eE-Zd-0an"/>
+                                        <constraint firstItem="EaU-qI-cHW" firstAttribute="leading" secondItem="DnD-tq-66K" secondAttribute="leading" constant="15" id="piy-Pd-PVh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="channelName" destination="EaU-qI-cHW" id="qxd-77-r91"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
