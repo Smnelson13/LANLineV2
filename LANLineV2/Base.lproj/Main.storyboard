@@ -78,7 +78,7 @@
         <!--Open Channel-->
         <scene sceneID="blE-Vq-Jg5">
             <objects>
-                <tableViewController id="Mz0-xe-9Bx" customClass="OpenChannelVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mz0-xe-9Bx" customClass="OpenChannelTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pLd-eb-GH4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
