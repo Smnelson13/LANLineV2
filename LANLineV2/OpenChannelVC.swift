@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import SendBirdSDK
 
-class OpenChannelVC: UITableViewController
+class OpenChannelVC: UITableViewController  //, AddOpenChannelVC
 {
 
+  private var channels: [SBDOpenChannel] = []
+  private var openChannelListQuery: SBDOpenChannelListQuery
+  
   override func viewDidLoad()
-  {
-      super.viewDidLoad()
+  { super.viewDidLoad()
+    
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+    self.tableView.addSubview(OpenChannelListTableViewCell.nib(), forCellReuseIdentifier: OpenChannelListTableViewCell.cellReuseIdentifier())
+    
  
   }
 
@@ -39,7 +47,7 @@ class OpenChannelVC: UITableViewController
   
   @IBAction func addButtonTapped(_ sender: Any)
   {
-    
+   
   }
 
   /*

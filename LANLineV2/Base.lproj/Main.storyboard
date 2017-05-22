@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="1860" y="-567"/>
         </scene>
-        <!--Add Open ChannelVC-->
+        <!--Create open Channel-->
         <scene sceneID="WVC-aY-5CS">
             <objects>
                 <viewController id="9HT-nn-Z4j" customClass="AddOpenChannelVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,9 +124,30 @@
                     <view key="view" contentMode="scaleToFill" id="GSL-hO-Vt4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Channel Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NhX-3Q-BfC">
+                                <rect key="frame" x="15" y="129" width="345" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZE-MO-qy8">
+                                <rect key="frame" x="100" y="196" width="175" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Create"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SZE-MO-qy8" firstAttribute="leading" secondItem="GSL-hO-Vt4" secondAttribute="leading" constant="100" id="DJO-79-B4T"/>
+                            <constraint firstItem="NhX-3Q-BfC" firstAttribute="leading" secondItem="GSL-hO-Vt4" secondAttribute="leading" constant="15" id="DbE-9z-efg"/>
+                            <constraint firstAttribute="trailing" secondItem="SZE-MO-qy8" secondAttribute="trailing" constant="100" id="J6W-2u-H36"/>
+                            <constraint firstAttribute="trailing" secondItem="NhX-3Q-BfC" secondAttribute="trailing" constant="15" id="KZh-xu-lMt"/>
+                            <constraint firstItem="NhX-3Q-BfC" firstAttribute="top" secondItem="4fy-uW-7PI" secondAttribute="bottom" constant="65" id="V1m-ky-ccM"/>
+                            <constraint firstItem="SZE-MO-qy8" firstAttribute="top" secondItem="NhX-3Q-BfC" secondAttribute="bottom" constant="37" id="ele-s2-pgU"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PJ0-Wb-bwm">
+                    <navigationItem key="navigationItem" title="Create open Channel" id="PJ0-Wb-bwm">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="LPv-6F-oLK">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="9HT-nn-Z4j" id="UMO-R4-MgN"/>
@@ -136,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7v-zQ-wsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="-1236"/>
+            <point key="canvasLocation" x="3341.5999999999999" y="-1236.4317841079462"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="03B-sA-wye">

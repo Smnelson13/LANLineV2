@@ -11,6 +11,7 @@
 		9051E5EC1ED26C4C008F5A77 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5EB1ED26C4C008F5A77 /* Bundle.swift */; };
 		9051E5EE1ED271A2008F5A77 /* OpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */; };
 		9051E5F01ED273C1008F5A77 /* AddOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */; };
+		9051E5F41ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */; };
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		9051E5EB1ED26C4C008F5A77 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelVC.swift; sourceTree = "<group>"; };
 		9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOpenChannelVC.swift; sourceTree = "<group>"; };
+		9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTableViewCell.swift; sourceTree = "<group>"; };
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				9051E5EF1ED273C1008F5A77 /* AddOpenChannelVC.swift */,
 				9051E5ED1ED271A2008F5A77 /* OpenChannelVC.swift */,
+				9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */,
 				902C35251ED2378000EB12C6 /* SignInVC.swift */,
 				9051E5EB1ED26C4C008F5A77 /* Bundle.swift */,
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
@@ -482,6 +485,7 @@
 				9051E5EE1ED271A2008F5A77 /* OpenChannelVC.swift in Sources */,
 				902C35261ED2378000EB12C6 /* SignInVC.swift in Sources */,
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
+				9051E5F41ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
