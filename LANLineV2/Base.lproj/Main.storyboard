@@ -40,7 +40,6 @@
                                 <state key="normal" title="Connect"/>
                                 <connections>
                                     <action selector="connectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="oKS-Ln-f11"/>
-                                    <segue destination="SRd-0H-dGT" kind="show" id="BLo-c4-hLt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No6-Qh-ggh">
@@ -73,6 +72,7 @@
                     <connections>
                         <outlet property="nicknameTextField" destination="38r-Eg-aoH" id="79I-l7-7nu"/>
                         <outlet property="userIdTextField" destination="eqW-u5-DKk" id="Kwf-d1-dU2"/>
+                        <segue destination="SRd-0H-dGT" kind="show" identifier="signInSegue" id="onc-r6-WRw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gis-0K-XFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="channelName" destination="gvp-gP-o56" id="C6R-rT-0Qv"/>
+                        <outlet property="channelNameTextField" destination="gvp-gP-o56" id="JUa-gl-dLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75V-Xd-JjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,13 +172,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bRT-rH-Ufv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mE5-Xm-bTJ">
-                            <connections>
-                                <segue destination="5QE-qx-eDu" kind="popoverPresentation" popoverAnchorBarButtonItem="mE5-Xm-bTJ" id="eXw-QX-c6p">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mE5-Xm-bTJ"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -370,7 +364,6 @@
         <!--Navigation Controller-->
         <scene sceneID="h6z-ma-bM3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mql-Sg-hpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5QE-qx-eDu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V8X-JN-mSi">
@@ -382,6 +375,7 @@
                         <segue destination="orc-ft-NAb" kind="relationship" relationship="rootViewController" id="7Qk-TO-E44"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mql-Sg-hpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2207" y="-577"/>
         </scene>

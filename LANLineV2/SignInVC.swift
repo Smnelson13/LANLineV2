@@ -8,6 +8,7 @@
 
 import UIKit
 import SendBirdSDK
+import SVProgressHUD
 
 class SignInVC: UIViewController, UITextFieldDelegate
 {
@@ -37,10 +38,23 @@ class SignInVC: UIViewController, UITextFieldDelegate
   
   @IBAction func connectButtonTapped(_ sender: Any)
   {
-    if userIdTextField.text != nil
+    if let text = userIdTextField.text
     {
-      SBDMain.connect(withUserId: userIdTextField.text!, completionHandler: { (user, error) in
+      SVProgressHUD.show(withStatus: "Logging in...")
+      SBDMain.connect(withUserId: text, completionHandler: { (user, error) in
+        let success = (user != nil)
         
+        if success {
+          SVProgressHUD.showSuccess(withStatus: "Logged in!")
+        } else {
+          SVProgressHUD.showError(withStatus: error.debugDescription)
+        }
+        
+        SVProgressHUD.dismiss(after: 1) {
+          if success {
+            self.performSegue(withIdentifier: "signInSegue", sender: nil)
+          }
+        }
       })
     }
   }

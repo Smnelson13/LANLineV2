@@ -20,6 +20,17 @@ class OpenChannelListTVC: UITableViewController
 
       // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
       // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+    let addButton = self.navigationItem.rightBarButtonItem!
+    addButton.target = self
+    addButton.action = #selector(self.addButtonWasTapped(sender:))
+  }
+  
+  func addButtonWasTapped(sender: UIBarButtonItem) {
+    let popover = CreateChannelPopoverViewController()
+    popover.popoverPresentationController?.barButtonItem = sender
+    
+    present(popover, animated: true, completion: nil)
   }
 
   override func didReceiveMemoryWarning()

@@ -5,7 +5,7 @@
 //  Created by Shane Nelson on 5/22/17.
 //  Copyright © 2017 Shane Nelson. All rights reserved.
 //
-
+import SendBirdSDK
 import UIKit
 
 class OpenChannelListCell: UITableViewCell
@@ -24,5 +24,16 @@ class OpenChannelListCell: UITableViewCell
 
       // Configure the view for the selected state
   }
-
+  
+//  let query = SBDOpenChannel.createOpenChannelListQuery()!
+//  query.loadNextPage(completionHandler: { (channels, error) in
+//  if error != nil {
+//  NSLog("Error: %@", error!)
+//  return
+//  }
+//  
+//  
+//  
+//  })
+//
 }
