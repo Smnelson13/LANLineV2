@@ -11,6 +11,11 @@ import SendBirdSDK
 
 class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDelegate  //, AddOpenChannelVC
 {
+  func refreshView(vc: UIViewController)
+  {
+    self.refreshChannelList()
+  }
+
 
   private var channels: [SBDOpenChannel] = []
   private var openChannelListQuery: SBDOpenChannelListQuery? // ONLY WAY TO GET IT TO STOP THOWING AN ERROR WAS TO UNRWRAP
@@ -20,7 +25,7 @@ class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDeleg
     
     self.tableView.delegate = self
     self.tableView.dataSource = self
-//    self.tableView.addSubview(OpenChannelListTableViewCell.nib(), forCellReuseIdentifier: OpenChannelListTableViewCell.cellReuseIdentifier())
+   // self.tableView.addSubview(OpenChannelListTableViewCell.nib(), forCellReuseIdentifier: OpenChannelListTableViewCell.cellReuseIdentifier())
     
  
   }
@@ -49,6 +54,37 @@ class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDeleg
   {
    
   }
+  
+  private func loadChannels()
+  {
+    if self.openChannelListQuery?.hasNext == false
+    {
+      return
+    }
+    
+    self.openChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
+      if error != nil {
+        let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
+        let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
+        vc.addAction(closeAction)
+        DispatchQueue.main.async {
+          self.present(vc, animated: true, completion: nil)
+        }
+        
+        return
+      }
+      
+      for channel in channels!
+      {
+        self.channels.append(channel)
+      }
+      
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+    })
+  }
+
   
   private func refreshChannelList()
   {
@@ -86,19 +122,16 @@ class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDeleg
         self.tableView.reloadData()
       }
       
-    })
+  })
 
-  
-  func refreshView(vc: UIViewController)
-  {
-    self.refreshChannelList()
-  }
-
-  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
       let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListTableViewCell", for: indexPath) as! OpenChannelListTableViewCell
 
+    if self.channels.count > 0 && indexPath.row + 1 == self.channels.count
+    {
+      self.loadChannels()
+    }
   
 
       return cell
@@ -150,4 +183,5 @@ class OpenChannelVC: UITableViewController, CreateOpenChannelViewControllerDeleg
   }
   */
 
+}
 }

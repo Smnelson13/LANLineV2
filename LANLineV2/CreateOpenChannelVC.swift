@@ -14,9 +14,9 @@ protocol CreateOpenChannelViewControllerDelegate
   func refreshView(vc: UIViewController)
 }
 
-class CreateOpenChannelVC: UIViewController, UITextFieldDelegate, CreateOpenChannelViewControllerDelegate?
+class CreateOpenChannelVC: UIViewController, UITextFieldDelegate
 {
-  weak var delegate: CreateOpenChannelViewControllerDelegate?
+  var delegate: CreateOpenChannelViewControllerDelegate?
   
   @IBOutlet weak var channelNameTextField: UITextField!
 

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class OpenChannelListTableViewCell: UITableViewCell
 {
-
+  
   override func awakeFromNib()
   {
       super.awakeFromNib()
