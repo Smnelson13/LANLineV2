@@ -1,0 +1,18 @@
+PODS:
+  - Eureka (3.0.0)
+  - SendBirdSDK (3.0.53)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Eureka
+  - SendBirdSDK
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
+  SendBirdSDK: 87e3746e3ace9b0b3633ff39d808428c0b0b4a88
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: 62e62a1d6cb67eb9c6faa5ec330c4dabeacd8dc6
+
+COCOAPODS: 1.2.1

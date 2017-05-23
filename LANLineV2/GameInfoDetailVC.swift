@@ -22,7 +22,7 @@ class GameInfoDetailVC: UIViewController
  
   @IBAction func doneButton(_ sender: Any)
   {
-    self.dismiss(animated: true, completion: nil)
+    self.navigationController?.popViewController(animated: true)
   }
 
   override func viewDidLoad()
@@ -56,30 +56,32 @@ class GameInfoDetailVC: UIViewController
       }
     }
 
-    if let screenshotIMG = imageCache[aGame.screenshotUrls[0]]
+    if aGame.screenshotUrls.count > 0
     {
-      screenshotImage.image = screenshotIMG
-    }
-    else
-    {
-      if let url = URL(string: aGame.screenshotUrls[0])
+      if let screenshotIMG = imageCache[aGame.screenshotUrls[Int(arc4random_uniform(UInt32(aGame.screenshotUrls.count)))]]
       {
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) {
-          data, response,error in
-          if error == nil
-          {
-            let image = UIImage(data: data!)
-            self.imageCache[(self.aGame.coverUrl)] = image
-            DispatchQueue.main.async {
-              self.screenshotImage.image = image
-            }
-          }
-          }.resume()
+        screenshotImage.image = screenshotIMG
       }
+      else
+      {
+        if let url = URL(string: aGame.screenshotUrls[Int(arc4random_uniform(UInt32(aGame.screenshotUrls.count)))])
+        {
+          let request = URLRequest(url: url)
+          URLSession.shared.dataTask(with: request) {
+            data, response,error in
+            if error == nil
+            {
+              let image = UIImage(data: data!)
+              self.imageCache[(self.aGame.coverUrl)] = image
+              DispatchQueue.main.async {
+                self.screenshotImage.image = image
+              }
+            }
+            }.resume()
+        }
+      }
+      
     }
-
-    
     
   }
 
