@@ -1,5 +1,5 @@
 //
-//  OpenChannelTVC.swift
+//  OpenChatVC.swift
 //  LANLineV2
 //
 //  Created by Shane Nelson on 5/23/17.
@@ -8,19 +8,17 @@
 
 import UIKit
 import SendBirdSDK
+import SlackTextViewController
 
-class OpenChannelChatTVC: UITableViewController
+class OpenChatVC: SLKTextViewController
 {
   var channel: SBDOpenChannel!
-  //var channelUrl = self.channel._channelUrl
-  
+
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    
+
     enterChannel()
-  
-    
     
   }
 
@@ -29,22 +27,9 @@ class OpenChannelChatTVC: UITableViewController
       super.didReceiveMemoryWarning()
       // Dispose of any resources that can be recreated.
   }
-
-  // MARK: - Table view data source
-
-  override func numberOfSections(in tableView: UITableView) -> Int
-  {
-      // #warning Incomplete implementation, return the number of sections
-      return 0
-  }
-
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-  {
-      // #warning Incomplete implementation, return the number of rows
-      return 0
-  }
-
-  // MARK: - enterChannel
+  
+  
+  // MARK: - Enter Chat Channel
   func enterChannel()
   {
     SBDOpenChannel.getWithUrl(channel.channelUrl) { (channel, error) in
@@ -63,7 +48,8 @@ class OpenChannelChatTVC: UITableViewController
         print("Successfully entered channel.")
       })
     }
-
+    
   }
-  
+
+
 }

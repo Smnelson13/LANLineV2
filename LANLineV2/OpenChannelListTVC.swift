@@ -109,7 +109,7 @@ class OpenChannelListTVC: UITableViewController
   {
     if segue.identifier == "EnterChatSegue"
     {
-      let chatVC = segue.destination as! OpenChannelChatTVC
+      let chatVC = segue.destination as! OpenChatVC
       let selectedCell = sender as! OpenChannelListCell
       let indexPath = tableView.indexPath(for: selectedCell)!
       let aChannel = channels[indexPath.row]

@@ -162,7 +162,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="channelNameLabel" destination="mtt-tw-gfo" id="Sv4-vn-5xQ"/>
-                                    <segue destination="bTh-rW-v57" kind="show" identifier="EnterChatSegue" id="xXQ-Cd-pfZ"/>
+                                    <segue destination="Lnk-HJ-e0i" kind="show" identifier="EnterChatSegue" id="zcD-et-hLg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,33 +181,23 @@
             </objects>
             <point key="canvasLocation" x="1889" y="-571"/>
         </scene>
-        <!--Open Channel ChatTVC-->
-        <scene sceneID="Hh7-gG-qFY">
+        <!--Open ChatVC-->
+        <scene sceneID="emP-63-Xfo">
             <objects>
-                <tableViewController id="bTh-rW-v57" customClass="OpenChannelChatTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VaC-Xp-uKF">
+                <viewController id="Lnk-HJ-e0i" customClass="OpenChatVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCd-P5-qrj"/>
+                        <viewControllerLayoutGuide type="bottom" id="BO1-Zb-MKu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3br-vU-JCs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7Wg-hH-2sK">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Wg-hH-2sK" id="EF1-2D-scy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="bTh-rW-v57" id="eZw-Xs-bug"/>
-                            <outlet property="delegate" destination="bTh-rW-v57" id="uui-eg-UeY"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AdO-gu-w44" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKQ-gX-r15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714" y="-571"/>
+            <point key="canvasLocation" x="2662" y="-588"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="03B-sA-wye">
@@ -358,7 +348,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="efB-M7-SWt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="3N9-Pw-HXO"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xca-Dn-Mnc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xca-Dn-Mnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
