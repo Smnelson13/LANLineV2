@@ -8,7 +8,6 @@ target 'LANLineV2' do
   # Pods for LANLineV2
 pod 'SendBirdSDK'
 pod 'SVProgressHUD'
-pod 'Eureka'
 pod 'SlackTextViewController'
   target 'LANLineV2Tests' do
     inherit! :search_paths
