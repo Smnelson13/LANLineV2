@@ -9,7 +9,6 @@
 import UIKit
 import SendBirdSDK
 import SVProgressHUD
-import Eureka
 
 
 /*
@@ -52,35 +51,23 @@ class CreateOpenChannelVC: UIViewController
 }
 */
 
-
-class CreateChannelPopoverViewController: FormViewController
+class CreateChannelPopoverViewController: UITableViewController
 {
+  @IBOutlet weak var textField: UITextField?
   
-  var channelName: String = ""
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    sharedInit()
-  }
-  
-  override init(style: UITableViewStyle)
-  {
-    super.init(style: style)
-    sharedInit()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    sharedInit()
-  }
-  
-  func sharedInit()
-  {
-    preferredContentSize = CGSize(width: 200, height: 150)
-    modalPresentationStyle = .popover
+  static func instantiateFromStoryboard() -> CreateChannelPopoverViewController {
+    let createChannelPopoverViewController = UIStoryboard(name: "CreateChannelPopoverViewController", bundle: nil)
+      .instantiateInitialViewController() as! CreateChannelPopoverViewController
     
+    createChannelPopoverViewController.setupPopoverStuff()
+    return createChannelPopoverViewController
+  }
+
+  func setupPopoverStuff()
+  {
+    preferredContentSize = CGSize(width: 200, height: 88)
+    modalPresentationStyle = .popover
+
     if let controller = popoverPresentationController
     {
       controller.permittedArrowDirections = .any
@@ -88,60 +75,131 @@ class CreateChannelPopoverViewController: FormViewController
     }
   }
   
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    
-    view.tintColor = .primaryPurple
-
-    form +++ Section()
-    
-    <<< TextRow { row in
-      row.tag = "textField"
-    }.cellSetup { cell, row in
-      cell.textField.becomeFirstResponder()
-    }.onChange { row in
-      self.channelName = row.value ?? ""
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 1: createChannelButtonWasPressed()
+    default: break
     }
-      
-    <<< ButtonRow { row in
-      row.title = "Create Channel"
-    }.cellUpdate { cell, row in
-      cell.textLabel?.textColor = .primaryPurple
-    }.onCellSelection { cell, row in
-      self.createChannelButtonWasPressed()
-    }
-    
-    
   }
   
-  //MARK: - Create Channel, this will create a new channel. 
-  func createChannelButtonWasPressed()
-  {
-    if channelName != ""
+    //MARK: - Create Channel, this will create a new channel.
+    func createChannelButtonWasPressed()
     {
-      view.endEditing(true)
-      
-      SVProgressHUD.show(withStatus: "Creating channel...")
-      SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
-        SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(self.channelName)\"")
-        
-        SVProgressHUD.dismiss(after: 1, completion: {
-          self.dismiss(animated: true, completion: nil)
+      if let channelName = self.textField?.text, channelName != ""
+      {
+        view.endEditing(true)
+  
+        SVProgressHUD.show(withStatus: "Creating channel...")
+        SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+          SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(channelName)\"")
+  
+          SVProgressHUD.dismiss(after: 1, completion: {
+            self.dismiss(animated: true, completion: nil)
+          })
+  
+          if error != nil
+          {
+            NSLog("Error: %@", error!)
+            return
+          }
+  
+          // ...
         })
-        
-        if error != nil
-        {
-          NSLog("Error: %@", error!)
-          return
-        }
-        
-        // ...
-      })
+      }
     }
-  }
-
 }
+
+
+//
+//class CreateChannelPopoverViewController: FormViewController
+//{
+//  
+//  var channelName: String = ""
+//  
+//  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+//  {
+//    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//    sharedInit()
+//  }
+//  
+//  override init(style: UITableViewStyle)
+//  {
+//    super.init(style: style)
+//    sharedInit()
+//  }
+//  
+//  required init?(coder aDecoder: NSCoder)
+//  {
+//    super.init(coder: aDecoder)
+//    sharedInit()
+//  }
+//  
+//  func sharedInit()
+//  {
+//    preferredContentSize = CGSize(width: 200, height: 150)
+//    modalPresentationStyle = .popover
+//    
+//    if let controller = popoverPresentationController
+//    {
+//      controller.permittedArrowDirections = .any
+//      controller.delegate = self
+//    }
+//  }
+//  
+//  override func viewDidLoad()
+//  {
+//    super.viewDidLoad()
+//    
+//    view.tintColor = .primaryPurple
+//
+//    form +++ Section()
+//    
+//    <<< TextRow { row in
+//      row.tag = "textField"
+//    }.cellSetup { cell, row in
+//      cell.textField.becomeFirstResponder()
+//    }.onChange { row in
+//      self.channelName = row.value ?? ""
+//    }
+//      
+//    <<< ButtonRow { row in
+//      row.title = "Create Channel"
+//    }.cellUpdate { cell, row in
+//      cell.textLabel?.textColor = .primaryPurple
+//    }.onCellSelection { cell, row in
+//      self.createChannelButtonWasPressed()
+//    }
+//    
+//    
+//  }
+//  
+//  //MARK: - Create Channel, this will create a new channel. 
+//  func createChannelButtonWasPressed()
+//  {
+//    if channelName != ""
+//    {
+//      view.endEditing(true)
+//      
+//      SVProgressHUD.show(withStatus: "Creating channel...")
+//      SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+//        SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(self.channelName)\"")
+//        
+//        SVProgressHUD.dismiss(after: 1, completion: {
+//          self.dismiss(animated: true, completion: nil)
+//        })
+//        
+//        if error != nil
+//        {
+//          NSLog("Error: %@", error!)
+//          return
+//        }
+//        
+//        // ...
+//      })
+//    }
+//  }
+//
+//}
 
 
 extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate
