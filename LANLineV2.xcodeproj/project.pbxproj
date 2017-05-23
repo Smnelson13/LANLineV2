@@ -13,6 +13,7 @@
 		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
 		907592611ED37627003E8019 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592601ED37627003E8019 /* Bundle.swift */; };
 		907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592621ED37987003E8019 /* OpenChannelListCell.swift */; };
+		90B0C13D1ED49BE5004FB6B9 /* OpenChannelChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B0C13C1ED49BE5004FB6B9 /* OpenChannelChatTVC.swift */; };
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
 		907592601ED37627003E8019 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		907592621ED37987003E8019 /* OpenChannelListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListCell.swift; sourceTree = "<group>"; };
+		90B0C13C1ED49BE5004FB6B9 /* OpenChannelChatTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelChatTVC.swift; sourceTree = "<group>"; };
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,10 +137,11 @@
 		907592641ED37A3B003E8019 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
-				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
-				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
+				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
+				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
+				90B0C13C1ED49BE5004FB6B9 /* OpenChannelChatTVC.swift */,
 				907592601ED37627003E8019 /* Bundle.swift */,
 			);
 			name = Chatting;
@@ -503,6 +506,7 @@
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
 				9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */,
+				90B0C13D1ED49BE5004FB6B9 /* OpenChannelChatTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

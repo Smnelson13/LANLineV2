@@ -10,6 +10,8 @@ import UIKit
 
 class OpenChannelListCell: UITableViewCell
 {
+  private var channel: SBDOpenChannel!
+  
   @IBOutlet weak var channelNameLabel: UILabel!
 
   override func awakeFromNib()
@@ -25,15 +27,14 @@ class OpenChannelListCell: UITableViewCell
       // Configure the view for the selected state
   }
   
-//  let query = SBDOpenChannel.createOpenChannelListQuery()!
-//  query.loadNextPage(completionHandler: { (channels, error) in
-//  if error != nil {
-//  NSLog("Error: %@", error!)
-//  return
-//  }
-//  
-//  
-//  
-//  })
-//
+  func setModel(aChannel: SBDOpenChannel)
+  {
+    self.channel = aChannel
+
+    
+    self.channelNameLabel.text = self.channel.name
+  
+  }
+
+
 }

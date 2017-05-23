@@ -11,6 +11,8 @@ import SendBirdSDK
 import SVProgressHUD
 import Eureka
 
+
+/*
 class CreateOpenChannelVC: UIViewController
 {
   @IBOutlet weak var channelNameTextField: UITextField! // JUST IMAGINE THIS SAYS CHANNELNAMETEXTFIELD.... CARRY ON.
@@ -46,38 +48,48 @@ class CreateOpenChannelVC: UIViewController
       })
     }
   }
-}
 
-class CreateChannelPopoverViewController: FormViewController {
+}
+*/
+
+// Mark: - Popover 
+class CreateChannelPopoverViewController: FormViewController
+{
   
   var channelName: String = ""
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+  {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     sharedInit()
   }
   
-  override init(style: UITableViewStyle) {
+  override init(style: UITableViewStyle)
+  {
     super.init(style: style)
     sharedInit()
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder)
+  {
     super.init(coder: aDecoder)
     sharedInit()
   }
   
-  func sharedInit() {
+  func sharedInit()
+  {
     preferredContentSize = CGSize(width: 200, height: 150)
     modalPresentationStyle = .popover
     
-    if let controller = popoverPresentationController {
+    if let controller = popoverPresentationController
+    {
       controller.permittedArrowDirections = .any
       controller.delegate = self
     }
   }
   
-  override func viewDidLoad() {
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
     
     view.tintColor = .primaryPurple
@@ -103,7 +115,8 @@ class CreateChannelPopoverViewController: FormViewController {
     
   }
   
-  func createChannelButtonWasPressed() {
+  func createChannelButtonWasPressed()
+  {
     if channelName != ""
     {
       view.endEditing(true)
@@ -116,7 +129,8 @@ class CreateChannelPopoverViewController: FormViewController {
           self.dismiss(animated: true, completion: nil)
         })
         
-        if error != nil {
+        if error != nil
+        {
           NSLog("Error: %@", error!)
           return
         }
@@ -125,10 +139,14 @@ class CreateChannelPopoverViewController: FormViewController {
       })
     }
   }
+
 }
 
-extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate {
-  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+
+extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate
+{
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
+  {
     return .none
   }
 }
