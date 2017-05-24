@@ -51,3 +51,4 @@ class InsetLabel: UILabel
     return intrinsicSuperViewContentSize
   }
 }
+

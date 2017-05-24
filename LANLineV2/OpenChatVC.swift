@@ -35,9 +35,7 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
       let nib = UINib(nibName: identifier, bundle: nil)
       tableView?.register(nib, forCellReuseIdentifier: identifier)
     }
-
-    
-    self.navigationItem
+    //self.navigationItem
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -52,15 +50,17 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    return userMessages.count
+    return userMessages.count + baseMessages.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
   
-   let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
     cell.transform = tableView.transform
     cell.outputLabel.text = userMessages[indexPath.row].message
+
+    
     
     return cell
   
@@ -105,6 +105,7 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
       textView.text = ""
     }
   }
+  
   
   // MARK: - send message
   func sendMessage(message: String)
