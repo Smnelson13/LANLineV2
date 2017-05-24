@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
     UIApplication.shared.registerUserNotificationSettings(notificationSettings)
     UIApplication.shared.registerForRemoteNotifications()
-
+    
+    UINavigationBar.appearance().tintColor = .white
   
     SBDMain.initWithApplicationId("83FD6C08-7A4D-47E0-9C02-D039B37CBC98")
     SBDMain.setLogLevel(SBDLogLevel.debug)

@@ -27,6 +27,7 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
     tableView?.separatorStyle = .none
     tableView?.tableFooterView = UIView()
     tableView?.tableHeaderView = UIView()
+    tableView?.estimatedRowHeight = 60
 
     for identifier in [kIncomingMessageCellIdentifier, kUserMessageCellIdentifier]
     {
@@ -35,7 +36,12 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
     }
 
     
-    
+    self.navigationItem
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+  {
+    return UITableViewAutomaticDimension
   }
   
   override class func tableViewStyle(for decoder: NSCoder) -> UITableViewStyle
@@ -108,7 +114,8 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
       }
       if let msg = userMessage
       {
-        self.messages.append(msg)
+       // self.messages.append(msg)
+        self.messages.insert(msg, at: 0)
       }
       
       self.tableView?.reloadData()

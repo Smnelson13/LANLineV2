@@ -19,7 +19,7 @@ class MessageCell: UITableViewCell
   override func awakeFromNib()
   {
     super.awakeFromNib()
-    outputLabel.layer.cornerRadius = 8
+    outputLabel.layer.cornerRadius = 10
     outputLabel.layer.masksToBounds = true
     outputLabel.numberOfLines = 0
     outputLabel.lineBreakMode = .byWordWrapping
@@ -39,14 +39,15 @@ class InsetLabel: UILabel
 
   override func drawText(in rect: CGRect)
   {
-  let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-  super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
+    let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+    super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
   }
+  
   override public var intrinsicContentSize: CGSize
   {
-  var intrinsicSuperViewContentSize = super.intrinsicContentSize
-  intrinsicSuperViewContentSize.height += topInset + bottomInset
-  intrinsicSuperViewContentSize.width += leftInset + rightInset
-  return intrinsicSuperViewContentSize
+    var intrinsicSuperViewContentSize = super.intrinsicContentSize
+    intrinsicSuperViewContentSize.height += topInset + bottomInset
+    intrinsicSuperViewContentSize.width += leftInset + rightInset
+    return intrinsicSuperViewContentSize
   }
 }
