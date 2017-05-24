@@ -23,7 +23,7 @@ class GameInfoDetailVC: UIViewController
   
   @IBAction func joinChatButton(_ sender: Any)
   {
-    
+    joinOrCreateChannel()
   }
   
   @IBAction func doneButton(_ sender: Any)
@@ -83,7 +83,7 @@ class GameInfoDetailVC: UIViewController
                 self.screenshotImage.image = image
               }
             }
-            }.resume()
+          }.resume()
         }
       }
       
@@ -99,58 +99,77 @@ class GameInfoDetailVC: UIViewController
   
   func joinOrCreateChannel()
   {
-    func test()
-    {
-      let value: Int = aGame.id
-      let channelUrl = String(describing: value)
-      SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
-        if let error = error as NSError?
+    let value: Int = aGame.id
+    let channelUrl = String(describing: value)
+    SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
+      if let error = error as NSError?
+      {
+        if error.code == 400201
         {
-          if error.code == 400201
-          {
-            SBDOpenChannel.createChannel(withName: self.aGame.name, coverUrl: channelUrl, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
-              if error != nil {
-                NSLog("Error: %@", error!)
-                return
-              }
-              
-              // ...
-            })
+          self.create {
+            self.joinOrCreateChannel()
           }
-          NSLog("Error: %@", error)
-          return
         }
-        
-        
-        
-        
-        
-        channel?.enter(completionHandler: { (error) in
-          if error != nil {
-            NSLog("Error: %@", error!)
-            return
-          }
-          
-          // ...
-        })
+        else
+        {
+          channel?.enter(completionHandler: { (error) in
+            if error != nil {
+              NSLog("Error: %@", error!)
+              return
+            }
+            
+            // ...
+          })
+        }
       }
-      
+        return
     }
-
-  }
-  
-  
-}
-
-extension GameInfoDetailVC
-{
-  
-  
-  
-  
-  func channelAutoCreate()
-  {
     
   }
-}
+  
+  
+  func create(completion:@escaping () -> Void)
+  {
+    let value: Int = aGame.id
+    let channelUrl = String(describing: value)
+    
+    /*
+     {
+     "name": "testerino",
+     "participant_count": 0,
+     "custom_type": "",
+     "channel_url": "lololo",
+     "created_at": 1495662977,
+     "cover_url": "https://sendbird.com/main/img/cover/cover_08.jpg",
+     "freeze": false,
+     "max_length_message": -1,
+     "data": "",
+     "operators": []
+     }
+     */
+    
+    //need to send [Api-Token: api token key right here] for header
+    
+    //https://api.sendbird.com/v3/open_channels
+    
+//    SBDOpenChannel.createchannel
+    
+    SBDOpenChannel.createChannel(withName: aGame.name, coverUrl: channelUrl, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+      if error != nil
+      {
+        NSLog("Error: %@", error!)
+        return
+      }
+      
+      completion()
+      
+      // ...
+    })
+  
 
+
+  }
+
+
+
+}
