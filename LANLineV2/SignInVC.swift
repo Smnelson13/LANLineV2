@@ -15,14 +15,6 @@ class SignInVC: UIViewController, UITextFieldDelegate
   
   @IBOutlet weak var userIdTextField: UITextField!
   @IBOutlet weak var nicknameTextField: UITextField!
-  
-  @IBAction func disconnectButtonTapped(_ sender: Any)
-  {
-    SBDMain.disconnect(completionHandler:
-      {
-      // ...
-    })
-  }
 
   override func viewDidLoad()
   {

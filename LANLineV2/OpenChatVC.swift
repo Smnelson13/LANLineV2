@@ -13,7 +13,8 @@ import SlackTextViewController
 class OpenChatVC: SLKTextViewController, SBDChannelDelegate
 {
   var channel: SBDOpenChannel!
-  var messages = [SBDUserMessage]()
+  var userMessages = [SBDUserMessage]()
+  var baseMessages = [SBDBaseMessage]()
   
   var kIncomingMessageCellIdentifier = "IncomingMessageCell"
   var kUserMessageCellIdentifier = "UserMessageCell"
@@ -51,14 +52,15 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    return messages.count
+    return userMessages.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
+  
    let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
     cell.transform = tableView.transform
-    cell.outputLabel.text = messages[indexPath.row].message
+    cell.outputLabel.text = userMessages[indexPath.row].message
     
     return cell
   
@@ -114,12 +116,9 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
       }
       if let msg = userMessage
       {
-       // self.messages.append(msg)
-        self.messages.insert(msg, at: 0)
+        self.userMessages.insert(msg, at: 0)
       }
-      
       self.tableView?.reloadData()
-      
     })
   }
   
@@ -132,13 +131,9 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
         NSLog("Error: %@", error!)
         return
       }
-      
-      // messages are SBDBaseMessage objects
-      if let previousMessages = messages
+      if let imsgs = messages
       {
-     //   self.messages = previousMessages
-        // chagne the content of the message arra;y 
-        //tell the slack vc to update its view w
+        self.baseMessages.append(contentsOf: imsgs)
       }
       
     })
@@ -146,25 +141,6 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
   
 }
 
-
-
-//
-//class OpenChannelChattingViewController: UIViewController, SBDChannelDelegate
-//{
-//  
-//  // ...
-// // SBDMain.add(self as SBDChannelDelegate, identifier: self.delegateIdentifier)
-//  
-//  // ...
-//  
-//  func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
-//  {
-//    // ...
-//  }
-//}
-
-
-// ViewController.swift
 
 class ViewController: UIViewController, SBDConnectionDelegate, SBDChannelDelegate
 {

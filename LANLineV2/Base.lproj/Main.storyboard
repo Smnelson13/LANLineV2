@@ -37,32 +37,22 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-XY-ZaX">
                                 <rect key="frame" x="100" y="221" width="175" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Connect"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="connectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="oKS-Ln-f11"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No6-Qh-ggh">
-                                <rect key="frame" x="100" y="274" width="175" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Disconnect"/>
-                                <connections>
-                                    <action selector="connectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="w7H-bf-XVl"/>
-                                    <action selector="disconnectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="Ele-ZT-mrN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="No6-Qh-ggh" secondAttribute="trailing" constant="100" id="5pk-gw-keR"/>
                             <constraint firstItem="Pwm-XY-ZaX" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="100" id="8k3-9k-S6v"/>
                             <constraint firstAttribute="trailing" secondItem="38r-Eg-aoH" secondAttribute="trailing" constant="15" id="DIu-ge-crx"/>
-                            <constraint firstItem="No6-Qh-ggh" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="100" id="DxN-v1-cuO"/>
                             <constraint firstItem="Pwm-XY-ZaX" firstAttribute="top" secondItem="38r-Eg-aoH" secondAttribute="bottom" constant="37" id="EoE-PJ-sh8"/>
                             <constraint firstAttribute="trailing" secondItem="Pwm-XY-ZaX" secondAttribute="trailing" constant="100" id="Vl5-RF-83v"/>
                             <constraint firstAttribute="trailing" secondItem="eqW-u5-DKk" secondAttribute="trailing" constant="15" id="WAa-mf-V04"/>
                             <constraint firstItem="eqW-u5-DKk" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="fne-iS-Yyh"/>
-                            <constraint firstItem="No6-Qh-ggh" firstAttribute="top" secondItem="Pwm-XY-ZaX" secondAttribute="bottom" constant="23" id="iK8-rm-Mhs"/>
                             <constraint firstItem="38r-Eg-aoH" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="kSN-f8-1cB"/>
                             <constraint firstItem="eqW-u5-DKk" firstAttribute="top" secondItem="tov-gA-45x" secondAttribute="bottom" constant="63" id="lg3-cb-hrI"/>
                             <constraint firstItem="38r-Eg-aoH" firstAttribute="top" secondItem="eqW-u5-DKk" secondAttribute="bottom" constant="41" id="mZ6-ng-083"/>
@@ -77,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gis-0K-XFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1343" y="-207"/>
+            <point key="canvasLocation" x="-1311" y="-207"/>
         </scene>
         <!--Open Channel ListTVC-->
         <scene sceneID="xrY-ep-wa2">
@@ -310,7 +300,7 @@
             </objects>
             <point key="canvasLocation" x="1630" y="161"/>
         </scene>
-        <!--Item-->
+        <!--Brain Test View Controller-->
         <scene sceneID="Q5a-m1-saH">
             <objects>
                 <viewController id="6XA-D8-Xw1" customClass="BrainTestViewController" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Q6G-1w-rsc"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Q6G-1w-rsc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="195-Uh-QZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,7 +346,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dO7-PV-4Nd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="HiI-VI-AMh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="OFj-hD-buO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
