@@ -18,7 +18,8 @@ class SignInVC: UIViewController, UITextFieldDelegate
   
   @IBAction func disconnectButtonTapped(_ sender: Any)
   {
-    SBDMain.disconnect(completionHandler: {
+    SBDMain.disconnect(completionHandler:
+      {
       // ...
     })
   }
@@ -51,7 +52,9 @@ class SignInVC: UIViewController, UITextFieldDelegate
         }
         
         SVProgressHUD.dismiss(after: 1) {
-          if success {
+          
+          if success
+          {
             self.performSegue(withIdentifier: "signInSegue", sender: nil)
           }
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class GameInfoDetailVC: UIViewController
 {
@@ -19,7 +20,12 @@ class GameInfoDetailVC: UIViewController
   @IBOutlet weak var coverImage: UIImageView!
   @IBOutlet weak var gameTitle: UILabel!
   @IBOutlet weak var gameSummary: UITextView!
- 
+  
+  @IBAction func joinChatButton(_ sender: Any)
+  {
+    
+  }
+  
   @IBAction func doneButton(_ sender: Any)
   {
     self.navigationController?.popViewController(animated: true)
@@ -92,14 +98,46 @@ class GameInfoDetailVC: UIViewController
   }
   
   
-
+  
 }
 
-//
-//extension GameInfoDetailVC: TappedGameInfoProtocol
-//{
-//  func didRecieveTappedGameInfo(results: [Game])
-//    {
-//      
-//    }
-//}
+
+
+
+extension GameInfoDetailVC
+{
+  func CreateOrJoinChannel()
+  {
+    let channelId = String(aGame.id)
+    
+    SBDOpenChannel.getWithUrl(channelId) { (channel, error) in
+      if let error = error as NSError? {
+        NSLog("Error: %@", error)
+        
+         print("lol", error)
+        
+        return
+       
+      }
+      
+      channel?.enter(completionHandler: { (error) in
+        if error != nil {
+          NSLog("Error: %@", error!)
+          return
+        }
+        
+        // ...
+      })
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+}
