@@ -97,47 +97,60 @@ class GameInfoDetailVC: UIViewController
      
   }
   
-  
-  
-}
-
-
-
-
-extension GameInfoDetailVC
-{
-  func CreateOrJoinChannel()
+  func joinOrCreateChannel()
   {
-    let channelId = String(aGame.id)
-    
-    SBDOpenChannel.getWithUrl(channelId) { (channel, error) in
-      if let error = error as NSError? {
-        NSLog("Error: %@", error)
-        
-         print("lol", error)
-        
-        return
-       
-      }
-      
-      channel?.enter(completionHandler: { (error) in
-        if error != nil {
-          NSLog("Error: %@", error!)
+    func test()
+    {
+      let value: Int = aGame.id
+      let channelUrl = String(describing: value)
+      SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
+        if let error = error as NSError?
+        {
+          if error.code == 400201
+          {
+            SBDOpenChannel.createChannel(withName: self.aGame.name, coverUrl: channelUrl, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+              if error != nil {
+                NSLog("Error: %@", error!)
+                return
+              }
+              
+              // ...
+            })
+          }
+          NSLog("Error: %@", error)
           return
         }
         
-        // ...
-      })
+        
+        
+        
+        
+        channel?.enter(completionHandler: { (error) in
+          if error != nil {
+            NSLog("Error: %@", error!)
+            return
+          }
+          
+          // ...
+        })
+      }
+      
     }
+
   }
-
-
-
-
-
-
-
-
-
-
+  
+  
 }
+
+extension GameInfoDetailVC
+{
+  
+  
+  
+  
+  func channelAutoCreate()
+  {
+    
+  }
+}
+
