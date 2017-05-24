@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 import SlackTextViewController
 
-class OpenChatVC: SLKTextViewController, SBDChannelDelegate
+class OpenChatVC: SLKTextViewController
 {
   var channel: SBDOpenChannel!
   var userMessages = [SBDUserMessage]()
@@ -22,6 +22,8 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    SBDMain.add(self as SBDChannelDelegate, identifier: "OpenChannel")
     
     enterChannel(); loadPreviousMessages()
     
@@ -50,20 +52,19 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    return userMessages.count + baseMessages.count
+    return baseMessages.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-  
     let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
     cell.transform = tableView.transform
-    cell.outputLabel.text = userMessages[indexPath.row].message
-
-    
+    if let userMsg = baseMessages[indexPath.row] as? SBDUserMessage
+    {
+      cell.outputLabel.text = userMsg.message!
+    }
     
     return cell
-  
   }
 
 
@@ -115,11 +116,11 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
         NSLog("Error: %@", error!)
         return
       }
-      if let msg = userMessage
-      {
-        self.userMessages.insert(msg, at: 0)
-      }
-      self.tableView?.reloadData()
+//      if let msg = userMessage
+//      {
+//        self.userMessages.insert(msg, at: 0)
+//      }
+//      self.tableView?.reloadData()
     })
   }
   
@@ -135,26 +136,28 @@ class OpenChatVC: SLKTextViewController, SBDChannelDelegate
       if let imsgs = messages
       {
         self.baseMessages.append(contentsOf: imsgs)
+        DispatchQueue.main.async {
+          self.tableView?.reloadData()
+        }
       }
       
     })
   }
   
+  deinit
+  {
+    SBDMain.removeChannelDelegate(forIdentifier: "OpenChannel")
+  }
+  
 }
 
 
-class ViewController: UIViewController, SBDConnectionDelegate, SBDChannelDelegate
+extension OpenChatVC: SBDChannelDelegate
 {
-  func initViewController()
-  {
-    // ...
-    SBDMain.add(self as SBDChannelDelegate, identifier: "234")
-    // ...
-  }
-  
   func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
   {
-    // Received a chat message
+    baseMessages.insert(message, at: 0)
+    self.tableView?.reloadData()
   }
   
   func channelDidUpdateReadReceipt(_ sender: SBDGroupChannel)

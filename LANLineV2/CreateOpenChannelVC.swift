@@ -66,6 +66,7 @@ class CreateChannelPopoverViewController: UITableViewController
           // ...
         })
       }
+      tableView.reloadData()
     }
 }
 

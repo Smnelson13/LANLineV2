@@ -28,6 +28,10 @@ class BrainTestViewController: UIViewController
     SBDOpenChannel.getWithUrl("12233455") { (channel, error) in
       if let error = error as NSError?
       {
+        if error.code == 400201
+        {
+          print("It worked")
+        }
         NSLog("Error: %@", error)
         return
       }
