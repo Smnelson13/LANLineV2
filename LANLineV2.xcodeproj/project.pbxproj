@@ -30,6 +30,7 @@
 		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
 		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
 		90F600F81ED507920018CD05 /* BrainTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600F71ED507920018CD05 /* BrainTestViewController.swift */; };
+		90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */; };
 		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
 		D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
 		90F600F71ED507920018CD05 /* BrainTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTestViewController.swift; sourceTree = "<group>"; };
+		90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,12 +154,13 @@
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
 				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
 				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
+				90B344ED1ED4D49C002AD127 /* MessageCell.swift */,
+				90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */,
 				907592601ED37627003E8019 /* Bundle.swift */,
 				90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */,
 				90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				90F600F71ED507920018CD05 /* BrainTestViewController.swift */,
-				90B344ED1ED4D49C002AD127 /* MessageCell.swift */,
 				90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */,
 			);
 			name = Chatting;
@@ -518,6 +521,7 @@
 				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
 				90B344E81ED4C397002AD127 /* OpenChatVC.swift in Sources */,
 				90B344EE1ED4D49C002AD127 /* MessageCell.swift in Sources */,
+				90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */,
 				907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */,
 				907592611ED37627003E8019 /* Bundle.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,

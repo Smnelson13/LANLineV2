@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class MessageCell: UITableViewCell
 {
+ // weak var delegate: MessageDelegate?
+  private var message: SBDUserMessage!
+  
   @IBOutlet weak var outputLabel: InsetLabel!
   
   override func awakeFromNib()
