@@ -31,6 +31,7 @@
 		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
 		90F600F81ED507920018CD05 /* BrainTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600F71ED507920018CD05 /* BrainTestViewController.swift */; };
 		90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */; };
+		90F601001ED713B50018CD05 /* SendBirdAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */; };
 		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
 		D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
 		90F600F71ED507920018CD05 /* BrainTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTestViewController.swift; sourceTree = "<group>"; };
 		90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
+		90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBirdAPIController.swift; sourceTree = "<group>"; };
 		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,7 @@
 		907592641ED37A3B003E8019 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B344E71ED4C397002AD127 /* OpenChatVC.swift */,
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
@@ -531,6 +534,7 @@
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
 				9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */,
+				90F601001ED713B50018CD05 /* SendBirdAPIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

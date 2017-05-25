@@ -23,7 +23,7 @@ class GameInfoDetailVC: UIViewController
   
   @IBAction func joinChatButton(_ sender: Any)
   {
-    joinOrCreateChannel()
+   // joinOrCreateChannel()
   }
   
   @IBAction func doneButton(_ sender: Any)
@@ -97,79 +97,58 @@ class GameInfoDetailVC: UIViewController
      
   }
   
-  func joinOrCreateChannel()
-  {
-    let value: Int = aGame.id
-    let channelUrl = String(describing: value)
-    SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
-      if let error = error as NSError?
-      {
-        if error.code == 400201
-        {
-          self.create {
-            self.joinOrCreateChannel()
-          }
-        }
-        else
-        {
-          channel?.enter(completionHandler: { (error) in
-            if error != nil {
-              NSLog("Error: %@", error!)
-              return
-            }
-            
-            // ...
-          })
-        }
-      }
-        return
-    }
+//  func joinOrCreateChannel()
+//  {
+//    let value: Int = aGame.id
+//    let channelUrl = String(describing: value)
+//    SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
+//      if let error = error as NSError?
+//      {
+//        if error.code == 400201
+//        {
+//          self.create {
+//            self.joinOrCreateChannel()
+//          }
+//        }
+//        else
+//        {
+//          channel?.enter(completionHandler: { (error) in
+//            if error != nil {
+//              NSLog("Error: %@", error!)
+//              return
+//            }
+//            
+//            // ...
+//          })
+//        }
+//      }
+//        return
+//    }
     
   }
   
-  
-  func create(completion:@escaping () -> Void)
-  {
-    let value: Int = aGame.id
-    let channelUrl = String(describing: value)
-    
-    /*
-     {
-     "name": "testerino",
-     "participant_count": 0,
-     "custom_type": "",
-     "channel_url": "lololo",
-     "created_at": 1495662977,
-     "cover_url": "https://sendbird.com/main/img/cover/cover_08.jpg",
-     "freeze": false,
-     "max_length_message": -1,
-     "data": "",
-     "operators": []
-     }
-     */
-    
-    //need to send [Api-Token: api token key right here] for header
-    
-    //https://api.sendbird.com/v3/open_channels
-    
-//    SBDOpenChannel.createchannel
-    
-    SBDOpenChannel.createChannel(withName: aGame.name, coverUrl: channelUrl, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
-      if error != nil
-      {
-        NSLog("Error: %@", error!)
-        return
-      }
-      
-      completion()
-      
-      // ...
-    })
-  
+//  
+//  func create(completion:@escaping () -> Void)
+//  {
+//    let idValue = aGame.id
+//    let channel_Id = String(describing: idValue)
+//    let channel_Name = aGame.name
+//    let createChannelUrl = " https://api.sendbird.com/channel/create"
+//    var param =
+//    [
+//      "auth": "b0208a8138659ed9a752fa268ab5fdf025d3614a",
+//      "channel_url": channel_Id,  // Channel Url
+//      "name": channel_Name,         // Topic
+//      "cover_url": nil,    // Cover Image Url
+//      "data": nil,         // Custom Channel Data
+//    ]
+//    
+//    var request = NSMutableURLRequest = NSMutableURLRequest(url: createChannelUrl)
+//    request.HTTPMethod = "POST"
+//    request.HTTPBody = postData
+//    
+//  }
+//
+//
+//
 
-
-  }
-
-
-
-}

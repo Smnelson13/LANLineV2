@@ -13,7 +13,7 @@ import SlackTextViewController
 class OpenChatVC: SLKTextViewController
 {
   var channel: SBDOpenChannel!
-  var userMessages = [SBDUserMessage]()
+//  var userMessages = [SBDUserMessage]()
   var baseMessages = [SBDBaseMessage]()
   
   var kIncomingMessageCellIdentifier = "IncomingMessageCell"
@@ -116,11 +116,11 @@ class OpenChatVC: SLKTextViewController
         NSLog("Error: %@", error!)
         return
       }
-//      if let msg = userMessage
-//      {
-//        self.userMessages.insert(msg, at: 0)
-//      }
-//      self.tableView?.reloadData()
+      if let msg = userMessage
+      {
+        self.baseMessages.insert(msg, at: 0)
+      }
+      self.tableView?.reloadData()
     })
   }
   

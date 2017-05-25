@@ -8,48 +8,32 @@
 
 import UIKit
 import SendBirdSDK
+import Foundation
 
-class BrainTestViewController: UIViewController
+
+
+func creatChannel()
 {
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    test()
-  }
+  let channelCreateUrl = "https://api.sendbird.com/v3/open_channels"
 
-  override func didReceiveMemoryWarning()
-  {
-      super.didReceiveMemoryWarning()
-  }
-    
-  func test()
-  {
-    SBDOpenChannel.getWithUrl("12233455") { (channel, error) in
-      if let error = error as NSError?
-      {
-        if error.code == 400201
-        {
-          print("It worked")
-        }
-        NSLog("Error: %@", error)
-        return
-      }
-      
-      
-      
-      
-      
-      channel?.enter(completionHandler: { (error) in
-        if error != nil {
-          NSLog("Error: %@", error!)
-          return
-        }
-        
-        // ...
-      })
+  
+  var request = URLRequest(url: URL(string: "https://api.sendbird.com/v3/open_channels")!)
+  request.httpMethod = "POST"
+  let postString = "id=13&name=Jack"
+  request.httpBody = postString.data(using: .utf8)
+  let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+      print("error=\(String(describing: error))")
+      return
     }
-  
+    
+    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+      print("statusCode should be 200, but is \(httpStatus.statusCode)")
+      print("response = \(String(describing: response))")
+    }
+    
+    let responseString = String(data: data, encoding: .utf8)
+    print("responseString = \(String(describing: responseString))")
   }
-
+  task.resume()
 }
