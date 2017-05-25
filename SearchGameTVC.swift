@@ -91,6 +91,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchBar.text = nil
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
+    //tableView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
     //tableView.reloadData()
   }
 
@@ -190,6 +191,8 @@ extension SearchGameTVC: APIControllerProtocol {
     let queue = DispatchQueue.main
     queue.async {
       self.games = results
+      
+  //    self.tableView.contentInset = UIEdgeInsets.zero
       self.tableView.reloadData()
     }
   }

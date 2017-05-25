@@ -23,7 +23,7 @@ class GameInfoDetailVC: UIViewController
   
   @IBAction func joinChatButton(_ sender: Any)
   {
-   // joinOrCreateChannel()
+    joinOrCreateChannel()
   }
   
   @IBAction func doneButton(_ sender: Any)
@@ -59,7 +59,7 @@ class GameInfoDetailVC: UIViewController
 //    blurView.frame = screenshotImage.bounds
 //    screenshotImage.addSubview(blurView)
     
-    if let img  = imageCache[aGame.coverUrl]
+    if let img  = imageCache[aGame.coverUrl] // use alamofire image cache to store then clean up old images.
     {
       coverImage.image = img
     }
@@ -115,6 +115,33 @@ class GameInfoDetailVC: UIViewController
   {
       super.didReceiveMemoryWarning()
      
+  }
+  
+  func joinOrCreateChannel()
+  {
+    let value: Int = aGame.id
+    let channelId = String(describing: value)
+    
+    SBDOpenChannel.getWithUrl(channelId) { (openChannel, error) in
+      if let error = error as NSError?
+      {
+        if error.code == 400201
+        {
+          self.create
+            {
+            // join channel
+          }
+        }
+        else
+        {
+          //join channel
+        }
+        return
+      }
+      
+      // Successfully fetched the channel.
+      // Do something with openChannel.
+    }
   }
 
   func create(completion:@escaping () -> Void)
