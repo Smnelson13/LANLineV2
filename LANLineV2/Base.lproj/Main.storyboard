@@ -340,11 +340,11 @@
             </objects>
             <point key="canvasLocation" x="281" y="161"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Chat-->
         <scene sceneID="Yh1-p8-iXh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dO7-PV-4Nd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="HiI-VI-AMh"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Speech Bubble with Dots" selectedImage="Speech Bubble with Dots Filled" id="HiI-VI-AMh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -361,4 +361,8 @@
             <point key="canvasLocation" x="281" y="-518"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Speech Bubble with Dots" width="25" height="25"/>
+        <image name="Speech Bubble with Dots Filled" width="25" height="25"/>
+    </resources>
 </document>
