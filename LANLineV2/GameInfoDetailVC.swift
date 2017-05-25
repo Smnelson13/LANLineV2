@@ -96,59 +96,19 @@ class GameInfoDetailVC: UIViewController
       super.didReceiveMemoryWarning()
      
   }
-  
-//  func joinOrCreateChannel()
-//  {
-//    let value: Int = aGame.id
-//    let channelUrl = String(describing: value)
-//    SBDOpenChannel.getWithUrl(channelUrl) { (channel, error) in
-//      if let error = error as NSError?
-//      {
-//        if error.code == 400201
-//        {
-//          self.create {
-//            self.joinOrCreateChannel()
-//          }
-//        }
-//        else
-//        {
-//          channel?.enter(completionHandler: { (error) in
-//            if error != nil {
-//              NSLog("Error: %@", error!)
-//              return
-//            }
-//            
-//            // ...
-//          })
-//        }
-//      }
-//        return
-//    }
+
+  func create(completion:@escaping () -> Void)
+  {
+    let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
+    
+    var request = URLRequest(url: URL(string: createChannelUrl)!)
+    request.httpMethod = "POST"
+    let requestJson = "{\"channel_url\": \"\(aGame.id)\", \"name\": \"\(aGame.name)\"}"
+    request.httpBody = requestJson.data(using: .utf8)
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("b0208a8138659ed9a752fa268ab5fdf025d3614a", forHTTPHeaderField: "Api-Token")
+    // create data task to create game
     
   }
-  
-//  
-//  func create(completion:@escaping () -> Void)
-//  {
-//    let idValue = aGame.id
-//    let channel_Id = String(describing: idValue)
-//    let channel_Name = aGame.name
-//    let createChannelUrl = " https://api.sendbird.com/channel/create"
-//    var param =
-//    [
-//      "auth": "b0208a8138659ed9a752fa268ab5fdf025d3614a",
-//      "channel_url": channel_Id,  // Channel Url
-//      "name": channel_Name,         // Topic
-//      "cover_url": nil,    // Cover Image Url
-//      "data": nil,         // Custom Channel Data
-//    ]
-//    
-//    var request = NSMutableURLRequest = NSMutableURLRequest(url: createChannelUrl)
-//    request.HTTPMethod = "POST"
-//    request.HTTPBody = postData
-//    
-//  }
-//
-//
-//
 
+}
