@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserMessageCell" rowHeight="111" id="sbp-xJ-kuC" customClass="UserMessageCell" customModule="LANLineV2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="532" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbp-xJ-kuC" id="C7L-FW-53L">
+                <rect key="frame" x="0.0" y="0.0" width="532" height="110.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbl-mf-mIe" customClass="InsetLabel" customModule="LANLineV2" customModuleProvider="target">
+                        <rect key="frame" x="478" y="12" width="42" height="86.5"/>
+                        <color key="backgroundColor" red="0.23137254900000001" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="top" secondItem="C7L-FW-53L" secondAttribute="top" constant="12" id="1dq-fM-DhM"/>
+                    <constraint firstAttribute="trailing" secondItem="Vbl-mf-mIe" secondAttribute="trailing" constant="12" id="Ijx-nL-rN6"/>
+                    <constraint firstAttribute="bottom" secondItem="Vbl-mf-mIe" secondAttribute="bottom" constant="12" id="UYZ-YG-zyG"/>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="width" relation="lessThanOrEqual" secondItem="C7L-FW-53L" secondAttribute="width" multiplier="0.75" id="aUk-TJ-HLc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="outputLabel" destination="Vbl-mf-mIe" id="o62-Pc-ea0"/>
+            </connections>
+            <point key="canvasLocation" x="-165" y="-16.5"/>
+        </tableViewCell>
+    </objects>
+</document>

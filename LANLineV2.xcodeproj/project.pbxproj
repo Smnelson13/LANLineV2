@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		902C35261ED2378000EB12C6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902C35251ED2378000EB12C6 /* SignInVC.swift */; };
-		9051E5EC1ED26C4C008F5A77 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5EB1ED26C4C008F5A77 /* Bundle.swift */; };
-		9051E5EE1ED271A2008F5A77 /* OpenChannelTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5ED1ED271A2008F5A77 /* OpenChannelTVC.swift */; };
-		9051E5F41ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */; };
-		9051E5F61ED3161D008F5A77 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5F51ED3161D008F5A77 /* Keys.swift */; };
-		9051E5F81ED3188B008F5A77 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051E5F71ED3188B008F5A77 /* CreateOpenChannelVC.swift */; };
+		4F8EE2BDB575F085B762821E /* Pods_LANLineV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */; };
+		9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925A1ED35C7B003E8019 /* SignInVC.swift */; };
+		9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */; };
+		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
+		907592611ED37627003E8019 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592601ED37627003E8019 /* Bundle.swift */; };
+		907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907592621ED37987003E8019 /* OpenChannelListCell.swift */; };
+		90B344E81ED4C397002AD127 /* OpenChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B344E71ED4C397002AD127 /* OpenChatVC.swift */; };
+		90B344EA1ED4D362002AD127 /* IncomingMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */; };
+		90B344EC1ED4D36E002AD127 /* UserMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */; };
+		90B344EE1ED4D49C002AD127 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B344ED1ED4D49C002AD127 /* MessageCell.swift */; };
+		90B344F01ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */; };
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
@@ -24,9 +29,11 @@
 		90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C561ECAA2A2008AF6E2 /* Game.swift */; };
 		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
 		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
-		9B40C9F7B7EC94EB7F500D73 /* Pods_LANLineV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAE997C9B68BCE643FEE153 /* Pods_LANLineV2.framework */; };
-		D184947D72DE3767BAC54699 /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B8F6A742A2EF95FA199015 /* Pods_LANLineV2Tests.framework */; };
-		EC76B3A3295B572947D4A769 /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAEB6FB7733363B54BA40D5 /* Pods_LANLineV2UITests.framework */; };
+		90F600F81ED507920018CD05 /* BrainTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600F71ED507920018CD05 /* BrainTestViewController.swift */; };
+		90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */; };
+		90F601001ED713B50018CD05 /* SendBirdAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */; };
+		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
+		D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,19 +54,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13F072F8EC512201D7188CAC /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1D3AAD8E0E1CA40BA11476D8 /* Pods-LANLineV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2C9DFB9FDDEC011F4602D383 /* Pods-LANLineV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.release.xcconfig"; sourceTree = "<group>"; };
-		2D5A4CFF99961CA0B25FFFFF /* Pods-LANLineV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.release.xcconfig"; sourceTree = "<group>"; };
-		48C90C24B303FB84585714A7 /* Pods-LANLineV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.debug.xcconfig"; sourceTree = "<group>"; };
-		56B8F6A742A2EF95FA199015 /* Pods_LANLineV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B5D5941655D3B0314B8C0F9 /* Pods-LANLineV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		902C35251ED2378000EB12C6 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		9051E5EB1ED26C4C008F5A77 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		9051E5ED1ED271A2008F5A77 /* OpenChannelTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelTVC.swift; sourceTree = "<group>"; };
-		9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTableViewCell.swift; sourceTree = "<group>"; };
-		9051E5F51ED3161D008F5A77 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		9051E5F71ED3188B008F5A77 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
+		1F9770AA85F103D2EB9F65C9 /* Pods-LANLineV2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2266FDCE689A36C9C25455AA /* Pods-LANLineV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.release.xcconfig"; sourceTree = "<group>"; };
+		46F7B999A9F94A6BC91B5694 /* Pods-LANLineV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		6CC4032B67B73723B64BD829 /* Pods-LANLineV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.debug.xcconfig"; sourceTree = "<group>"; };
+		7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9075925A1ED35C7B003E8019 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTVC.swift; sourceTree = "<group>"; };
+		9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
+		907592601ED37627003E8019 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		907592621ED37987003E8019 /* OpenChannelListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListCell.swift; sourceTree = "<group>"; };
+		90B344E71ED4C397002AD127 /* OpenChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChatVC.swift; sourceTree = "<group>"; };
+		90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomingMessageCell.xib; sourceTree = "<group>"; };
+		90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserMessageCell.xib; sourceTree = "<group>"; };
+		90B344ED1ED4D49C002AD127 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateChannelPopoverViewController.storyboard; sourceTree = "<group>"; };
 		90B52C211ECAA0A1008AF6E2 /* LANLineV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLineV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,8 +86,13 @@
 		90B52C561ECAA2A2008AF6E2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
-		9BAEB6FB7733363B54BA40D5 /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAAE997C9B68BCE643FEE153 /* Pods_LANLineV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90F600F71ED507920018CD05 /* BrainTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTestViewController.swift; sourceTree = "<group>"; };
+		90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
+		90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendBirdAPIController.swift; sourceTree = "<group>"; };
+		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5F4F43DE0749A4FC3F89876 /* Pods-LANLineV2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B40C9F7B7EC94EB7F500D73 /* Pods_LANLineV2.framework in Frameworks */,
+				4F8EE2BDB575F085B762821E /* Pods_LANLineV2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D184947D72DE3767BAC54699 /* Pods_LANLineV2Tests.framework in Frameworks */,
+				99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,46 +116,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC76B3A3295B572947D4A769 /* Pods_LANLineV2UITests.framework in Frameworks */,
+				D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A852DE94E523FDA8833B89B /* Frameworks */ = {
+		58C0610A88AAFB87349EB06F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AAAE997C9B68BCE643FEE153 /* Pods_LANLineV2.framework */,
-				56B8F6A742A2EF95FA199015 /* Pods_LANLineV2Tests.framework */,
-				9BAEB6FB7733363B54BA40D5 /* Pods_LANLineV2UITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5FBA2A1540171FBB87C95E6D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				48C90C24B303FB84585714A7 /* Pods-LANLineV2.debug.xcconfig */,
-				2D5A4CFF99961CA0B25FFFFF /* Pods-LANLineV2.release.xcconfig */,
-				7B5D5941655D3B0314B8C0F9 /* Pods-LANLineV2Tests.debug.xcconfig */,
-				1D3AAD8E0E1CA40BA11476D8 /* Pods-LANLineV2Tests.release.xcconfig */,
-				13F072F8EC512201D7188CAC /* Pods-LANLineV2UITests.debug.xcconfig */,
-				2C9DFB9FDDEC011F4602D383 /* Pods-LANLineV2UITests.release.xcconfig */,
+				6CC4032B67B73723B64BD829 /* Pods-LANLineV2.debug.xcconfig */,
+				2266FDCE689A36C9C25455AA /* Pods-LANLineV2.release.xcconfig */,
+				1F9770AA85F103D2EB9F65C9 /* Pods-LANLineV2Tests.debug.xcconfig */,
+				F5F4F43DE0749A4FC3F89876 /* Pods-LANLineV2Tests.release.xcconfig */,
+				BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */,
+				46F7B999A9F94A6BC91B5694 /* Pods-LANLineV2UITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9051E5F91ED31931008F5A77 /* Game Search */ = {
+		907592591ED35B78003E8019 /* GameSearch */ = {
 			isa = PBXGroup;
 			children = (
-				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
 				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
-				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
 				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
+				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
+				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 			);
-			name = "Game Search";
+			name = GameSearch;
+			sourceTree = "<group>";
+		};
+		907592641ED37A3B003E8019 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				90F600FF1ED713B50018CD05 /* SendBirdAPIController.swift */,
+				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				90B344E71ED4C397002AD127 /* OpenChatVC.swift */,
+				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
+				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
+				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
+				90B344ED1ED4D49C002AD127 /* MessageCell.swift */,
+				90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */,
+				907592601ED37627003E8019 /* Bundle.swift */,
+				90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */,
+				90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */,
+				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
+				90F600F71ED507920018CD05 /* BrainTestViewController.swift */,
+				90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */,
+			);
+			name = Chatting;
 			sourceTree = "<group>";
 		};
 		90B52C181ECAA0A1008AF6E2 = {
@@ -151,8 +176,8 @@
 				90B52C381ECAA0A1008AF6E2 /* LANLineV2Tests */,
 				90B52C431ECAA0A1008AF6E2 /* LANLineV2UITests */,
 				90B52C221ECAA0A1008AF6E2 /* Products */,
-				5FBA2A1540171FBB87C95E6D /* Pods */,
-				5A852DE94E523FDA8833B89B /* Frameworks */,
+				58C0610A88AAFB87349EB06F /* Pods */,
+				A73D0E77958ADC3971FF25E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,15 +194,9 @@
 		90B52C231ECAA0A1008AF6E2 /* LANLineV2 */ = {
 			isa = PBXGroup;
 			children = (
+				907592591ED35B78003E8019 /* GameSearch */,
+				907592641ED37A3B003E8019 /* Chatting */,
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
-				9051E5F71ED3188B008F5A77 /* CreateOpenChannelVC.swift */,
-				9051E5ED1ED271A2008F5A77 /* OpenChannelTVC.swift */,
-				9051E5F31ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift */,
-				902C35251ED2378000EB12C6 /* SignInVC.swift */,
-				9051E5F51ED3161D008F5A77 /* Keys.swift */,
-				9051E5EB1ED26C4C008F5A77 /* Bundle.swift */,
-				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
-				9051E5F91ED31931008F5A77 /* Game Search */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
@@ -203,6 +222,16 @@
 			path = LANLineV2UITests;
 			sourceTree = "<group>";
 		};
+		A73D0E77958ADC3971FF25E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */,
+				7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */,
+				A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,12 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90B52C491ECAA0A1008AF6E2 /* Build configuration list for PBXNativeTarget "LANLineV2" */;
 			buildPhases = (
-				700F5D21A97893242AC5E323 /* [CP] Check Pods Manifest.lock */,
+				746EE4EB8B4FC71581AC8CF2 /* [CP] Check Pods Manifest.lock */,
 				90B52C1D1ECAA0A1008AF6E2 /* Sources */,
 				90B52C1E1ECAA0A1008AF6E2 /* Frameworks */,
 				90B52C1F1ECAA0A1008AF6E2 /* Resources */,
-				A4B8AB34174F980FB74D2FA7 /* [CP] Embed Pods Frameworks */,
-				AEE69D6C4EEC3F87DB95688B /* [CP] Copy Pods Resources */,
+				DDF03339BE7F2789B2B347BC /* [CP] Embed Pods Frameworks */,
+				9B860B08969E4BB3D4EA1D57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,12 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90B52C4C1ECAA0A1008AF6E2 /* Build configuration list for PBXNativeTarget "LANLineV2Tests" */;
 			buildPhases = (
-				71003BA32F51E4D07D49DCD9 /* [CP] Check Pods Manifest.lock */,
+				90714F8D124D98950064FF65 /* [CP] Check Pods Manifest.lock */,
 				90B52C311ECAA0A1008AF6E2 /* Sources */,
 				90B52C321ECAA0A1008AF6E2 /* Frameworks */,
 				90B52C331ECAA0A1008AF6E2 /* Resources */,
-				E8C1A41258FDCCB5BDF33734 /* [CP] Embed Pods Frameworks */,
-				E704BB941B3E99486460754A /* [CP] Copy Pods Resources */,
+				3E3A11829986479F6A2CF2F9 /* [CP] Embed Pods Frameworks */,
+				510EED13EAD2C2320656F559 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90B52C4F1ECAA0A1008AF6E2 /* Build configuration list for PBXNativeTarget "LANLineV2UITests" */;
 			buildPhases = (
-				FCB4FC9EBFD460E437C9EF89 /* [CP] Check Pods Manifest.lock */,
+				CD4FC33F80FF79C1B4453F6D /* [CP] Check Pods Manifest.lock */,
 				90B52C3C1ECAA0A1008AF6E2 /* Sources */,
 				90B52C3D1ECAA0A1008AF6E2 /* Frameworks */,
 				90B52C3E1ECAA0A1008AF6E2 /* Resources */,
-				686B9D28B536888F2ABEE850 /* [CP] Embed Pods Frameworks */,
-				9DD82DDBADDF452AD2074FA3 /* [CP] Copy Pods Resources */,
+				57615B48704940CC7EEA947C /* [CP] Embed Pods Frameworks */,
+				CCB78C09E1A1B4299C97449C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,7 +351,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B344EC1ED4D36E002AD127 /* UserMessageCell.xib in Resources */,
 				90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */,
+				90B344EA1ED4D362002AD127 /* IncomingMessageCell.xib in Resources */,
+				90B344F01ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard in Resources */,
 				90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */,
 				90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */,
 			);
@@ -345,112 +377,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		686B9D28B536888F2ABEE850 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		700F5D21A97893242AC5E323 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		71003BA32F51E4D07D49DCD9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9DD82DDBADDF452AD2074FA3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4B8AB34174F980FB74D2FA7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AEE69D6C4EEC3F87DB95688B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E704BB941B3E99486460754A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8C1A41258FDCCB5BDF33734 /* [CP] Embed Pods Frameworks */ = {
+		3E3A11829986479F6A2CF2F9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -465,7 +392,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCB4FC9EBFD460E437C9EF89 /* [CP] Check Pods Manifest.lock */ = {
+		510EED13EAD2C2320656F559 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2Tests/Pods-LANLineV2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57615B48704940CC7EEA947C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		746EE4EB8B4FC71581AC8CF2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,6 +437,81 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		90714F8D124D98950064FF65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9B860B08969E4BB3D4EA1D57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCB78C09E1A1B4299C97449C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD4FC33F80FF79C1B4453F6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDF03339BE7F2789B2B347BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -491,14 +523,21 @@
 				9051E5F61ED3161D008F5A77 /* Keys.swift in Sources */,
 				9051E5EC1ED26C4C008F5A77 /* Bundle.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
+				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
+				90B344E81ED4C397002AD127 /* OpenChatVC.swift in Sources */,
+				90B344EE1ED4D49C002AD127 /* MessageCell.swift in Sources */,
+				90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */,
+				907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */,
+				907592611ED37627003E8019 /* Bundle.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
 				90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */,
-				9051E5EE1ED271A2008F5A77 /* OpenChannelTVC.swift in Sources */,
-				902C35261ED2378000EB12C6 /* SignInVC.swift in Sources */,
-				9051E5F81ED3188B008F5A77 /* CreateOpenChannelVC.swift in Sources */,
+				90F600F81ED507920018CD05 /* BrainTestViewController.swift in Sources */,
+				9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */,
 				90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */,
 				9051E5F41ED27AF9008F5A77 /* OpenChannelListTableViewCell.swift in Sources */,
 				90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */,
+				9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */,
+				90F601001ED713B50018CD05 /* SendBirdAPIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,7 +687,7 @@
 		};
 		90B52C4A1ECAA0A1008AF6E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48C90C24B303FB84585714A7 /* Pods-LANLineV2.debug.xcconfig */;
+			baseConfigurationReference = 6CC4032B67B73723B64BD829 /* Pods-LANLineV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5CZ45M6538;
@@ -662,7 +701,7 @@
 		};
 		90B52C4B1ECAA0A1008AF6E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D5A4CFF99961CA0B25FFFFF /* Pods-LANLineV2.release.xcconfig */;
+			baseConfigurationReference = 2266FDCE689A36C9C25455AA /* Pods-LANLineV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5CZ45M6538;
@@ -676,7 +715,7 @@
 		};
 		90B52C4D1ECAA0A1008AF6E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B5D5941655D3B0314B8C0F9 /* Pods-LANLineV2Tests.debug.xcconfig */;
+			baseConfigurationReference = 1F9770AA85F103D2EB9F65C9 /* Pods-LANLineV2Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -692,7 +731,7 @@
 		};
 		90B52C4E1ECAA0A1008AF6E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D3AAD8E0E1CA40BA11476D8 /* Pods-LANLineV2Tests.release.xcconfig */;
+			baseConfigurationReference = F5F4F43DE0749A4FC3F89876 /* Pods-LANLineV2Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -708,7 +747,7 @@
 		};
 		90B52C501ECAA0A1008AF6E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13F072F8EC512201D7188CAC /* Pods-LANLineV2UITests.debug.xcconfig */;
+			baseConfigurationReference = BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 5CZ45M6538;
@@ -723,7 +762,7 @@
 		};
 		90B52C511ECAA0A1008AF6E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C9DFB9FDDEC011F4602D383 /* Pods-LANLineV2UITests.release.xcconfig */;
+			baseConfigurationReference = 46F7B999A9F94A6BC91B5694 /* Pods-LANLineV2UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 5CZ45M6538;

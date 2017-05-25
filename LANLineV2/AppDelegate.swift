@@ -17,19 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
-    //  ERRORS THROWN WHEN CHANGES TO THE VERSION IT ASKS FOR.
     let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
     UIApplication.shared.registerUserNotificationSettings(notificationSettings)
     UIApplication.shared.registerForRemoteNotifications()
-
     
-    SBDMain.initWithApplicationId("9DA1B1F4-0BE6-4DA8-82C5-2E81DAB56F23")
+    UINavigationBar.appearance().tintColor = .white
+  
+    SBDMain.initWithApplicationId("83FD6C08-7A4D-47E0-9C02-D039B37CBC98")
     SBDMain.setLogLevel(SBDLogLevel.debug)
     SBDOptions.setUseMemberAsMessageSender(true)
 
     
-    
-    // Override point for customization after application launch.
     return true
   }
 
@@ -55,36 +53,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
   {
     SBDMain.registerDevicePushToken(deviceToken, unique: true) { (status, error) in
       if error == nil {
-        if status == SBDPushTokenRegistrationStatus.pending
-        {
+        if status == SBDPushTokenRegistrationStatus.pending {
           
         }
-        else
-        {
+        else {
           
         }
       }
-      else
-      {
+      else {
         
       }
     }
   }
-  
-  func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)
-  {
-    
-  }
-
-
-
-
-
 
 
 }

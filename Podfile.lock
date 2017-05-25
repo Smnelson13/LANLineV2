@@ -1,0 +1,18 @@
+PODS:
+  - SendBirdSDK (3.0.53)
+  - SlackTextViewController (1.9.5)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - SendBirdSDK
+  - SlackTextViewController
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  SendBirdSDK: 87e3746e3ace9b0b3633ff39d808428c0b0b4a88
+  SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: d8b17621bbb81a815b6759c3fd85923edc670526
+
+COCOAPODS: 1.2.1

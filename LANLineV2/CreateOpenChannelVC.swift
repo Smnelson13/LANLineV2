@@ -1,88 +1,82 @@
 //
 //  CreateOpenChannelVC.swift
-//  
+//  LANLineV2
 //
 //  Created by Shane Nelson on 5/22/17.
-//
+//  Copyright © 2017 Shane Nelson. All rights reserved.
 //
 
 import UIKit
 import SendBirdSDK
+import SVProgressHUD
 
-protocol CreateOpenChannelViewControllerDelegate
+
+class CreateChannelPopoverViewController: UITableViewController
 {
-  func refreshView(vc: UIViewController)
-}
-
-class CreateOpenChannelVC: UIViewController, UITextFieldDelegate
-{
+  @IBOutlet weak var textField: UITextField?
   
-  @IBAction func doneButtonTapped(_ sender: Any)
-  {
-    self.dismiss(animated: true, completion: nil)
-  }
-  
-  
-  
-  var delegate: CreateOpenChannelViewControllerDelegate?
-  
-  @IBOutlet weak var channelNameTextField: UITextField!
-
-  override func viewDidLoad()
-  {
-      super.viewDidLoad()
-
-      // Do any additional setup after loading the view.
-  }
-
-  override func didReceiveMemoryWarning()
-  {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-  }
- 
-  private func createOpenChannel()
-  {
-    if self.channelNameTextField.text?.characters.count == 0
-    {
-      return
-    }
+  static func instantiateFromStoryboard() -> CreateChannelPopoverViewController {
+    let createChannelPopoverViewController = UIStoryboard(name: "CreateChannelPopoverViewController", bundle: nil)
+      .instantiateInitialViewController() as! CreateChannelPopoverViewController
     
-    SBDOpenChannel.createChannel(withName: self.channelNameTextField.text, coverUrl: nil, data: nil, operatorUsers: nil) { (channel, error) in
-      if error != nil
-      {
-        let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
-        let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
-        vc.addAction(closeAction)
-        DispatchQueue.main.async {
-          self.present(vc, animated: true, completion: nil)
-        }
-        
-        return
-      }
-      
-      self.delegate?.refreshView(vc: self)
-      let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedTitle"), message: Bundle.sbLocalizedStringForKey(key: "OpenChannelCreatedMessage"), preferredStyle: UIAlertControllerStyle.alert)
-      let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: { (action) in
-        self.dismiss(animated: false, completion: nil)
-      })
-      vc.addAction(closeAction)
-      DispatchQueue.main.async {
-        self.present(vc, animated: true, completion: nil)
-      }
+    createChannelPopoverViewController.setupPopoverStuff()
+    return createChannelPopoverViewController
+  }
+
+  func setupPopoverStuff()
+  {
+    preferredContentSize = CGSize(width: 200, height: 88)
+    modalPresentationStyle = .popover
+
+    if let controller = popoverPresentationController
+    {
+      controller.permittedArrowDirections = .any
+      controller.delegate = self
     }
   }
-
   
-  
- 
-  
-  @IBAction func createButtonTapped(_ sender: Any)
-  {
-   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.row {
+    case 1: createChannelButtonWasPressed()
+    default: break
+    }
   }
-
-
-
-
+  
+    //MARK: - Create Channel, this will create a new channel.
+    func createChannelButtonWasPressed()
+    {
+      if let channelName = self.textField?.text, channelName != ""
+      {
+        view.endEditing(true)
+  
+        SVProgressHUD.show(withStatus: "Creating channel...")
+        SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
+          SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(channelName)\"")
+  
+          SVProgressHUD.dismiss(after: 1, completion: {
+            self.dismiss(animated: true, completion: nil)
+          })
+  
+          if error != nil
+          {
+            NSLog("Error: %@", error!)
+            return
+          }
+  
+          // ...
+        })
+      }
+      tableView.reloadData()
+    }
 }
+
+
+
+extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate
+{
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
+  {
+    return .none
+  }
+}
+

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class GameInfoDetailVC: UIViewController
 {
@@ -19,7 +20,12 @@ class GameInfoDetailVC: UIViewController
   @IBOutlet weak var coverImage: UIImageView!
   @IBOutlet weak var gameTitle: UILabel!
   @IBOutlet weak var gameSummary: UITextView!
- 
+  
+  @IBAction func joinChatButton(_ sender: Any)
+  {
+   // joinOrCreateChannel()
+  }
+  
   @IBAction func doneButton(_ sender: Any)
   {
     self.navigationController?.popViewController(animated: true)
@@ -75,6 +81,7 @@ class GameInfoDetailVC: UIViewController
         }.resume()
       }
     }
+
     if aGame.screenshotUrls.count > 0
     {
       if let screenshotIMG = imageCache[aGame.screenshotUrls[Int(arc4random_uniform(UInt32(aGame.screenshotUrls.count)))]]
@@ -99,7 +106,7 @@ class GameInfoDetailVC: UIViewController
           }.resume()
         }
       }
-
+      
     }
     
   }
@@ -109,16 +116,19 @@ class GameInfoDetailVC: UIViewController
       super.didReceiveMemoryWarning()
      
   }
-  
-  
+
+  func create(completion:@escaping () -> Void)
+  {
+    let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
+    
+    var request = URLRequest(url: URL(string: createChannelUrl)!)
+    request.httpMethod = "POST"
+    let requestJson = "{\"channel_url\": \"\(aGame.id)\", \"name\": \"\(aGame.name)\"}"
+    request.httpBody = requestJson.data(using: .utf8)
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("b0208a8138659ed9a752fa268ab5fdf025d3614a", forHTTPHeaderField: "Api-Token")
+    // create data task to create game
+    
+  }
 
 }
-
-//
-//extension GameInfoDetailVC: TappedGameInfoProtocol
-//{
-//  func didRecieveTappedGameInfo(results: [Game])
-//    {
-//      
-//    }
-//}
