@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKQ-gX-r15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="-207"/>
+            <point key="canvasLocation" x="1630" y="-519"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="03B-sA-wye">
@@ -262,7 +262,7 @@
                                 </state>
                                 <connections>
                                     <action selector="joinChatButton:" destination="c25-lP-94y" eventType="touchUpInside" id="4qL-3K-Y8L"/>
-                                    <segue destination="Lnk-HJ-e0i" kind="show" id="T4c-LF-9bV"/>
+                                    <segue destination="9Ga-xX-Agm" kind="show" identifier="ShowGameChatVC" id="d1C-zm-wDV"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ik-XT-ap2">
@@ -315,6 +315,24 @@
             </objects>
             <point key="canvasLocation" x="1630" y="161"/>
         </scene>
+        <!--Game Chat View Controller-->
+        <scene sceneID="noA-hW-9IG">
+            <objects>
+                <viewController id="9Ga-xX-Agm" customClass="GameChatViewController" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B0s-TL-tgy"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6h-uc-7OW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LqA-eU-lxh">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYw-eb-adC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="161"/>
+        </scene>
         <!--Brain Test View Controller-->
         <scene sceneID="Q5a-m1-saH">
             <objects>
@@ -358,7 +376,6 @@
         <!--Chat-->
         <scene sceneID="Yh1-p8-iXh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-VF-eLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dO7-PV-4Nd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chat" image="Speech Bubble with Dots" selectedImage="Speech Bubble with Dots Filled" id="HiI-VI-AMh"/>
                     <toolbarItems/>
@@ -372,6 +389,7 @@
                         <segue destination="SRd-0H-dGT" kind="relationship" relationship="rootViewController" id="WFp-3U-ivq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-VF-eLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="281" y="-518"/>
         </scene>
@@ -380,7 +398,4 @@
         <image name="Speech Bubble with Dots" width="25" height="25"/>
         <image name="Speech Bubble with Dots Filled" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="zcD-et-hLg"/>
-    </inferredMetricsTieBreakers>
 </document>

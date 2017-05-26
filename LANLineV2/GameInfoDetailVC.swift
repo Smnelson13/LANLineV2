@@ -181,6 +181,16 @@ class GameInfoDetailVC: UIViewController
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+    if segue.identifier == "ShowGameChatVC"
+    {
+    let gameChatVC: GameChatViewController = segue.destination as! GameChatViewController
+    let channelId = "\(aGame.id)"
+    gameChatVC.aGameChannelUrl = channelId
+    
+    }
+  }
 
 }
 

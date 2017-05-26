@@ -29,6 +29,7 @@
 		90B52C571ECAA2A2008AF6E2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C561ECAA2A2008AF6E2 /* Game.swift */; };
 		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
 		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
+		90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */; };
 		90F600F81ED507920018CD05 /* BrainTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600F71ED507920018CD05 /* BrainTestViewController.swift */; };
 		90F600FC1ED5D8920018CD05 /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */; };
 		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
@@ -85,6 +86,7 @@
 		90B52C561ECAA2A2008AF6E2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
+		90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameChatViewController.swift; sourceTree = "<group>"; };
 		90F600F71ED507920018CD05 /* BrainTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTestViewController.swift; sourceTree = "<group>"; };
 		90F600FB1ED5D8920018CD05 /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 			children = (
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B344E71ED4C397002AD127 /* OpenChatVC.swift */,
+				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
 				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
 				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
@@ -516,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */,
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
 				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
