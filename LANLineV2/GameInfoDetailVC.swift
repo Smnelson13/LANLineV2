@@ -127,14 +127,16 @@ class GameInfoDetailVC: UIViewController
       {
         if error.code == 400201
         {
-          self.create
-            {
-            // join channel
+          self.create()
+          
+          {
+            self.joinChannel()
           }
+          
         }
         else
         {
-          //join channel
+          // error handle
         }
         return
       }
@@ -157,5 +159,39 @@ class GameInfoDetailVC: UIViewController
     // create data task to create game
     
   }
+  
+  func joinChannel()
+  {
+    let value: Int = aGame.id
+    let channelId = String(describing: value)
+    SBDOpenChannel.getWithUrl(channelId) { (channel, error) in
+      if error != nil
+      {
+        NSLog("Error: %@", error!)
+        return
+      }
+      
+      channel?.enter(completionHandler: { (error) in
+        if error != nil
+        {
+          NSLog("Error: %@", error!)
+          return
+        }
+        
+       
+      })
+    }
+  }
+  
 
 }
+
+
+
+
+
+
+
+
+
+
