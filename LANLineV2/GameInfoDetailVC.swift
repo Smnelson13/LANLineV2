@@ -129,12 +129,19 @@ class GameInfoDetailVC: UIViewController
         switch error.code
         {
         case 400201:
-          self.create(completion: self.joinChannel)
+          self.create(completion: { success in
+            if success {
+              self.joinChannel()
+            } else {
+              SVProgressHUD.showError(withStatus: "Could not create channel")
+            }
+          })
+          
         case 1, 2, 3, 4:
           break
           // other errors
-        default:
-          self.joinChannel()
+        default: break
+         // self.joinChannel()
         }
         return
       }
@@ -144,7 +151,7 @@ class GameInfoDetailVC: UIViewController
     }
   }
 
-  func create(completion:@escaping () -> Void)
+  func create(completion:@escaping (_ success: Bool) -> Void)
   {
     let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
     
@@ -154,8 +161,10 @@ class GameInfoDetailVC: UIViewController
     request.httpBody = requestJson.data(using: .utf8)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("b0208a8138659ed9a752fa268ab5fdf025d3614a", forHTTPHeaderField: "Api-Token")
-    // create data task to create game
-//    completion()
+    
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      completion(error == nil)
+    }.resume()
   }
   
   func joinChannel()
