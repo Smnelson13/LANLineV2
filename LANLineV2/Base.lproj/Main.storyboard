@@ -164,7 +164,7 @@
         <!--Search GameTVC-->
         <scene sceneID="eKg-BW-LFw">
             <objects>
-                <tableViewController id="Z02-cY-72s" customClass="SearchGameTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Z02-cY-72s" customClass="SearchGameTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" id="nD3-8K-0iA">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

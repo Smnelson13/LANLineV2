@@ -43,16 +43,18 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   {
     self.tableView.separatorColor = UIColor.black
     
-    super.viewDidLoad()
-    tableView.tableHeaderView = searchController.searchBar
-    searchController.searchResultsUpdater = self
-    searchController.dimsBackgroundDuringPresentation = false
-    definesPresentationContext = true
-    searchController.searchBar.delegate = self
-    //didRecieve(results: searchBar.text)
+    super.viewDidLoad(); searchBarSetup()
+
     apiController = APIController(delegate: self)
-    
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
+  }
+  
+  override func viewWillLayoutSubviews()
+  {
+    print("will layout subviews-------------------")
+    let zContentInsets = UIEdgeInsets.zero
+    tableView.contentInset = zContentInsets
+    tableView.scrollIndicatorInsets = zContentInsets
   }
 
   override func didReceiveMemoryWarning()
@@ -83,6 +85,16 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
   {
     searchBar.showsCancelButton = true
+  }
+  
+  func searchBarSetup()
+  {
+    tableView.tableHeaderView = searchController.searchBar
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    definesPresentationContext = true
+    searchController.searchBar.delegate = self
+
   }
   
   
