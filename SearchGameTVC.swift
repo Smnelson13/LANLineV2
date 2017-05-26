@@ -41,7 +41,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
-    self.tableView.separatorColor = UIColor.black
+    self.tableView.separatorColor = UIColor.lightGray
     
     super.viewDidLoad(); searchBarSetup()
 

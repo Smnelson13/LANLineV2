@@ -8,6 +8,7 @@
 
 import UIKit
 import SendBirdSDK
+import SVProgressHUD
 
 class GameInfoDetailVC: UIViewController
 {
@@ -125,18 +126,15 @@ class GameInfoDetailVC: UIViewController
     SBDOpenChannel.getWithUrl(channelId) { (openChannel, error) in
       if let error = error as NSError?
       {
-        if error.code == 400201
+        switch error.code
         {
-          self.create()
-          
-          {
-            self.joinChannel()
-          }
-          
-        }
-        else
-        {
-          // error handle
+        case 400201:
+          self.create(completion: self.joinChannel)
+        case 1, 2, 3, 4:
+          break
+          // other errors
+        default:
+          self.joinChannel()
         }
         return
       }
@@ -157,7 +155,7 @@ class GameInfoDetailVC: UIViewController
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("b0208a8138659ed9a752fa268ab5fdf025d3614a", forHTTPHeaderField: "Api-Token")
     // create data task to create game
-    
+//    completion()
   }
   
   func joinChannel()

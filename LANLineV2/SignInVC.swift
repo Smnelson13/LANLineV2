@@ -31,6 +31,17 @@ class SignInVC: UIViewController, UITextFieldDelegate
   
   @IBAction func connectButtonTapped(_ sender: Any)
   {
+    loggingIn()
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  {
+    loggingIn()
+    return false
+  }
+
+  func loggingIn()
+  {
     if let text = userIdTextField.text
     {
       SVProgressHUD.show(withStatus: "Logging in...")
@@ -53,7 +64,5 @@ class SignInVC: UIViewController, UITextFieldDelegate
       })
     }
   }
-
-
 
 }
