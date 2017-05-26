@@ -262,7 +262,6 @@
                                 </state>
                                 <connections>
                                     <action selector="joinChatButton:" destination="c25-lP-94y" eventType="touchUpInside" id="4qL-3K-Y8L"/>
-                                    <segue destination="9Ga-xX-Agm" kind="show" identifier="ShowGameChatVC" id="d1C-zm-wDV"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ik-XT-ap2">
@@ -309,6 +308,7 @@
                         <outlet property="gameSummary" destination="4Ik-XT-ap2" id="VIM-8R-W4s"/>
                         <outlet property="gameTitle" destination="Hz3-vj-fYZ" id="cRm-Wh-hZS"/>
                         <outlet property="screenshotImage" destination="Cbr-0R-L3Q" id="6xU-HC-hCa"/>
+                        <segue destination="9Ga-xX-Agm" kind="show" identifier="ShowGameChatVC" id="YA5-QJ-P85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-bc-631" userLabel="First Responder" sceneMemberID="firstResponder"/>

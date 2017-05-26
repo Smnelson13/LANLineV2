@@ -76,18 +76,13 @@ class APIController
     task.resume()
     print(request)
   }
-  
-  
-  
+
   func getTappedGameInfo(gameId: String)
   { 
     let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/\(gameId)?fields=*")
 
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
-    
-    
-    
     let task = defaultSession.dataTask(with: request) { data, response, error in
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
@@ -124,11 +119,6 @@ class APIController
     print(request)
   }
 
-  
-  
-  
-  
-  
   func parseJSON(_ data: Data) -> [[String: Any]]?
   {
     do

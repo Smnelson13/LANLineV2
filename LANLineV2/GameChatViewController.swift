@@ -12,18 +12,30 @@ import SlackTextViewController
 
 class GameChatViewController: SLKTextViewController, SBDChannelDelegate
 {
-  var channel: SBDOpenChannel?
+  var channel: SBDOpenChannel!
   var aGameChannelUrl: String!
   var baseMessages = [SBDBaseMessage]()
   var kUserMessageCellIdentifier = "UserMessageCell"
+  var kIncomingMessageCellIdentifier = "IncomingMessageCell"
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    enterChannel()
+    enterChannel(); loadPreviousMessages()
     SBDMain.add(self as SBDChannelDelegate, identifier: "GameChatChannel")
+    
+    tableView?.separatorStyle = .none
+    tableView?.tableFooterView = UIView()
+    tableView?.tableHeaderView = UIView()
+    tableView?.estimatedRowHeight = 60
 
-      // Do any additional setup after loading the view.
+
+    for identifier in [kIncomingMessageCellIdentifier, kUserMessageCellIdentifier]
+    {
+      let nib = UINib(nibName: identifier, bundle: nil)
+      tableView?.register(nib, forCellReuseIdentifier: identifier)
+    }
+
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -76,6 +88,8 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
         return
       }
       
+      self.channel = channel
+      
       channel?.enter(completionHandler: { (error) in
         if error != nil {
           NSLog("Error: %@", error!)
@@ -88,23 +102,41 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     }
   }
 
-  func sendMessage(message:String)
+
+  func sendMessage(message: String)
   {
-    channel?.sendUserMessage(message, data: nil, completionHandler: { (userMessage, error) in
+    channel.sendUserMessage(message, data: nil, completionHandler: { (userMessage, error) in
       if error != nil {
         NSLog("Error: %@", error!)
-        if let msg = userMessage
-        {
-          self.baseMessages.insert(msg, at: 0)
-        }
-        self.tableView?.reloadData()
-
         return
       }
-      
-      // ...
+      if let msg = userMessage
+      {
+        self.baseMessages.insert(msg, at: 0)
+      }
+      self.tableView?.reloadData()
     })
   }
+  
+  func loadPreviousMessages()
+  {
+    let previousMessageQuery = self.channel?.createPreviousMessageListQuery()
+    previousMessageQuery?.loadPreviousMessages(withLimit: 30, reverse: true, completionHandler: { (messages, error) in
+      if error != nil {
+        NSLog("Error: %@", error!)
+        return
+      }
+      if let imsgs = messages
+      {
+        self.baseMessages.append(contentsOf: imsgs)
+        DispatchQueue.main.async {
+          self.tableView?.reloadData()
+        }
+      }
+      
+    })
+  }
+
   
   func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
   {

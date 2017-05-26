@@ -130,8 +130,10 @@ class GameInfoDetailVC: UIViewController
         {
         case 400201:
           self.create(completion: { success in
-            if success {
-              self.joinChannel()
+            if success
+            {
+              print("SUCCESS--------------------")
+              self.joinOrCreateChannel()
             } else {
               SVProgressHUD.showError(withStatus: "Could not create channel")
             }
@@ -140,10 +142,14 @@ class GameInfoDetailVC: UIViewController
         case 1, 2, 3, 4:
           break
           // other errors
-        default: break
-         // self.joinChannel()
+        default:
+          break
         }
         return
+      } else if let channel = openChannel {
+        self.joinChannel(channel: channel)
+      } else {
+        fatalError("channel couldn't be created and doesn't exist")
       }
       
       // Successfully fetched the channel.
@@ -167,6 +173,19 @@ class GameInfoDetailVC: UIViewController
     }.resume()
   }
   
+  func joinChannel(channel: SBDOpenChannel) {
+    channel.enter(completionHandler: { (error) in
+      if error != nil
+      {
+        NSLog("Error: %@", error!)
+        return
+      }
+      
+      self.performSegue(withIdentifier: "ShowGameChatVC", sender: channel)
+    })
+  }
+  
+  /*
   func joinChannel()
   {
     let value: Int = aGame.id
@@ -184,20 +203,26 @@ class GameInfoDetailVC: UIViewController
           NSLog("Error: %@", error!)
           return
         }
-        
-       
+
+        self.performSegue(withIdentifier: "ShowGameChatVC", sender: channel)
       })
     }
   }
+ */
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    if segue.identifier == "ShowGameChatVC"
+    if segue.identifier == "ShowGameChatVC",
+      let gameChatVC = segue.destination as? GameChatViewController,
+      let channel = sender as? SBDOpenChannel
     {
-    let gameChatVC: GameChatViewController = segue.destination as! GameChatViewController
-    let channelId = "\(aGame.id)"
-    gameChatVC.aGameChannelUrl = channelId
-    
+      let channelId = "\(aGame.id)"
+      gameChatVC.aGameChannelUrl = channelId
+      gameChatVC.channel = channel
+    }
+    else
+    {
+        //error
     }
   }
 
