@@ -337,15 +337,6 @@
         <scene sceneID="Q5a-m1-saH">
             <objects>
                 <viewController id="6XA-D8-Xw1" customClass="BrainTestViewController" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Hsd-Gc-aaO"/>
-                        <viewControllerLayoutGuide type="bottom" id="fhL-YA-DIQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kZP-KT-TRi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="Q6G-1w-rsc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="195-Uh-QZl" userLabel="First Responder" sceneMemberID="firstResponder"/>

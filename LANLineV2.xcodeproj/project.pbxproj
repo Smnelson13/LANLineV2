@@ -135,6 +135,7 @@
 		907592591ED35B78003E8019 /* GameSearch */ = {
 			isa = PBXGroup;
 			children = (
+				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
 				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
 				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
@@ -147,9 +148,7 @@
 		907592641ED37A3B003E8019 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B344E71ED4C397002AD127 /* OpenChatVC.swift */,
-				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
 				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
 				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
@@ -157,7 +156,6 @@
 				907592601ED37627003E8019 /* Bundle.swift */,
 				90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */,
 				90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */,
-				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */,
 			);
 			name = Chatting;
@@ -190,9 +188,11 @@
 			children = (
 				907592591ED35B78003E8019 /* GameSearch */,
 				907592641ED37A3B003E8019 /* Chatting */,
-				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
+				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
+				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
 			);
 			path = LANLineV2;
