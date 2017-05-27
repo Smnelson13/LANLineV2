@@ -21,9 +21,6 @@ class Game
   var screenshotUrls = [String]()
   var summary = ""
  
-  
-  
-  
   init(gameDictionary: [String: Any])
   {
     self.id = gameDictionary["id"] as! Int

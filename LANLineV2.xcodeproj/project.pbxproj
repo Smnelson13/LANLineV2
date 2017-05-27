@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F8EE2BDB575F085B762821E /* Pods_LANLineV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */; };
+		902253AC1EDA3D1E00661A8C /* GameNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */; };
+		902253AE1EDA413F00661A8C /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902253AD1EDA413F00661A8C /* Pulse.swift */; };
 		9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925A1ED35C7B003E8019 /* SignInVC.swift */; };
 		9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */; };
 		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
@@ -32,6 +34,7 @@
 		90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */; };
 		90C45CB21ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */; };
 		90C45CB61EDA0D280030A641 /* GameSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CB51EDA0D280030A641 /* GameSummaryViewController.swift */; };
+		90C45CB81EDA151E0030A641 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CB71EDA151E0030A641 /* NewsTVC.swift */; };
 		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
 		D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,8 @@
 		46F7B999A9F94A6BC91B5694 /* Pods-LANLineV2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		6CC4032B67B73723B64BD829 /* Pods-LANLineV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2/Pods-LANLineV2.debug.xcconfig"; sourceTree = "<group>"; };
 		7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameNewsCell.swift; sourceTree = "<group>"; };
+		902253AD1EDA413F00661A8C /* Pulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulse.swift; sourceTree = "<group>"; };
 		9075925A1ED35C7B003E8019 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTVC.swift; sourceTree = "<group>"; };
 		9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameChatViewController.swift; sourceTree = "<group>"; };
 		90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg"; sourceTree = "<group>"; };
 		90C45CB51EDA0D280030A641 /* GameSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameSummaryViewController.swift; path = ../GameSummaryViewController.swift; sourceTree = "<group>"; };
+		90C45CB71EDA151E0030A641 /* NewsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,12 +145,14 @@
 		907592591ED35B78003E8019 /* GameSearch */ = {
 			isa = PBXGroup;
 			children = (
+				90C45CB71EDA151E0030A641 /* NewsTVC.swift */,
 				90C45CB51EDA0D280030A641 /* GameSummaryViewController.swift */,
 				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
 				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
 				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
 				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
+				902253AD1EDA413F00661A8C /* Pulse.swift */,
 				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 			);
 			name = GameSearch;
@@ -196,6 +204,7 @@
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
+				902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */,
@@ -522,11 +531,14 @@
 			files = (
 				90C45CB61EDA0D280030A641 /* GameSummaryViewController.swift in Sources */,
 				90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */,
+				90C45CB81EDA151E0030A641 /* NewsTVC.swift in Sources */,
+				902253AC1EDA3D1E00661A8C /* GameNewsCell.swift in Sources */,
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
 				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
 				90B344E81ED4C397002AD127 /* OpenChatVC.swift in Sources */,
 				90B344EE1ED4D49C002AD127 /* MessageCell.swift in Sources */,
+				902253AE1EDA413F00661A8C /* Pulse.swift in Sources */,
 				907592631ED37987003E8019 /* OpenChannelListCell.swift in Sources */,
 				907592611ED37627003E8019 /* Bundle.swift in Sources */,
 				90B52C551ECAA19E008AF6E2 /* SearchedGameCell.swift in Sources */,
