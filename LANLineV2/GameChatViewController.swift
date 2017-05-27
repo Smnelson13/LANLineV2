@@ -21,14 +21,9 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    enterChannel(); loadPreviousMessages()
-    SBDMain.add(self as SBDChannelDelegate, identifier: "GameChatChannel")
+    enterChannel(); loadPreviousMessages(); tableViewCellSetup()
     
-    tableView?.separatorStyle = .none
-    tableView?.tableFooterView = UIView()
-    tableView?.tableHeaderView = UIView()
-    tableView?.estimatedRowHeight = 60
-
+    SBDMain.add(self as SBDChannelDelegate, identifier: "GameChatChannel")
 
     for identifier in [kIncomingMessageCellIdentifier, kUserMessageCellIdentifier]
     {
@@ -148,6 +143,14 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
   deinit
   {
     SBDMain.removeChannelDelegate(forIdentifier: "GameChatChannel")
+  }
+  
+  func tableViewCellSetup()
+  {
+    tableView?.separatorStyle = .none
+    tableView?.tableFooterView = UIView()
+    tableView?.tableHeaderView = UIView()
+    tableView?.estimatedRowHeight = 60
   }
   
 }
