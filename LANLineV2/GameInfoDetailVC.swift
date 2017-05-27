@@ -185,31 +185,6 @@ class GameInfoDetailVC: UIViewController
     })
   }
   
-  /*
-  func joinChannel()
-  {
-    let value: Int = aGame.id
-    let channelId = String(describing: value)
-    SBDOpenChannel.getWithUrl(channelId) { (channel, error) in
-      if error != nil
-      {
-        NSLog("Error: %@", error!)
-        return
-      }
-      
-      channel?.enter(completionHandler: { (error) in
-        if error != nil
-        {
-          NSLog("Error: %@", error!)
-          return
-        }
-
-        self.performSegue(withIdentifier: "ShowGameChatVC", sender: channel)
-      })
-    }
-  }
- */
-  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "ShowGameChatVC",

@@ -30,10 +30,7 @@ class OpenChannelListCell: UITableViewCell
   func setModel(aChannel: SBDOpenChannel)
   {
     self.channel = aChannel
-
-    
     self.channelNameLabel.text = self.channel.name
-  
   }
 
 

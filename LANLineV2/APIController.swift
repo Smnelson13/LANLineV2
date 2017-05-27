@@ -14,12 +14,6 @@ protocol APIControllerProtocol
   func didReceiveGameInfo(results: [Game])
 }
 
-//protocol TappedGameInfoProtocol
-//{
-//  func didRecieveTappedGameInfo(results: [Game])
-//}
-
-
 class APIController
 {
   var games = [Game]()
