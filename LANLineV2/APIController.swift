@@ -25,11 +25,18 @@ class APIController
   var games = [Game]()
   let defaultSession = URLSession.shared
   var delegate: APIControllerProtocol?
+  var pulseDelegate: APIPulseControllerProtocol?
   
   init(delegate: APIControllerProtocol)
   {
     self.delegate = delegate
   }
+  
+  init(pulseDelegate: APIPulseControllerProtocol)
+  {
+    self.pulseDelegate = pulseDelegate
+  }
+  
   func getGameInfo(searchTerm: String)
   { // to get more from this call add something after the name separated by a comma/ change release_date.date to popularity or others
     let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=10&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
@@ -158,11 +165,11 @@ class APIController
               var pulse = [Pulse]()
               for pulseDictionary in array
               {
-                let pulse = Pulse(pulseDictionary: pulseDictionary)
-                pulse.append(pulse)
+                let aPulse = Pulse(pulseDictionary: pulseDictionary)
+                pulse.append(aPulse)
               }
               
-              self.delegate?.didRecieve
+              self.pulseDelegate?.didRecievePulseInfo(results: pulse)
             }
           }
           else if httpResponse.statusCode == 429 // Rate limit reached
@@ -180,6 +187,7 @@ class APIController
     task.resume()
     print(request)
   }
+  
 
   
 

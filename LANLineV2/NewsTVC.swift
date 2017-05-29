@@ -8,18 +8,18 @@
 
 import UIKit
 
-class NewsTVC: UITableViewController
+class NewsTVC: UITableViewController, APIPulseControllerProtocol
 {
-
+ // var aPulse = [Pulse]()
+  //var apiController: APIController
+  
   override func viewDidLoad()
   {
-      super.viewDidLoad()
-
-      // Uncomment the following line to preserve selection between presentations
-      // self.clearsSelectionOnViewWillAppear = false
-
-      // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-      // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+    super.viewDidLoad()
+    
+    
+    
   }
 
   override func didReceiveMemoryWarning()
@@ -41,7 +41,13 @@ class NewsTVC: UITableViewController
       // #warning Incomplete implementation, return the number of rows
       return 0
   }
+  
+  func didRecievePulseInfo(results: [Pulse])
+  {
+    
+  }
 
+  
   /*
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -98,3 +104,8 @@ class NewsTVC: UITableViewController
   */
 
 }
+
+
+
+
+

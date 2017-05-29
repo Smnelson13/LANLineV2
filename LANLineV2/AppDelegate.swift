@@ -10,13 +10,14 @@ import UIKit
 import SendBirdSDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
+  
   var window: UIWindow?
-
-
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
+    
     let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
     UIApplication.shared.registerUserNotificationSettings(notificationSettings)
     UIApplication.shared.registerForRemoteNotifications()

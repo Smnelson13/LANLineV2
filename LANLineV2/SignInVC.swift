@@ -13,15 +13,15 @@ import CoreData
 
 class SignInVC: UIViewController, UITextFieldDelegate
 {
+  var apiController: APIController!
   
   @IBOutlet weak var userIdTextField: UITextField!
   @IBOutlet weak var nicknameTextField: UITextField!
 
   override func viewDidLoad()
   {
-      super.viewDidLoad()
-
-      // Do any additional setup after loading the view.
+    super.viewDidLoad()
+    
   }
 
   override func didReceiveMemoryWarning()

@@ -28,18 +28,25 @@ class Pulse
   init(pulseDictionary: [String: Any])
   {
     self.id = pulseDictionary["id"] as! Int
-    self.category = pulseDictionary["category"] as Int
-    self.title = pulseDictionary["title"] as String
-    self.sumary = pulseDictionary["summary"] as String
-    self.image = pulseDictionary["image"] as String
-    self.url = pulseDictionary["url"] as String
-    self.created_at = pulseDictionary["created_at"] as String
-    self.updated_at = pulseDictionary["updated_at"] as String
-    self.pulse_source = pulseDictionary["pulse_source"] as String
-    self.published_at = pulseDictionary["published_at"] as String
-    self.tags = pulseDictionary["tags"] as [Int]
+    self.category = pulseDictionary["category"] as! Int
+    self.title = pulseDictionary["title"] as! String
+    self.summary = pulseDictionary["summary"] as! String
+    self.image = pulseDictionary["image"] as! String
+    self.url = pulseDictionary["url"] as! String
+    self.created_at = pulseDictionary["created_at"] as! Int
+    self.updated_at = pulseDictionary["updated_at"] as! Int
+    self.pulse_source = pulseDictionary["pulse_source"] as! Int
+    self.published_at = pulseDictionary["published_at"] as! Int
+    self.tags = pulseDictionary["tags"] as! [Int]
+    self.author = pulseDictionary["author"] as! String
+    self.uid = pulseDictionary["uid"] as! String
   }
   
+  convenience init(dictionary: NSDictionary)
+  {
+    let dict = dictionary as! [String: Any]
+    self.init(pulseDictionary: dict)
+  }
   
 
 

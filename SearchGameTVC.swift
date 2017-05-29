@@ -198,8 +198,10 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
  
 }
 
-extension SearchGameTVC: APIControllerProtocol {
-  func didReceiveGameInfo(results: [Game]) {
+extension SearchGameTVC: APIControllerProtocol
+{
+  func didReceiveGameInfo(results: [Game])
+  {
     let queue = DispatchQueue.main
     queue.async {
       self.games = results
