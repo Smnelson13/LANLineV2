@@ -146,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				90C45CB71EDA151E0030A641 /* NewsTVC.swift */,
+				902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */,
 				90C45CB51EDA0D280030A641 /* GameSummaryViewController.swift */,
 				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
@@ -204,7 +205,6 @@
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
-				902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */,

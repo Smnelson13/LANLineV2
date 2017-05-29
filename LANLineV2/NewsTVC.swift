@@ -10,14 +10,19 @@ import UIKit
 
 class NewsTVC: UITableViewController, APIPulseControllerProtocol
 {
- // var aPulse = [Pulse]()
-  //var apiController: APIController
+  var imageCache = [String: UIImage]()
+  var pulses = [Pulse]()
+  var apiController: APIController!
   
   override func viewDidLoad()
   {
     
+    
     super.viewDidLoad()
     
+    apiController = APIController(pulseDelegate: self)
+    
+    apiController.getPulse()
     
     
   }
@@ -33,30 +38,62 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol
   override func numberOfSections(in tableView: UITableView) -> Int
   {
       // #warning Incomplete implementation, return the number of sections
-      return 0
+      return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
       // #warning Incomplete implementation, return the number of rows
-      return 0
+      return pulses.count
   }
   
   func didRecievePulseInfo(results: [Pulse])
   {
-    
+    let queue = DispatchQueue.main
+    queue.async {
+      self.pulses = results
+      self.tableView.reloadData()
+    }
   }
 
   
-  /*
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-      // Configure the cell...
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+  {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "GameNewsCell", for: indexPath) as! GameNewsCell
+    let aPulse = pulses[indexPath.row]
+    cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
+    
+    if let img = imageCache[aPulse.image]
+    {
+      cell.backGroundImage.image = img
+    }
+    else
+    {
+      if let url = URL(string: aPulse.image)
+      {
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) {
+          data, response, error in
+          if error == nil
+            {
+              let image = UIImage(data: data!)
+              self.imageCache[(aPulse.image)] = image
+              DispatchQueue.main.sync {
+                cell.backGroundImage.image = image
+              }
+          }
+        }.resume()
+      }
+    }
+    
+       
 
       return cell
   }
-  */
+  
+  
+  
 
   /*
   // Override to support conditional editing of the table view.

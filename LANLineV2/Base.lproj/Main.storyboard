@@ -422,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="2414" y="-207"/>
         </scene>
-        <!--Table View Controller-->
+        <!--NewsTVC-->
         <scene sceneID="2IW-wh-jHm">
             <objects>
-                <tableViewController id="WkW-5d-qAk" sceneMemberID="viewController">
+                <tableViewController id="WkW-5d-qAk" customClass="NewsTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gte-im-6QQ">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
