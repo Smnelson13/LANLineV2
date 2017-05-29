@@ -14,7 +14,7 @@ class Pulse
   let id: Int
 //  let category: Int
   let title: String
-  let summary: String
+  var summary = "" 
   let image: String
   let url: String
 //  let uid: String
