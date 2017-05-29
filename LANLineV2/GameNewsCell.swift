@@ -11,6 +11,7 @@ import UIKit
 class GameNewsCell: UITableViewCell
 {
   @IBOutlet weak var backGroundImage: UIImageView!
+  @IBOutlet weak var titleLabel: UILabel!
 
   override func awakeFromNib()
   {

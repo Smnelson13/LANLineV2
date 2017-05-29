@@ -431,7 +431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="P05-c6-aQO" customClass="GameNewsCell" customModule="LANLineV2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameNewsCell" rowHeight="187" id="P05-c6-aQO" customClass="GameNewsCell" customModule="LANLineV2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P05-c6-aQO" id="ldb-ir-byJ">
@@ -441,16 +441,26 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-Qn-fMS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-xh-bze">
+                                            <rect key="frame" x="15" y="12" width="345" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="4ST-Fc-9dl"/>
+                                        <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="-36" id="4ll-rg-87w"/>
                                         <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="5yW-Bk-YXU"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="OzO-Bg-XWE"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="top" id="Wlw-Bw-gbD"/>
                                         <constraint firstAttribute="bottom" secondItem="MAA-Qn-fMS" secondAttribute="bottom" id="Wlw-W5-ssA"/>
+                                        <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="Y58-TI-49u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backGroundImage" destination="MAA-Qn-fMS" id="bcg-ah-Cm3"/>
+                                    <outlet property="titleLabel" destination="DVC-xh-bze" id="76b-BZ-g2h"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

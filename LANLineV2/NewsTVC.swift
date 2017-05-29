@@ -63,6 +63,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol
     let cell = tableView.dequeueReusableCell(withIdentifier: "GameNewsCell", for: indexPath) as! GameNewsCell
     let aPulse = pulses[indexPath.row]
     cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
+    cell.titleLabel.text = aPulse.title
     
     if let img = imageCache[aPulse.image]
     {
