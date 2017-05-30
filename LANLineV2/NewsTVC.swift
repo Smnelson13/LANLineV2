@@ -26,6 +26,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     apiController.getPulse()
     
     
+    
   }
 
   override func didReceiveMemoryWarning()
@@ -65,7 +66,9 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     let aPulse = pulses[indexPath.row]
     cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
     cell.titleLabel.text = aPulse.title
-    cell.summaryTextField.text = aPulse.summary
+    cell.authorLabel.text = aPulse.author
+  //  cell.summaryTextField.loadHTMLString(aPulse.summary, baseURL: nil)
+  //  cell.summaryTextField.isOpaque = false
     
     if let img = imageCache[aPulse.image]
     {

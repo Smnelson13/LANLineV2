@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GfZ-WX-nOI" id="hK0-Wv-hLC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-tw-gfo">
@@ -205,7 +205,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jSU-zI-hXf" id="VbZ-fC-b4h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-7m-Dws">
@@ -435,7 +435,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="187"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P05-c6-aQO" id="ldb-ir-byJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="186.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-Qn-fMS">
@@ -447,32 +447,28 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duy-Rh-zu1">
-                                            <rect key="frame" x="0.0" y="51" width="375" height="135.5"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-4d-sEY">
+                                            <rect key="frame" x="6" y="159.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="duy-Rh-zu1" secondAttribute="trailing" id="0hT-28-0W2"/>
                                         <constraint firstAttribute="trailing" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="4ST-Fc-9dl"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="-36" id="4ll-rg-87w"/>
                                         <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="5yW-Bk-YXU"/>
-                                        <constraint firstItem="duy-Rh-zu1" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="K6Q-bH-scQ"/>
+                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="6" id="NUI-m8-8YV"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="OzO-Bg-XWE"/>
+                                        <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="6" id="Vsn-dS-zVV"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="top" id="Wlw-Bw-gbD"/>
                                         <constraint firstAttribute="bottom" secondItem="MAA-Qn-fMS" secondAttribute="bottom" id="Wlw-W5-ssA"/>
-                                        <constraint firstAttribute="bottom" secondItem="duy-Rh-zu1" secondAttribute="bottom" id="XID-4M-Ycr"/>
                                         <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="Y58-TI-49u"/>
-                                        <constraint firstItem="duy-Rh-zu1" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="15" id="p2l-Pj-uqo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorLabel" destination="qYx-4d-sEY" id="wAr-F0-OJT"/>
                                     <outlet property="backGroundImage" destination="MAA-Qn-fMS" id="bcg-ah-Cm3"/>
-                                    <outlet property="summaryTextField" destination="duy-Rh-zu1" id="6sz-kf-GWt"/>
                                     <outlet property="titleLabel" destination="DVC-xh-bze" id="76b-BZ-g2h"/>
                                 </connections>
                             </tableViewCell>

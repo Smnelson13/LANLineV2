@@ -18,7 +18,7 @@ class Pulse
   let image: String
   let url: String
 //  let uid: String
-//  let author: String
+  let author: String
 //  let created_at: Int
 //  let updated_at: Int
 //  let pulse_source: Int
@@ -38,7 +38,7 @@ class Pulse
 //    self.pulse_source = pulseDictionary["pulse_source"] as! Int
 //    self.published_at = pulseDictionary["published_at"] as! Int
 //   self.tags = pulseDictionary["tags"] as! [Int]
-//    self.author = pulseDictionary["author"] as! String
+    self.author = pulseDictionary["author"] as! String
  //   self.uid = pulseDictionary["uid"] as! String
   }
   

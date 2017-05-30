@@ -12,7 +12,8 @@ class GameNewsCell: UITableViewCell
 {
   @IBOutlet weak var backGroundImage: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var summaryTextField: UITextView!
+  @IBOutlet weak var authorLabel: UILabel!
+
 
   override func awakeFromNib()
   {

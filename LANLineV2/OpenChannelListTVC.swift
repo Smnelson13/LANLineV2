@@ -25,7 +25,8 @@ class OpenChannelListTVC: UITableViewController
     addButton.action = #selector(self.addButtonWasTapped(sender:))
   }
   
-  func addButtonWasTapped(sender: UIBarButtonItem) {
+  func addButtonWasTapped(sender: UIBarButtonItem)
+  {
     let popover = CreateChannelPopoverViewController.instantiateFromStoryboard()
     popover.popoverPresentationController?.barButtonItem = sender
     present(popover, animated: true, completion: nil)
