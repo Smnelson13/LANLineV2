@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
+    UIApplication.shared.statusBarStyle = .lightContent
     let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
     UIApplication.shared.registerUserNotificationSettings(notificationSettings)
     UIApplication.shared.registerForRemoteNotifications()
