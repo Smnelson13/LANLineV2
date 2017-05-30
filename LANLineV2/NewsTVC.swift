@@ -15,6 +15,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
   var pulses = [Pulse]()
   var apiController: APIController!
   
+  
   override func viewDidLoad()
   {
     

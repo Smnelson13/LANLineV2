@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,25 +26,34 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbl-mf-mIe" customClass="InsetLabel" customModule="LANLineV2" customModuleProvider="target">
-                        <rect key="frame" x="478" y="46" width="42" height="20.5"/>
+                        <rect key="frame" x="478" y="48" width="42" height="20.5"/>
                         <color key="backgroundColor" red="0.23137254900000001" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgv-iz-o5G">
+                        <rect key="frame" x="486" y="28.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PdW-w0-4kH" firstAttribute="centerX" secondItem="C7L-FW-53L" secondAttribute="centerX" id="3ir-bk-xOZ"/>
-                    <constraint firstAttribute="trailing" secondItem="Vbl-mf-mIe" secondAttribute="trailing" constant="12" id="JRp-Ao-34O"/>
-                    <constraint firstItem="PdW-w0-4kH" firstAttribute="top" secondItem="C7L-FW-53L" secondAttribute="topMargin" constant="6" id="TEa-GP-G5v"/>
-                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="width" relation="lessThanOrEqual" secondItem="C7L-FW-53L" secondAttribute="width" multiplier="0.75" id="aUk-TJ-HLc"/>
-                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="top" secondItem="PdW-w0-4kH" secondAttribute="bottom" constant="17.5" id="bqi-ra-PuR"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Vbl-mf-mIe" secondAttribute="bottom" id="cyY-7x-chl"/>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="top" secondItem="jgv-iz-o5G" secondAttribute="bottom" constant="5" id="7b1-cT-vsO"/>
+                    <constraint firstItem="PdW-w0-4kH" firstAttribute="centerX" secondItem="C7L-FW-53L" secondAttribute="centerX" id="HSI-xQ-APN"/>
+                    <constraint firstAttribute="bottom" secondItem="Vbl-mf-mIe" secondAttribute="bottom" constant="6" id="Paw-rS-gMc"/>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C7L-FW-53L" secondAttribute="leading" constant="12" id="g4f-WC-cRO"/>
+                    <constraint firstItem="jgv-iz-o5G" firstAttribute="top" secondItem="PdW-w0-4kH" secondAttribute="bottom" id="ke8-Cv-6g5"/>
+                    <constraint firstItem="PdW-w0-4kH" firstAttribute="top" secondItem="C7L-FW-53L" secondAttribute="topMargin" constant="6" id="mBY-2r-lHj"/>
+                    <constraint firstAttribute="trailing" secondItem="Vbl-mf-mIe" secondAttribute="trailing" constant="12" id="rba-wt-0Aw"/>
+                    <constraint firstAttribute="trailing" secondItem="jgv-iz-o5G" secondAttribute="trailing" constant="15" id="y1I-wx-XMd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="PdW-w0-4kH" id="km4-Fx-o4G"/>
                 <outlet property="outputLabel" destination="Vbl-mf-mIe" id="o62-Pc-ea0"/>
+                <outlet property="userNameLabel" destination="jgv-iz-o5G" id="jSw-aV-3Ce"/>
             </connections>
             <point key="canvasLocation" x="-74" y="-72.5"/>
         </tableViewCell>

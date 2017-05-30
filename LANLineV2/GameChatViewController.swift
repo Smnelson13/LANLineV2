@@ -51,6 +51,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
       //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
+      cell.userNameLabel.text = userMsg.sender?.userId ?? ""
     }
     
     return cell

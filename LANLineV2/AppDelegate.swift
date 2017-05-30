@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     UINavigationBar.appearance().tintColor = .white
   
     SBDMain.initWithApplicationId("83FD6C08-7A4D-47E0-9C02-D039B37CBC98")
-  //  SBDMain.setLogLevel(SBDLogLevel.debug)
+    SBDMain.setLogLevel(SBDLogLevel.debug)
     SBDOptions.setUseMemberAsMessageSender(true)
 
     

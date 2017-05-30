@@ -10,10 +10,11 @@ import UIKit
 import SendBirdSDK
 import SlackTextViewController
 
+
 class OpenChatVC: SLKTextViewController
 {
   var channel: SBDOpenChannel!
-//  var userMessages = [SBDUserMessage]()
+  //var sender = SBDUser()
   var baseMessages = [SBDBaseMessage]()
   
   var kIncomingMessageCellIdentifier = "IncomingMessageCell"
@@ -72,6 +73,8 @@ class OpenChatVC: SLKTextViewController
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
       //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
+      cell.userNameLabel.text = userMsg.sender?.userId ?? ""
+      
 
     }
     
