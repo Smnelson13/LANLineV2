@@ -49,6 +49,11 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle
+  {
+    return .lightContent
+  }
+  
   override func viewWillLayoutSubviews()
   {
     print("will layout subviews-------------------")
