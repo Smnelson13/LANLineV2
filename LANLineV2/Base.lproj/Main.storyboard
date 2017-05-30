@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -426,44 +427,47 @@
         <scene sceneID="2IW-wh-jHm">
             <objects>
                 <tableViewController id="WkW-5d-qAk" customClass="NewsTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gte-im-6QQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gte-im-6QQ">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameNewsCell" rowHeight="187" id="P05-c6-aQO" customClass="GameNewsCell" customModule="LANLineV2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="187"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameNewsCell" id="P05-c6-aQO" customClass="GameNewsCell" customModule="LANLineV2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P05-c6-aQO" id="ldb-ir-byJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="186.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-Qn-fMS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="MAA-Qn-fMS" secondAttribute="height" multiplier="318:121" id="RPn-qJ-qAS"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-xh-bze">
-                                            <rect key="frame" x="15" y="14.5" width="345" height="21.5"/>
+                                            <rect key="frame" x="15" y="15" width="38.5" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-4d-sEY">
-                                            <rect key="frame" x="6" y="159.5" width="42" height="21"/>
+                                            <rect key="frame" x="15" y="107" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="4ST-Fc-9dl"/>
-                                        <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="-36" id="4ll-rg-87w"/>
-                                        <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="5yW-Bk-YXU"/>
-                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="6" id="NUI-m8-8YV"/>
-                                        <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="OzO-Bg-XWE"/>
-                                        <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="6" id="Vsn-dS-zVV"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qYx-4d-sEY" secondAttribute="trailing" constant="15" id="77O-1k-Cmj"/>
+                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="8Mw-xn-v6b"/>
+                                        <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="15" id="KAT-il-8gS"/>
+                                        <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="RFt-o2-s5h"/>
+                                        <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leadingMargin" constant="7" id="RHV-O7-NMM"/>
+                                        <constraint firstItem="DVC-xh-bze" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="topMargin" constant="7" id="Rh0-lL-UuY"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="top" id="Wlw-Bw-gbD"/>
-                                        <constraint firstAttribute="bottom" secondItem="MAA-Qn-fMS" secondAttribute="bottom" id="Wlw-W5-ssA"/>
-                                        <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="Y58-TI-49u"/>
+                                        <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="pVx-v0-pmL"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="pnu-JA-QgI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -58,10 +58,12 @@ class OpenChatVC: SLKTextViewController
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
-    cell.transform = tableView.transform
-    if let userMsg = baseMessages[indexPath.row] as? SBDUserMessage
+    guard let userMsg = baseMessages[indexPath.row] as? SBDUserMessage else { return UITableViewCell() }
+    
+    if userMsg.sender?.userId != Session.shared.user?.userId
     {
+      let cell = tableView.dequeueReusableCell(withIdentifier: kIncomingMessageCellIdentifier) as! IncomingMessageCell
+      cell.transform = tableView.transform
       cell.outputLabel.text = userMsg.message!
       let dateFormatter = DateFormatter()
       dateFormatter.timeStyle = .short
@@ -74,11 +76,26 @@ class OpenChatVC: SLKTextViewController
       //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
       cell.userNameLabel.text = userMsg.sender?.userId ?? ""
-      
-
+      return cell
     }
-    
-    return cell
+    else
+    {
+      let cell = tableView.dequeueReusableCell(withIdentifier: kUserMessageCellIdentifier) as! UserMessageCell
+      cell.transform = tableView.transform
+      cell.outputLabel.text = userMsg.message!
+      let dateFormatter = DateFormatter()
+      dateFormatter.timeStyle = .short
+      dateFormatter.dateStyle = .short
+      let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
+      //print("\(createdAtSeconds)--------------")
+      let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
+      //print("\(messageCreatedDate)--------------")
+      let messageDateString = dateFormatter.string(from: messageCreatedDate)
+      //print(messageDateString+"--------------")
+      cell.dateLabel.text = messageDateString
+      cell.userNameLabel.text = userMsg.sender?.userId ?? ""
+      return cell
+    }
   }
 
 
