@@ -17,6 +17,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
   var baseMessages = [SBDBaseMessage]()
   var kUserMessageCellIdentifier = "UserMessageCell"
   var kIncomingMessageCellIdentifier = "IncomingMessageCell"
+  private var userMessage = SBDUserMessage()
   
   override func viewDidLoad()
   {
@@ -40,6 +41,16 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     if let userMsg = baseMessages[indexPath.row] as? SBDUserMessage
     {
       cell.outputLabel.text = userMsg.message!
+      let dateFormatter = DateFormatter()
+      dateFormatter.timeStyle = .short
+      dateFormatter.dateStyle = .short
+      let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
+      //print("\(createdAtSeconds)--------------")
+      let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
+      //print("\(messageCreatedDate)--------------")
+      let messageDateString = dateFormatter.string(from: messageCreatedDate)
+      //print(messageDateString+"--------------")
+      cell.dateLabel.text = messageDateString
     }
     
     return cell
@@ -150,7 +161,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     tableView?.separatorStyle = .none
     tableView?.tableFooterView = UIView()
     tableView?.tableHeaderView = UIView()
-    tableView?.estimatedRowHeight = 60
+    tableView?.estimatedRowHeight = 140
   }
   
 }
