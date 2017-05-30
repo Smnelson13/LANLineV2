@@ -57,10 +57,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SendBird" translatesAutoresizingMaskIntoConstraints="NO" id="08t-wY-mJB">
-                                <rect key="frame" x="112.5" y="585" width="150" height="40"/>
+                                <rect key="frame" x="133.5" y="585" width="108" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="08t-wY-mJB" secondAttribute="height" multiplier="421:156" id="SuZ-dO-X9s"/>
                                     <constraint firstAttribute="height" constant="40" id="dqL-lR-1PU"/>
-                                    <constraint firstAttribute="width" constant="150" id="fLG-gn-Kgq"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Videogame info freely provided by IGDB." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-bk-lCF">

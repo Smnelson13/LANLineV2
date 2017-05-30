@@ -6,38 +6,54 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BotMessageCell" rowHeight="111" id="U57-fb-tDA" customClass="IncomingMessageCell" customModule="LANLineV2">
-            <rect key="frame" x="0.0" y="0.0" width="532" height="111"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomingMessageCell" rowHeight="65" id="U57-fb-tDA" customClass="IncomingMessageCell" customModule="LANLineV2">
+            <rect key="frame" x="0.0" y="0.0" width="532" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U57-fb-tDA" id="a5o-Ov-d16">
-                <rect key="frame" x="0.0" y="0.0" width="532" height="110.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="532" height="64.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47J-rI-O4P" customClass="InsetLabel" customModule="NotSoCleverBot">
-                        <rect key="frame" x="16" y="12" width="42" height="86.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47J-rI-O4P" customClass="InsetLabel" customModule="LANLineV2">
+                        <rect key="frame" x="12" y="38" width="42" height="21"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Sep, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYW-xD-g2G" userLabel="Date Label">
+                        <rect key="frame" x="230" y="1" width="72" height="14.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXc-pX-K2G">
+                        <rect key="frame" x="15" y="18.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="47J-rI-O4P" firstAttribute="leading" secondItem="a5o-Ov-d16" secondAttribute="leadingMargin" constant="8" id="E07-fM-puY"/>
-                    <constraint firstItem="47J-rI-O4P" firstAttribute="top" secondItem="a5o-Ov-d16" secondAttribute="top" constant="12" id="FpH-ID-snV"/>
-                    <constraint firstAttribute="bottom" secondItem="47J-rI-O4P" secondAttribute="bottom" constant="12" id="NaG-6X-6hH"/>
-                    <constraint firstItem="47J-rI-O4P" firstAttribute="width" relation="lessThanOrEqual" secondItem="a5o-Ov-d16" secondAttribute="width" multiplier="0.75" id="gB2-SH-2qJ"/>
+                    <constraint firstItem="NYW-xD-g2G" firstAttribute="centerX" secondItem="a5o-Ov-d16" secondAttribute="centerX" id="4Ku-dj-PUm"/>
+                    <constraint firstItem="jXc-pX-K2G" firstAttribute="leading" secondItem="a5o-Ov-d16" secondAttribute="leading" constant="15" id="Bay-j8-NEB"/>
+                    <constraint firstAttribute="bottom" secondItem="47J-rI-O4P" secondAttribute="bottom" constant="6" id="iS1-4q-WSa"/>
+                    <constraint firstItem="jXc-pX-K2G" firstAttribute="top" secondItem="NYW-xD-g2G" secondAttribute="bottom" constant="3" id="l2r-v8-5p3"/>
+                    <constraint firstItem="47J-rI-O4P" firstAttribute="leading" secondItem="a5o-Ov-d16" secondAttribute="leading" constant="12" id="lc6-Fa-2wm"/>
+                    <constraint firstItem="NYW-xD-g2G" firstAttribute="top" secondItem="a5o-Ov-d16" secondAttribute="top" constant="1" id="nvr-Et-9Q9"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="47J-rI-O4P" secondAttribute="trailing" constant="12" id="sMz-89-6eI"/>
+                    <constraint firstItem="47J-rI-O4P" firstAttribute="top" secondItem="jXc-pX-K2G" secondAttribute="bottom" constant="5" id="z0E-4u-kW4"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="outputLabel" destination="47J-rI-O4P" id="MJ9-ya-zAP"/>
+                <outlet property="dateLabel" destination="NYW-xD-g2G" id="CrX-gK-0dQ"/>
+                <outlet property="outputLabel" destination="47J-rI-O4P" id="E1o-rJ-gSX"/>
+                <outlet property="userNameLabel" destination="jXc-pX-K2G" id="a4R-vC-2EW"/>
             </connections>
-            <point key="canvasLocation" x="-165" y="-16.5"/>
+            <point key="canvasLocation" x="-165" y="-39.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -12,42 +12,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserMessageCell" rowHeight="75" id="sbp-xJ-kuC" customClass="UserMessageCell" customModule="LANLineV2" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="532" height="75"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserMessageCell" rowHeight="65" id="sbp-xJ-kuC" customClass="UserMessageCell" customModule="LANLineV2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="532" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbp-xJ-kuC" id="C7L-FW-53L">
-                <rect key="frame" x="0.0" y="0.0" width="532" height="74.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="532" height="64.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Sep, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdW-w0-4kH" userLabel="Date Label">
-                        <rect key="frame" x="230" y="14" width="72" height="14.5"/>
+                        <rect key="frame" x="230" y="9" width="72" height="14.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" red="0.74901960779999999" green="0.74901960779999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbl-mf-mIe" customClass="InsetLabel" customModule="LANLineV2" customModuleProvider="target">
-                        <rect key="frame" x="478" y="48" width="42" height="20.5"/>
+                        <rect key="frame" x="478" y="38" width="42" height="21"/>
                         <color key="backgroundColor" red="0.23137254900000001" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgv-iz-o5G">
-                        <rect key="frame" x="486" y="28.5" width="31" height="14.5"/>
+                        <rect key="frame" x="486" y="18.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="top" secondItem="jgv-iz-o5G" secondAttribute="bottom" constant="5" id="7b1-cT-vsO"/>
-                    <constraint firstItem="PdW-w0-4kH" firstAttribute="centerX" secondItem="C7L-FW-53L" secondAttribute="centerX" id="HSI-xQ-APN"/>
-                    <constraint firstAttribute="bottom" secondItem="Vbl-mf-mIe" secondAttribute="bottom" constant="6" id="Paw-rS-gMc"/>
-                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C7L-FW-53L" secondAttribute="leading" constant="12" id="g4f-WC-cRO"/>
-                    <constraint firstItem="jgv-iz-o5G" firstAttribute="top" secondItem="PdW-w0-4kH" secondAttribute="bottom" id="ke8-Cv-6g5"/>
-                    <constraint firstItem="PdW-w0-4kH" firstAttribute="top" secondItem="C7L-FW-53L" secondAttribute="topMargin" constant="6" id="mBY-2r-lHj"/>
-                    <constraint firstAttribute="trailing" secondItem="Vbl-mf-mIe" secondAttribute="trailing" constant="12" id="rba-wt-0Aw"/>
-                    <constraint firstAttribute="trailing" secondItem="jgv-iz-o5G" secondAttribute="trailing" constant="15" id="y1I-wx-XMd"/>
+                    <constraint firstAttribute="trailing" secondItem="jgv-iz-o5G" secondAttribute="trailing" constant="15" id="8iJ-iD-HTE"/>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C7L-FW-53L" secondAttribute="leading" constant="12" id="Joh-Zc-QnL"/>
+                    <constraint firstAttribute="bottom" secondItem="Vbl-mf-mIe" secondAttribute="bottom" constant="6" id="SiM-5e-l1q"/>
+                    <constraint firstItem="jgv-iz-o5G" firstAttribute="top" secondItem="PdW-w0-4kH" secondAttribute="bottom" constant="-5" id="VH3-dN-NN4"/>
+                    <constraint firstAttribute="trailing" secondItem="Vbl-mf-mIe" secondAttribute="trailing" constant="12" id="fWP-eq-gYl"/>
+                    <constraint firstItem="PdW-w0-4kH" firstAttribute="top" secondItem="C7L-FW-53L" secondAttribute="topMargin" constant="1" id="jC0-gM-YVp"/>
+                    <constraint firstItem="Vbl-mf-mIe" firstAttribute="top" secondItem="jgv-iz-o5G" secondAttribute="bottom" constant="5" id="sn5-cG-mY4"/>
+                    <constraint firstItem="PdW-w0-4kH" firstAttribute="centerX" secondItem="C7L-FW-53L" secondAttribute="centerX" id="v5X-Xd-10v"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -55,7 +55,7 @@
                 <outlet property="outputLabel" destination="Vbl-mf-mIe" id="o62-Pc-ea0"/>
                 <outlet property="userNameLabel" destination="jgv-iz-o5G" id="jSw-aV-3Ce"/>
             </connections>
-            <point key="canvasLocation" x="-74" y="-72.5"/>
+            <point key="canvasLocation" x="-74" y="-67.5"/>
         </tableViewCell>
     </objects>
 </document>

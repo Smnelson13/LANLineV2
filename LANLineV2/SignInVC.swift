@@ -11,6 +11,12 @@ import SendBirdSDK
 import SVProgressHUD
 import CoreData
 
+class Session
+{
+  static let shared = Session()
+  var user: SBDUser?
+}
+
 class SignInVC: UIViewController, UITextFieldDelegate
 {
   var apiController: APIController!
@@ -59,6 +65,7 @@ class SignInVC: UIViewController, UITextFieldDelegate
           
           if success
           {
+            Session.shared.user = user
             self.performSegue(withIdentifier: "signInSegue", sender: nil)
           }
         }
