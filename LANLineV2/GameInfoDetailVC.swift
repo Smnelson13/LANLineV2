@@ -12,6 +12,7 @@ import SVProgressHUD
 
 class GameInfoDetailVC: UIViewController
 {
+  let blurRadius: CGFloat = 5
   var imageCache = [String: UIImage]()
   var games = [Game]()
   var aGame: Game!
@@ -50,7 +51,7 @@ class GameInfoDetailVC: UIViewController
     
     if let img  = imageCache[aGame.coverUrl]
     {
-      coverImage.image = img
+           coverImage.image = img
     }
     else
     {
@@ -89,7 +90,8 @@ class GameInfoDetailVC: UIViewController
               let image = UIImage(data: data!)
               self.imageCache[(self.aGame.coverUrl)] = image
               DispatchQueue.main.async {
-                self.screenshotImage.image = image
+                let blurredImage = image?.applyBlur(withRadius: self.blurRadius, tintColor: UIColor(white: 1.0, alpha: 0.3), saturationDeltaFactor: 1.8, maskImage: nil)
+                self.screenshotImage.image = blurredImage
               }
             }
           }.resume()
