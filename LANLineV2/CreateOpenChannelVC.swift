@@ -10,6 +10,10 @@ import UIKit
 import SendBirdSDK
 import SVProgressHUD
 
+protocol didCreateChannelProtocol
+{
+  func createChannelButtonTapped()
+}
 
 class CreateChannelPopoverViewController: UITableViewController
 {

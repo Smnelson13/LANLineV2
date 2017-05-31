@@ -277,8 +277,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz3-vj-fYZ">
-                                <rect key="frame" x="123" y="218" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="123" y="217" width="130" height="22"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -331,7 +331,6 @@
                             <constraint firstAttribute="trailing" secondItem="4Ik-XT-ap2" secondAttribute="trailing" id="9s6-ei-hY6"/>
                             <constraint firstItem="6QA-yu-cAa" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" constant="19" id="BvM-AF-vFj"/>
                             <constraint firstAttribute="trailing" secondItem="hH4-hi-HfS" secondAttribute="trailing" constant="125" id="Far-V4-1b5"/>
-                            <constraint firstItem="Hz3-vj-fYZ" firstAttribute="top" secondItem="Cbr-0R-L3Q" secondAttribute="bottom" constant="7" id="JTv-9l-e8V"/>
                             <constraint firstItem="3N9-wA-Rvw" firstAttribute="top" secondItem="Cbr-0R-L3Q" secondAttribute="bottom" constant="-37" id="La6-fT-DdJ"/>
                             <constraint firstItem="dmc-PY-7K3" firstAttribute="top" secondItem="4Ik-XT-ap2" secondAttribute="bottom" id="N8b-kh-P1l"/>
                             <constraint firstAttribute="trailing" secondItem="4Ik-XT-ap2" secondAttribute="trailing" id="PfF-2P-AtF"/>
@@ -342,6 +341,7 @@
                             <constraint firstItem="sHo-eh-YcM" firstAttribute="centerX" secondItem="Cbr-0R-L3Q" secondAttribute="centerX" id="dE0-mv-YOT"/>
                             <constraint firstItem="4Ik-XT-ap2" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="gYy-Pw-pLf"/>
                             <constraint firstItem="Cbr-0R-L3Q" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="oJL-EM-maR"/>
+                            <constraint firstItem="Hz3-vj-fYZ" firstAttribute="top" secondItem="sHo-eh-YcM" secondAttribute="bottom" constant="6" id="rWg-PA-vIr"/>
                             <constraint firstItem="sHo-eh-YcM" firstAttribute="leading" secondItem="3N9-wA-Rvw" secondAttribute="trailing" constant="19" id="scN-25-Ncq"/>
                             <constraint firstItem="dmc-PY-7K3" firstAttribute="top" secondItem="4Ik-XT-ap2" secondAttribute="bottom" id="sge-S5-CU6"/>
                             <constraint firstItem="hH4-hi-HfS" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" constant="125" id="u14-sJ-g7x"/>
