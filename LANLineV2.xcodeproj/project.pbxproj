@@ -34,7 +34,6 @@
 		90B52C591ECAA4A6008AF6E2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C581ECAA4A6008AF6E2 /* APIController.swift */; };
 		90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */; };
 		90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */; };
-		90C45CB21ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */; };
 		90C45CB81EDA151E0030A641 /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C45CB71EDA151E0030A641 /* NewsTVC.swift */; };
 		99A018D2332E93FCFC729D3E /* Pods_LANLineV2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E041CC0BE8F998D4C81B81F /* Pods_LANLineV2Tests.framework */; };
 		D482A948CD21E93DA3FC25CD /* Pods_LANLineV2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */; };
@@ -97,7 +96,6 @@
 		90B52C581ECAA4A6008AF6E2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoDetailVC.swift; sourceTree = "<group>"; };
 		90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameChatViewController.swift; sourceTree = "<group>"; };
-		90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg"; sourceTree = "<group>"; };
 		90C45CB71EDA151E0030A641 /* NewsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		A3731E7F43E2E3253154253E /* Pods_LANLineV2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANLineV2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC996A0424344401A1CFD88B /* Pods-LANLineV2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANLineV2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LANLineV2UITests/Pods-LANLineV2UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +144,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9060C85F1EDF2498009476FA /* Fonts/Addons */ = {
+			isa = PBXGroup;
+			children = (
+				90789EAA1EDE4FD1002BC87E /* gamecuben.ttf */,
+				9060C85B1EDF0F21009476FA /* UIImage+ImageEffects.m */,
+				9060C85C1EDF0F21009476FA /* UIImage+ImageEffects.h */,
+				9060C85A1EDF0F20009476FA /* LANLineV2-Bridging-Header.h */,
+				907592601ED37627003E8019 /* Bundle.swift */,
+			);
+			name = Fonts/Addons;
+			sourceTree = "<group>";
+		};
+		9060C8601EDF24F2009476FA /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				90B344ED1ED4D49C002AD127 /* MessageCell.swift */,
+				90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */,
+				90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		907592591ED35B78003E8019 /* GameSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,16 +187,10 @@
 			children = (
 				90B344E71ED4C397002AD127 /* OpenChatVC.swift */,
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
-				9060C85B1EDF0F21009476FA /* UIImage+ImageEffects.m */,
-				9060C85C1EDF0F21009476FA /* UIImage+ImageEffects.h */,
 				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
 				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
-				90B344ED1ED4D49C002AD127 /* MessageCell.swift */,
-				907592601ED37627003E8019 /* Bundle.swift */,
-				90B344EB1ED4D36E002AD127 /* UserMessageCell.xib */,
-				90B344E91ED4D362002AD127 /* IncomingMessageCell.xib */,
+				9060C8601EDF24F2009476FA /* Messages */,
 				90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */,
-				9060C85A1EDF0F20009476FA /* LANLineV2-Bridging-Header.h */,
 			);
 			name = Chatting;
 			sourceTree = "<group>";
@@ -206,15 +220,14 @@
 		90B52C231ECAA0A1008AF6E2 /* LANLineV2 */ = {
 			isa = PBXGroup;
 			children = (
+				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
+				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				907592591ED35B78003E8019 /* GameSearch */,
 				907592641ED37A3B003E8019 /* Chatting */,
+				9060C85F1EDF2498009476FA /* Fonts/Addons */,
 				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
 				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
-				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
-				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
-				90C45CB11ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg */,
-				90789EAA1EDE4FD1002BC87E /* gamecuben.ttf */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
 			);
 			path = LANLineV2;
@@ -370,7 +383,6 @@
 			files = (
 				9060C8591EDEF72E009476FA /* gamecuben.ttf in Resources */,
 				90B344EC1ED4D36E002AD127 /* UserMessageCell.xib in Resources */,
-				90C45CB21ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg in Resources */,
 				90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */,
 				90B344EA1ED4D362002AD127 /* IncomingMessageCell.xib in Resources */,
 				90B344F01ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard in Resources */,
