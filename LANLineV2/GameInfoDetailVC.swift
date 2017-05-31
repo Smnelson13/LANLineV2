@@ -42,7 +42,7 @@ class GameInfoDetailVC: UIViewController
     coverImage.image = #imageLiteral(resourceName: "blank-66")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
     let dateFormatter = DateFormatter()
-    dateFormatter.timeStyle = .short
+  //dateFormatter.timeStyle = .short
     dateFormatter.dateStyle = .short
     let createdAtSeconds = Double(aGame.release_date) / 1000.0
     let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
