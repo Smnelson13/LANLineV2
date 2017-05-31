@@ -25,7 +25,6 @@
 		90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */; };
 		90B52C2A1ECAA0A1008AF6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C281ECAA0A1008AF6E2 /* Main.storyboard */; };
 		90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */; };
-		90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */; };
 		90B52C3A1ECAA0A1008AF6E2 /* LANLineV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C391ECAA0A1008AF6E2 /* LANLineV2Tests.swift */; };
 		90B52C451ECAA0A1008AF6E2 /* LANLineV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C441ECAA0A1008AF6E2 /* LANLineV2UITests.swift */; };
 		90B52C531ECAA131008AF6E2 /* SearchGameTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */; };
@@ -82,7 +81,6 @@
 		90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90B52C291ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		90B52C2E1ECAA0A1008AF6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90B52C301ECAA0A1008AF6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90B52C351ECAA0A1008AF6E2 /* LANLineV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LANLineV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B52C391ECAA0A1008AF6E2 /* LANLineV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LANLineV2Tests.swift; sourceTree = "<group>"; };
@@ -144,7 +142,7 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9060C85F1EDF2498009476FA /* Fonts/Addons */ = {
+		9060C85F1EDF2498009476FA /* Fonts/Add-ons */ = {
 			isa = PBXGroup;
 			children = (
 				90789EAA1EDE4FD1002BC87E /* gamecuben.ttf */,
@@ -153,7 +151,7 @@
 				9060C85A1EDF0F20009476FA /* LANLineV2-Bridging-Header.h */,
 				907592601ED37627003E8019 /* Bundle.swift */,
 			);
-			name = Fonts/Addons;
+			name = "Fonts/Add-ons";
 			sourceTree = "<group>";
 		};
 		9060C8601EDF24F2009476FA /* Messages */ = {
@@ -166,17 +164,23 @@
 			name = Messages;
 			sourceTree = "<group>";
 		};
+		9060C8611EDF26CC009476FA /* NewsPulse */ = {
+			isa = PBXGroup;
+			children = (
+				902253AD1EDA413F00661A8C /* Pulse.swift */,
+				90C45CB71EDA151E0030A641 /* NewsTVC.swift */,
+				902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */,
+			);
+			name = NewsPulse;
+			sourceTree = "<group>";
+		};
 		907592591ED35B78003E8019 /* GameSearch */ = {
 			isa = PBXGroup;
 			children = (
-				90C45CB71EDA151E0030A641 /* NewsTVC.swift */,
-				902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */,
 				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
 				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
-				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
 				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
-				902253AD1EDA413F00661A8C /* Pulse.swift */,
 				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 			);
 			name = GameSearch;
@@ -189,7 +193,6 @@
 				9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */,
 				907592621ED37987003E8019 /* OpenChannelListCell.swift */,
 				9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */,
-				9060C8601EDF24F2009476FA /* Messages */,
 				90B344EF1ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard */,
 			);
 			name = Chatting;
@@ -221,14 +224,16 @@
 			isa = PBXGroup;
 			children = (
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
+				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
+				9060C8611EDF26CC009476FA /* NewsPulse */,
 				907592591ED35B78003E8019 /* GameSearch */,
 				907592641ED37A3B003E8019 /* Chatting */,
-				9060C85F1EDF2498009476FA /* Fonts/Addons */,
-				90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */,
-				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
-				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
+				9060C8601EDF24F2009476FA /* Messages */,
+				9060C85F1EDF2498009476FA /* Fonts/Add-ons */,
 				90B52C2B1ECAA0A1008AF6E2 /* Assets.xcassets */,
+				90B52C301ECAA0A1008AF6E2 /* Info.plist */,
 			);
 			path = LANLineV2;
 			sourceTree = "<group>";
@@ -383,7 +388,6 @@
 			files = (
 				9060C8591EDEF72E009476FA /* gamecuben.ttf in Resources */,
 				90B344EC1ED4D36E002AD127 /* UserMessageCell.xib in Resources */,
-				90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */,
 				90B344EA1ED4D362002AD127 /* IncomingMessageCell.xib in Resources */,
 				90B344F01ED4E714002AD127 /* CreateChannelPopoverViewController.storyboard in Resources */,
 				90B52C2C1ECAA0A1008AF6E2 /* Assets.xcassets in Resources */,
@@ -609,14 +613,6 @@
 				90B52C291ECAA0A1008AF6E2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		90B52C2D1ECAA0A1008AF6E2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				90B52C2E1ECAA0A1008AF6E2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
