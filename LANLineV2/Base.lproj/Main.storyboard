@@ -10,6 +10,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="gamecuben.ttf">
+            <string>GAMECUBENDualSet</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign InVC-->
         <scene sceneID="ooV-QU-9PR">
@@ -24,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-u5-DKk">
-                                <rect key="frame" x="15" y="83" width="345" height="30"/>
+                                <rect key="frame" x="100" y="151" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -32,31 +37,19 @@
                                     <outlet property="delegate" destination="whx-kQ-m2I" id="1iA-i9-oMS"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38r-Eg-aoH">
-                                <rect key="frame" x="15" y="154" width="345" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="whx-kQ-m2I" id="DiU-no-0TR"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-XY-ZaX">
-                                <rect key="frame" x="100" y="221" width="175" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Connect">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="connectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="oKS-Ln-f11"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chatting made possible by SendBird" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-Tb-DqE">
                                 <rect key="frame" x="99.5" y="633" width="176" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SendBird" translatesAutoresizingMaskIntoConstraints="NO" id="08t-wY-mJB">
+                                <rect key="frame" x="133" y="573" width="108" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="08t-wY-mJB" secondAttribute="height" multiplier="421:156" id="SuZ-dO-X9s"/>
+                                    <constraint firstAttribute="height" constant="40" id="dqL-lR-1PU"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Videogame info freely provided by IGDB." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-bk-lCF">
                                 <rect key="frame" x="81.5" y="645" width="211" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -69,38 +62,47 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SendBird" translatesAutoresizingMaskIntoConstraints="NO" id="08t-wY-mJB">
-                                <rect key="frame" x="133" y="573" width="108" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="08t-wY-mJB" secondAttribute="height" multiplier="421:156" id="SuZ-dO-X9s"/>
-                                    <constraint firstAttribute="height" constant="40" id="dqL-lR-1PU"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-XY-ZaX">
+                                <rect key="frame" x="100" y="203" width="175" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Connect">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectButtonTapped:" destination="whx-kQ-m2I" eventType="touchUpInside" id="oKS-Ln-f11"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LANLine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-E3-x5j">
+                                <rect key="frame" x="24" y="42" width="327" height="63"/>
+                                <fontDescription key="fontDescription" name="GAMECUBENDualSet" family="GAMECUBEN" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Pwm-XY-ZaX" firstAttribute="width" secondItem="eqW-u5-DKk" secondAttribute="width" id="0nf-9c-4it"/>
                             <constraint firstItem="T7X-dV-T4r" firstAttribute="top" secondItem="08t-wY-mJB" secondAttribute="bottom" constant="8" id="3Ih-IJ-gfg"/>
-                            <constraint firstItem="Pwm-XY-ZaX" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="100" id="8k3-9k-S6v"/>
+                            <constraint firstItem="fx5-E3-x5j" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="BBN-sz-RLy"/>
+                            <constraint firstAttribute="trailing" secondItem="eqW-u5-DKk" secondAttribute="trailing" constant="100" id="CZF-f6-WUf"/>
                             <constraint firstItem="5kf-Vd-V9a" firstAttribute="top" secondItem="oFQ-bk-lCF" secondAttribute="bottom" constant="10" id="CZU-z6-DUX"/>
                             <constraint firstItem="lN3-Tb-DqE" firstAttribute="top" secondItem="T7X-dV-T4r" secondAttribute="bottom" id="Cbf-1S-kv5"/>
-                            <constraint firstAttribute="trailing" secondItem="38r-Eg-aoH" secondAttribute="trailing" constant="15" id="DIu-ge-crx"/>
-                            <constraint firstItem="Pwm-XY-ZaX" firstAttribute="top" secondItem="38r-Eg-aoH" secondAttribute="bottom" constant="37" id="EoE-PJ-sh8"/>
                             <constraint firstItem="08t-wY-mJB" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="KON-G6-aej"/>
                             <constraint firstItem="oFQ-bk-lCF" firstAttribute="top" secondItem="lN3-Tb-DqE" secondAttribute="bottom" id="SW0-2r-B95"/>
-                            <constraint firstAttribute="trailing" secondItem="Pwm-XY-ZaX" secondAttribute="trailing" constant="100" id="Vl5-RF-83v"/>
-                            <constraint firstAttribute="trailing" secondItem="eqW-u5-DKk" secondAttribute="trailing" constant="15" id="WAa-mf-V04"/>
                             <constraint firstItem="lN3-Tb-DqE" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="Zuz-gG-hWj"/>
                             <constraint firstItem="T7X-dV-T4r" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="axf-9R-JDe"/>
-                            <constraint firstItem="eqW-u5-DKk" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="fne-iS-Yyh"/>
+                            <constraint firstItem="eqW-u5-DKk" firstAttribute="top" secondItem="fx5-E3-x5j" secondAttribute="bottom" constant="46" id="cU9-6p-amn"/>
+                            <constraint firstItem="Pwm-XY-ZaX" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="dHt-DY-bJP"/>
+                            <constraint firstItem="eqW-u5-DKk" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="i2a-Ic-DNa"/>
                             <constraint firstItem="oFQ-bk-lCF" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="iop-zI-RiU"/>
-                            <constraint firstItem="38r-Eg-aoH" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="kSN-f8-1cB"/>
-                            <constraint firstItem="eqW-u5-DKk" firstAttribute="top" secondItem="tov-gA-45x" secondAttribute="bottom" constant="63" id="lg3-cb-hrI"/>
-                            <constraint firstItem="38r-Eg-aoH" firstAttribute="top" secondItem="eqW-u5-DKk" secondAttribute="bottom" constant="41" id="mZ6-ng-083"/>
+                            <constraint firstItem="eqW-u5-DKk" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="100" id="mL3-I7-d4g"/>
+                            <constraint firstItem="fx5-E3-x5j" firstAttribute="top" secondItem="tov-gA-45x" secondAttribute="bottom" constant="22" id="rN0-78-JGn"/>
+                            <constraint firstItem="Pwm-XY-ZaX" firstAttribute="top" secondItem="eqW-u5-DKk" secondAttribute="bottom" constant="22" id="yrj-JQ-W0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qbS-4f-gr3"/>
                     <connections>
-                        <outlet property="nicknameTextField" destination="38r-Eg-aoH" id="79I-l7-7nu"/>
+                        <outlet property="connectButton" destination="Pwm-XY-ZaX" id="SnF-P3-SM3"/>
                         <outlet property="userIdTextField" destination="eqW-u5-DKk" id="Kwf-d1-dU2"/>
                         <segue destination="JWs-OC-9kC" kind="presentation" identifier="signInSegue" id="VMX-yd-Rjr"/>
                     </connections>
@@ -461,7 +463,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xca-Dn-Mnc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="xca-Dn-Mnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -495,7 +497,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -528,7 +530,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Pa-4t-aAd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="8Pa-4t-aAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>

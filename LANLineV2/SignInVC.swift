@@ -19,14 +19,14 @@ class Session
 
 class SignInVC: UIViewController, UITextFieldDelegate
 {
+  @IBOutlet weak var connectButton: UIButton!
   var apiController: APIController!
-  
   @IBOutlet weak var userIdTextField: UITextField!
-  @IBOutlet weak var nicknameTextField: UITextField!
-
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    connectButton.layer.cornerRadius = 4
     
   }
 
