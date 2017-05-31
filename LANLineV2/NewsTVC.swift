@@ -56,7 +56,16 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     let aPulse = pulses[indexPath.row]
     cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
     cell.titleLabel.text = aPulse.title
-    cell.authorLabel.text = aPulse.author
+    cell.authorLabel.text = ("Author: " + aPulse.author)
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .short
+    dateFormatter.dateStyle = .short
+    let createdAtSeconds = Double(aPulse.createAt!) / 1000.0
+    let newsCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
+    let messageDateString = dateFormatter.string(from: newsCreatedDate)
+    cell.dateLabel.text = messageDateString
+    
+
   
     if let img = imageCache[aPulse.image]
     {

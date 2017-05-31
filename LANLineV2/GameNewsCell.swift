@@ -13,6 +13,7 @@ class GameNewsCell: UITableViewCell
   @IBOutlet weak var backGroundImage: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var authorLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
   
   override func awakeFromNib()
   {

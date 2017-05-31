@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gis-0K-XFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1016" y="-208"/>
+            <point key="canvasLocation" x="-1209" y="-207"/>
         </scene>
         <!--Open Channel ListTVC-->
         <scene sceneID="xrY-ep-wa2">
@@ -414,15 +414,24 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-qR-ukE">
+                                            <rect key="frame" x="15" y="61" width="35" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qYx-4d-sEY" secondAttribute="trailing" constant="15" id="77O-1k-Cmj"/>
                                         <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="8Mw-xn-v6b"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cOb-qR-ukE" secondAttribute="trailing" constant="325" id="DZE-7v-Emm"/>
+                                        <constraint firstItem="cOb-qR-ukE" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="24" id="IHQ-Ig-AZn"/>
                                         <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="15" id="KAT-il-8gS"/>
                                         <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="RFt-o2-s5h"/>
                                         <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leadingMargin" constant="7" id="RHV-O7-NMM"/>
                                         <constraint firstItem="DVC-xh-bze" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="topMargin" constant="7" id="Rh0-lL-UuY"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="top" id="Wlw-Bw-gbD"/>
+                                        <constraint firstItem="cOb-qR-ukE" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="mBZ-HJ-Hnd"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="pVx-v0-pmL"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="pnu-JA-QgI"/>
                                     </constraints>
@@ -430,6 +439,7 @@
                                 <connections>
                                     <outlet property="authorLabel" destination="qYx-4d-sEY" id="wAr-F0-OJT"/>
                                     <outlet property="backGroundImage" destination="MAA-Qn-fMS" id="bcg-ah-Cm3"/>
+                                    <outlet property="dateLabel" destination="cOb-qR-ukE" id="ceK-cw-0Mm"/>
                                     <outlet property="titleLabel" destination="DVC-xh-bze" id="76b-BZ-g2h"/>
                                 </connections>
                             </tableViewCell>
