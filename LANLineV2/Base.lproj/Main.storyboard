@@ -57,32 +57,40 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SendBird" translatesAutoresizingMaskIntoConstraints="NO" id="08t-wY-mJB">
-                                <rect key="frame" x="133.5" y="585" width="108" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="08t-wY-mJB" secondAttribute="height" multiplier="421:156" id="SuZ-dO-X9s"/>
-                                    <constraint firstAttribute="height" constant="40" id="dqL-lR-1PU"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Videogame info freely provided by IGDB." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-bk-lCF">
                                 <rect key="frame" x="81.5" y="645" width="211" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom icons provided byhttps://icons8.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-dV-T4r">
+                                <rect key="frame" x="79" y="621" width="216.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SendBird" translatesAutoresizingMaskIntoConstraints="NO" id="08t-wY-mJB">
+                                <rect key="frame" x="133" y="573" width="108" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="08t-wY-mJB" secondAttribute="height" multiplier="421:156" id="SuZ-dO-X9s"/>
+                                    <constraint firstAttribute="height" constant="40" id="dqL-lR-1PU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="T7X-dV-T4r" firstAttribute="top" secondItem="08t-wY-mJB" secondAttribute="bottom" constant="8" id="3Ih-IJ-gfg"/>
                             <constraint firstItem="Pwm-XY-ZaX" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="100" id="8k3-9k-S6v"/>
+                            <constraint firstItem="5kf-Vd-V9a" firstAttribute="top" secondItem="oFQ-bk-lCF" secondAttribute="bottom" constant="10" id="CZU-z6-DUX"/>
+                            <constraint firstItem="lN3-Tb-DqE" firstAttribute="top" secondItem="T7X-dV-T4r" secondAttribute="bottom" id="Cbf-1S-kv5"/>
                             <constraint firstAttribute="trailing" secondItem="38r-Eg-aoH" secondAttribute="trailing" constant="15" id="DIu-ge-crx"/>
                             <constraint firstItem="Pwm-XY-ZaX" firstAttribute="top" secondItem="38r-Eg-aoH" secondAttribute="bottom" constant="37" id="EoE-PJ-sh8"/>
                             <constraint firstItem="08t-wY-mJB" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="KON-G6-aej"/>
-                            <constraint firstItem="lN3-Tb-DqE" firstAttribute="top" secondItem="08t-wY-mJB" secondAttribute="bottom" constant="8" id="Ri4-k7-evn"/>
                             <constraint firstItem="oFQ-bk-lCF" firstAttribute="top" secondItem="lN3-Tb-DqE" secondAttribute="bottom" id="SW0-2r-B95"/>
-                            <constraint firstItem="5kf-Vd-V9a" firstAttribute="top" secondItem="08t-wY-mJB" secondAttribute="bottom" constant="42" id="Vbp-EZ-hD8"/>
                             <constraint firstAttribute="trailing" secondItem="Pwm-XY-ZaX" secondAttribute="trailing" constant="100" id="Vl5-RF-83v"/>
                             <constraint firstAttribute="trailing" secondItem="eqW-u5-DKk" secondAttribute="trailing" constant="15" id="WAa-mf-V04"/>
                             <constraint firstItem="lN3-Tb-DqE" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="Zuz-gG-hWj"/>
+                            <constraint firstItem="T7X-dV-T4r" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="axf-9R-JDe"/>
                             <constraint firstItem="eqW-u5-DKk" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="fne-iS-Yyh"/>
                             <constraint firstItem="oFQ-bk-lCF" firstAttribute="centerX" secondItem="R54-3F-JWO" secondAttribute="centerX" id="iop-zI-RiU"/>
                             <constraint firstItem="38r-Eg-aoH" firstAttribute="leading" secondItem="R54-3F-JWO" secondAttribute="leading" constant="15" id="kSN-f8-1cB"/>
@@ -171,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="1700" y="-906"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="03B-sA-wye">
             <objects>
-                <tabBarController id="JWs-OC-9kC" sceneMemberID="viewController">
+                <tabBarController id="JWs-OC-9kC" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="G1I-Ax-Frf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -487,11 +495,23 @@
             </objects>
             <point key="canvasLocation" x="261.60000000000002" y="500.59970014992507"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="zJf-wf-v1c">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="efB-M7-SWt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="3N9-Pw-HXO"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search-50" selectedImage="Search Filled-75" id="3N9-Pw-HXO" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="7O4-ds-8Dv" id="mz3-bb-FBI"/>
+                        </connections>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xca-Dn-Mnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -505,6 +525,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHF-Xb-6DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="7O4-ds-8Dv" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="262" y="-217"/>
         </scene>
@@ -512,7 +533,19 @@
         <scene sceneID="Yh1-p8-iXh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dO7-PV-4Nd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="Speech Bubble with Dots" selectedImage="Speech Bubble with Dots Filled" id="HiI-VI-AMh"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="Speech Bubble with Dots" selectedImage="Speech Bubble with Dots Filled" id="HiI-VI-AMh" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="uPh-w3-moh" id="WaR-M0-srS"/>
+                        </connections>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -525,6 +558,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-VF-eLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="uPh-w3-moh" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="262" y="-906"/>
         </scene>
@@ -552,7 +586,19 @@
         <scene sceneID="yeS-A3-1Ew">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GwC-Yh-bcP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="News-75" selectedImage="News Filled-75" id="9Lc-XF-j1x"/>
+                    <tabBarItem key="tabBarItem" title="News" image="News-75" selectedImage="News Filled-75" id="9Lc-XF-j1x" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="m6a-ps-DMI" id="TjX-X5-Pxp"/>
+                        </connections>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Pa-4t-aAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -565,6 +611,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oC-NW-Edw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="m6a-ps-DMI" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
             </objects>
             <point key="canvasLocation" x="-506" y="501"/>
         </scene>
@@ -573,6 +620,8 @@
         <image name="5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg" width="2000" height="2000"/>
         <image name="News Filled-75" width="25" height="25"/>
         <image name="News-75" width="25" height="25"/>
+        <image name="Search Filled-75" width="25" height="25"/>
+        <image name="Search-50" width="25" height="25"/>
         <image name="SendBird" width="421" height="156"/>
         <image name="Speech Bubble with Dots" width="25" height="25"/>
         <image name="Speech Bubble with Dots Filled" width="25" height="25"/>

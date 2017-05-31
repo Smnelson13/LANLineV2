@@ -21,6 +21,8 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     
     
     super.viewDidLoad()
+    UITabBar.appearance().tintColor = .white
+    UITabBar.appearance().unselectedItemTintColor = .white
     
     apiController = APIController(pulseDelegate: self)
     
