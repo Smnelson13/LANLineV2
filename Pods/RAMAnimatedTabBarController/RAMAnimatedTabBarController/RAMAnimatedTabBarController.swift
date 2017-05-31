@@ -51,7 +51,10 @@ extension RAMAnimatedTabBarItem {
 }
 
 /// UITabBarItem with animation
-open class RAMAnimatedTabBarItem: UITabBarItem {
+open class RAMAnimatedTabBarItem: UITabBarItem
+{
+  var itemImage: UIImage?
+  var itemSelectedImage: UIImage?
   
   @IBInspectable open var yOffSet: CGFloat = 0
   
@@ -87,7 +90,9 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
   /**
    Start selected animation
    */
-  open func playAnimation() {
+  open func playAnimation()
+  {
+    iconView?.icon.image = itemSelectedImage
     
     assert(animation != nil, "add animation in UITabBarItem")
     guard animation != nil && iconView != nil else  {
@@ -99,7 +104,9 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
   /**
    Start unselected animation
    */
-  open func deselectAnimation() {
+  open func deselectAnimation()
+  {
+    iconView?.icon.image = itemImage
     
     guard animation != nil && iconView != nil else  {
       return
@@ -115,7 +122,9 @@ open class RAMAnimatedTabBarItem: UITabBarItem {
   /**
    Set selected state without animation
    */
-  open func selectedState() {
+  open func selectedState()
+  {
+    iconView?.icon.image = itemSelectedImage
     guard animation != nil && iconView != nil else  {
       return
     }
@@ -187,7 +196,8 @@ extension  RAMAnimatedTabBarController {
 }
 
 /// UITabBarController with item animations
-open class RAMAnimatedTabBarController: UITabBarController {
+open class RAMAnimatedTabBarController: UITabBarController
+{
   
   fileprivate var didInit: Bool = false
   fileprivate var didLoadView: Bool = false
@@ -265,7 +275,8 @@ open class RAMAnimatedTabBarController: UITabBarController {
   
   // MARK: create methods
   
-  fileprivate func createCustomIcons(_ containers : NSDictionary) {
+  fileprivate func createCustomIcons(_ containers : NSDictionary)
+  {
     
     guard let items = tabBar.items as? [RAMAnimatedTabBarItem] else {
       fatalError("items must inherit RAMAnimatedTabBarItem")
@@ -314,6 +325,9 @@ open class RAMAnimatedTabBarController: UITabBarController {
         textLabel.alpha = 0.5
       }
       item.iconView = (icon:icon, textLabel:textLabel)
+      
+      item.itemImage = item.image
+      item.itemSelectedImage = item.selectedImage
       
       if 0 == index { // selected first elemet
         item.selectedState()
