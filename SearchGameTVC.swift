@@ -87,6 +87,11 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   
   func searchBarSetup()
   {
+    searchController.searchBar.tintColor = UIColor.primaryPurple
+    let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    searchController.searchBar.backgroundColor = UIColor.primaryPurple
+    searchController.searchBar.barTintColor = UIColor.primaryPurple
     tableView.tableHeaderView = searchController.searchBar
     searchController.searchResultsUpdater = self
     searchController.dimsBackgroundDuringPresentation = false
@@ -94,7 +99,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.searchBar.delegate = self
 
   }
-  
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
   {

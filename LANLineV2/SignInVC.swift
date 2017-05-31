@@ -26,6 +26,7 @@ class SignInVC: UIViewController, UITextFieldDelegate
   {
     super.viewDidLoad()
     
+    userIdTextField.tintColor = UIColor.primaryPurple
     connectButton.layer.cornerRadius = 4
     
   }

@@ -11,6 +11,7 @@ import SafariServices
 
 class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewControllerDelegate
 {
+  let blurRadius: CGFloat = 4
   var imageCache = [String: UIImage]()
   var pulses = [Pulse]()
   var apiController: APIController!
@@ -74,7 +75,8 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
               let image = UIImage(data: data!)
               self.imageCache[(aPulse.image)] = image
               DispatchQueue.main.sync {
-                cell.backGroundImage.image = image
+                 let blurredImage = image?.applyBlur(withRadius: self.blurRadius, tintColor: UIColor(white: 0.5, alpha: 0.2), saturationDeltaFactor: 1.8, maskImage: nil)
+                cell.backGroundImage.image = blurredImage
               }
           }
         }.resume()
