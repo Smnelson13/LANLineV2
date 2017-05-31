@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gis-0K-XFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-735" y="-564"/>
+            <point key="canvasLocation" x="-1207" y="-564"/>
         </scene>
         <!--Open Channels-->
         <scene sceneID="xrY-ep-wa2">
@@ -161,7 +161,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqq-eO-NkS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-907"/>
+            <point key="canvasLocation" x="1039" y="-907"/>
         </scene>
         <!--Open ChatVC-->
         <scene sceneID="emP-63-Xfo">
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKQ-gX-r15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="-907"/>
+            <point key="canvasLocation" x="1876" y="-907"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="03B-sA-wye">
@@ -200,7 +200,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3l7-so-hrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="-563"/>
+            <point key="canvasLocation" x="-514" y="-564"/>
         </scene>
         <!--Search for a game-->
         <scene sceneID="eKg-BW-LFw">
@@ -256,7 +256,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AM-vc-6AF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-208"/>
+            <point key="canvasLocation" x="1038" y="-208"/>
         </scene>
         <!--Game Info DetailVC-->
         <scene sceneID="OQk-Oc-wtB">
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-bc-631" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="-208"/>
+            <point key="canvasLocation" x="1876" y="-208"/>
         </scene>
         <!--Game Chat View Controller-->
         <scene sceneID="noA-hW-9IG">
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYw-eb-adC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684" y="-209"/>
+            <point key="canvasLocation" x="2705" y="-208"/>
         </scene>
         <!--Game News-->
         <scene sceneID="2IW-wh-jHm">
@@ -408,30 +408,30 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-4d-sEY">
-                                            <rect key="frame" x="15" y="107" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYx-4d-sEY">
+                                            <rect key="frame" x="317" y="116.5" width="43" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-qR-ukE">
-                                            <rect key="frame" x="15" y="61" width="35" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-qR-ukE">
+                                            <rect key="frame" x="329.5" y="98.5" width="30.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qYx-4d-sEY" secondAttribute="trailing" constant="15" id="77O-1k-Cmj"/>
-                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="8Mw-xn-v6b"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cOb-qR-ukE" secondAttribute="trailing" constant="15" id="DZE-7v-Emm"/>
-                                        <constraint firstItem="cOb-qR-ukE" firstAttribute="top" secondItem="DVC-xh-bze" secondAttribute="bottom" constant="24" id="IHQ-Ig-AZn"/>
-                                        <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="15" id="KAT-il-8gS"/>
+                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="1l5-WR-nEV"/>
+                                        <constraint firstAttribute="bottom" secondItem="qYx-4d-sEY" secondAttribute="bottom" constant="5" id="D42-yP-s3a"/>
+                                        <constraint firstItem="qYx-4d-sEY" firstAttribute="top" secondItem="cOb-qR-ukE" secondAttribute="bottom" id="EUQ-hP-IM7"/>
                                         <constraint firstAttribute="trailing" secondItem="MAA-Qn-fMS" secondAttribute="trailing" id="RFt-o2-s5h"/>
                                         <constraint firstItem="DVC-xh-bze" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leadingMargin" constant="7" id="RHV-O7-NMM"/>
                                         <constraint firstItem="DVC-xh-bze" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="topMargin" constant="7" id="Rh0-lL-UuY"/>
+                                        <constraint firstAttribute="trailing" secondItem="cOb-qR-ukE" secondAttribute="trailing" constant="15" id="TZ2-ah-zVt"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="top" secondItem="ldb-ir-byJ" secondAttribute="top" id="Wlw-Bw-gbD"/>
-                                        <constraint firstItem="cOb-qR-ukE" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="mBZ-HJ-Hnd"/>
+                                        <constraint firstItem="cOb-qR-ukE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ldb-ir-byJ" secondAttribute="leading" constant="15" id="mim-Ju-Aoh"/>
+                                        <constraint firstAttribute="trailing" secondItem="qYx-4d-sEY" secondAttribute="trailing" constant="15" id="mk4-Ej-3CI"/>
                                         <constraint firstItem="MAA-Qn-fMS" firstAttribute="leading" secondItem="ldb-ir-byJ" secondAttribute="leading" id="pVx-v0-pmL"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DVC-xh-bze" secondAttribute="trailing" constant="15" id="pnu-JA-QgI"/>
                                     </constraints>
@@ -453,7 +453,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dA2-1M-QCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261.60000000000002" y="500.59970014992507"/>
+            <point key="canvasLocation" x="262" y="487"/>
         </scene>
         <!--Search-->
         <scene sceneID="zJf-wf-v1c">
@@ -473,7 +473,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xca-Dn-Mnc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="xca-Dn-Mnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -516,7 +516,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -558,7 +558,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Pa-4t-aAd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="8Pa-4t-aAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -580,7 +580,7 @@
                     </userDefinedRuntimeAttributes>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-227" y="501"/>
+            <point key="canvasLocation" x="-514" y="501"/>
         </scene>
     </scenes>
     <resources>

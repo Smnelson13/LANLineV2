@@ -63,7 +63,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     let createdAtSeconds = Double(aPulse.createAt!) / 1000.0
     let newsCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
     let messageDateString = dateFormatter.string(from: newsCreatedDate)
-    cell.dateLabel.text = messageDateString
+    cell.dateLabel.text = ("Published: " + messageDateString)
   
 
   
