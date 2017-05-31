@@ -17,6 +17,7 @@ class GameInfoDetailVC: UIViewController
   var aGame: Game!
   //let aGame = games[indexPath.row]
   
+  @IBOutlet weak var releaseDate: UILabel!
   @IBOutlet weak var screenshotImage: UIImageView!
   @IBOutlet weak var coverImage: UIImageView!
   @IBOutlet weak var gameTitle: UILabel!
@@ -54,6 +55,13 @@ class GameInfoDetailVC: UIViewController
     gameSummary.text = aGame.summary
     coverImage.image = #imageLiteral(resourceName: "blank-66")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .short
+    dateFormatter.dateStyle = .short
+    let createdAtSeconds = Double(aGame.release_date) / 1000.0
+    let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
+    let messageDateString = dateFormatter.string(from: messageCreatedDate)
+    releaseDate.text = messageDateString
     
 //    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: Int(2.5))!)
 //    let blurView = UIVisualEffectView(effect: blurEffect)

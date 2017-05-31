@@ -15,6 +15,7 @@ enum SerializationError: Error
 
 class Game
 {
+  let release_date: Int
   let id: Int
   let name: String
   var coverUrl: String = ""
@@ -23,6 +24,7 @@ class Game
  
   init(gameDictionary: [String: Any])
   {
+    self.release_date = (gameDictionary["first_release_date"] as? Int)!
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
     if let summary = gameDictionary["summary"] as? String
