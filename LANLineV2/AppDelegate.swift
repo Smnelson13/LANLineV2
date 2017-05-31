@@ -8,6 +8,7 @@
 
 import UIKit
 import SendBirdSDK
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -17,19 +18,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
-    UITabBar.appearance().tintColor = .white
+    UITabBar.appearance().tintColor = .red
     UITabBar.appearance().unselectedItemTintColor = .white
     UIApplication.shared.statusBarStyle = .lightContent
-    let notificationSettings = UIUserNotificationSettings(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
-    UIApplication.shared.registerUserNotificationSettings(notificationSettings)
-    UIApplication.shared.registerForRemoteNotifications()
+    let center = UNUserNotificationCenter.current()
+    center.getNotificationSettings() {
+      settings in
+      if settings.authorizationStatus == UNAuthorizationStatus.notDetermined
+      {
+        center.requestAuthorization(options: [.alert, .sound, .badge]) {
+          granted, error in
+          if granted
+          {
+            print("Authorization was granted.")
+          }
+          else
+          {
+            print("Authorization was denied.")
+          }
+        }
+      }
+    }
+//    let notificationSettings = UNNotificationSetting(types: [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound], categories: nil)
+//    UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+//    UIApplication.shared.registerForRemoteNotifications()
     
     UINavigationBar.appearance().tintColor = .white
   
     SBDMain.initWithApplicationId("83FD6C08-7A4D-47E0-9C02-D039B37CBC98")
     SBDMain.setLogLevel(SBDLogLevel.debug)
     SBDOptions.setUseMemberAsMessageSender(true)
-
     
     return true
   }

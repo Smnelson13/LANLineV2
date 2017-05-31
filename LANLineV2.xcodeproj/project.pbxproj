@@ -10,6 +10,7 @@
 		4F8EE2BDB575F085B762821E /* Pods_LANLineV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC62C737C6912B7A3AE0C35D /* Pods_LANLineV2.framework */; };
 		902253AC1EDA3D1E00661A8C /* GameNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902253AB1EDA3D1E00661A8C /* GameNewsCell.swift */; };
 		902253AE1EDA413F00661A8C /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902253AD1EDA413F00661A8C /* Pulse.swift */; };
+		9060C8591EDEF72E009476FA /* gamecuben.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90789EAA1EDE4FD1002BC87E /* gamecuben.ttf */; };
 		9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925A1ED35C7B003E8019 /* SignInVC.swift */; };
 		9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */; };
 		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
@@ -359,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9060C8591EDEF72E009476FA /* gamecuben.ttf in Resources */,
 				90B344EC1ED4D36E002AD127 /* UserMessageCell.xib in Resources */,
 				90C45CB21ED939730030A641 /* 5ef68f29-79b5-4204-bd9b-6f936b37b657_1.4310dd77109bf2866add854fbad724b2.jpeg in Resources */,
 				90B52C2F1ECAA0A1008AF6E2 /* LaunchScreen.storyboard in Resources */,

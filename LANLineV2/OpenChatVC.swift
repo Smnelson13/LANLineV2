@@ -76,6 +76,7 @@ class OpenChatVC: SLKTextViewController
       cell.outputLabel.text = userMsg.message!
       let dateFormatter = DateFormatter()
       dateFormatter.timeStyle = .short
+      print(dateFormatter)
       dateFormatter.dateStyle = .short
       let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
       let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)

@@ -24,7 +24,15 @@ class Game
  
   init(gameDictionary: [String: Any])
   {
-    self.release_date = (gameDictionary["first_release_date"] as? Int)!
+    if let release = gameDictionary["first_release_date"] as? Int
+    {
+      self.release_date = release
+    }
+    else
+    {
+      self.release_date = 0
+    }
+//    self.release_date = (gameDictionary["first_release_date"] as? Int)!
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
     if let summary = gameDictionary["summary"] as? String
