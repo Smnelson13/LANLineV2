@@ -15,41 +15,29 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
   var pulses = [Pulse]()
   var apiController: APIController!
   
-  
   override func viewDidLoad()
   {
-    
-    
     super.viewDidLoad()
     UITabBar.appearance().tintColor = .white
     UITabBar.appearance().unselectedItemTintColor = .white
-    
     apiController = APIController(pulseDelegate: self)
-    
     apiController.getPulse()
-    
-    
-    
   }
 
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   // MARK: - Table view data source
-
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      // #warning Incomplete implementation, return the number of sections
       return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-      // #warning Incomplete implementation, return the number of rows
-      return pulses.count
+    return pulses.count
   }
   
   func didRecievePulseInfo(results: [Pulse])
@@ -61,8 +49,6 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     }
   }
 
-  
-  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GameNewsCell", for: indexPath) as! GameNewsCell
@@ -70,9 +56,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
     cell.titleLabel.text = aPulse.title
     cell.authorLabel.text = aPulse.author
-  //  cell.summaryTextField.loadHTMLString(aPulse.summary, baseURL: nil)
-  //  cell.summaryTextField.isOpaque = false
-    
+  
     if let img = imageCache[aPulse.image]
     {
       cell.backGroundImage.image = img
@@ -82,7 +66,8 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
       if let url = URL(string: aPulse.image)
       {
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) {
+        URLSession.shared.dataTask(with: request)
+        {
           data, response, error in
           if error == nil
             {
@@ -96,12 +81,9 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
       }
     }
     
-       
-
       return cell
   }
   
-
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
   {
     let aPulse = pulses[indexPath.row]
@@ -115,8 +97,3 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
   }
   
 }
-
-
-
-
-

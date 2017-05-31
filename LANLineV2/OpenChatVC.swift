@@ -10,24 +10,18 @@ import UIKit
 import SendBirdSDK
 import SlackTextViewController
 
-
 class OpenChatVC: SLKTextViewController
 {
   var channel: SBDOpenChannel!
-  //var sender = SBDUser()
   var baseMessages = [SBDBaseMessage]()
-  
   var kIncomingMessageCellIdentifier = "IncomingMessageCell"
   var kUserMessageCellIdentifier = "UserMessageCell"
 
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    
     SBDMain.add(self as SBDChannelDelegate, identifier: "OpenChannel")
-    
     enterChannel(); loadPreviousMessages()
-    
     tableView?.separatorStyle = .none
     tableView?.tableFooterView = UIView()
     tableView?.tableHeaderView = UIView()
@@ -38,7 +32,7 @@ class OpenChatVC: SLKTextViewController
       let nib = UINib(nibName: identifier, bundle: nil)
       tableView?.register(nib, forCellReuseIdentifier: identifier)
     }
-    //self.navigationItem
+
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -69,11 +63,8 @@ class OpenChatVC: SLKTextViewController
       dateFormatter.timeStyle = .short
       dateFormatter.dateStyle = .short
       let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
-      //print("\(createdAtSeconds)--------------")
       let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
-      //print("\(messageCreatedDate)--------------")
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
-      //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
       cell.userNameLabel.text = userMsg.sender?.userId ?? ""
       return cell
@@ -87,25 +78,18 @@ class OpenChatVC: SLKTextViewController
       dateFormatter.timeStyle = .short
       dateFormatter.dateStyle = .short
       let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
-      //print("\(createdAtSeconds)--------------")
       let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
-      //print("\(messageCreatedDate)--------------")
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
-      //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
       cell.userNameLabel.text = userMsg.sender?.userId ?? ""
       return cell
     }
   }
 
-
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
-  
-  
   
   // MARK: - Enter Chat Channel
   func enterChannel()
@@ -115,14 +99,11 @@ class OpenChatVC: SLKTextViewController
         NSLog("Error: %@", error!)
         return
       }
-      
-      channel?.enter(completionHandler: { (error) in
+        channel?.enter(completionHandler: { (error) in
         if error != nil {
           NSLog("Error: %@", error!)
           return
         }
-        
-        // ...
         print("Successfully entered channel.")
       })
     }
@@ -137,7 +118,6 @@ class OpenChatVC: SLKTextViewController
       textView.text = ""
     }
   }
-  
   
   // MARK: - send message
   func sendMessage(message: String)
@@ -182,7 +162,6 @@ class OpenChatVC: SLKTextViewController
   
 }
 
-
 extension OpenChatVC: SBDChannelDelegate
 {
   func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
@@ -190,82 +169,4 @@ extension OpenChatVC: SBDChannelDelegate
     baseMessages.insert(message, at: 0)
     self.tableView?.reloadData()
   }
-  
-  func channelDidUpdateReadReceipt(_ sender: SBDGroupChannel)
-  {
-    // When read receipt has been updated
-  }
-  
-  func channelDidUpdateTypingStatus(_ sender: SBDGroupChannel)
-  {
-    // When typing status has been updated
-  }
-  
-  func channel(_ sender: SBDGroupChannel, userDidJoin user: SBDUser)
-  {
-    // When a new member joined the group channel
-  }
-  
-  func channel(_ sender: SBDGroupChannel, userDidLeave user: SBDUser)
-  {
-    // When a member left the group channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userDidEnter user: SBDUser)
-  {
-    // When a new user entered the open channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userDidExit user: SBDUser)
-  {
-    // When a new user left the open channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userWasMuted user: SBDUser)
-  {
-    // When a user is muted on the open channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userWasUnmuted user: SBDUser)
-  {
-    // When a user is unmuted on the open channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userWasBanned user: SBDUser)
-  {
-    // When a user is banned on the open channel
-  }
-  
-  func channel(_ sender: SBDOpenChannel, userWasUnbanned user: SBDUser)
-  {
-    // When a user is unbanned on the open channel
-  }
-  
-  func channelWasFrozen(_ sender: SBDOpenChannel)
-  {
-    // When the open channel is frozen
-  }
-  
-  func channelWasUnfrozen(_ sender: SBDOpenChannel)
-  {
-    // When the open channel is unfrozen
-  }
-  
-  func channelWasChanged(_ sender: SBDBaseChannel)
-  {
-    // When a channel property has been changed
-  }
-  
-  func channelWasDeleted(_ channelUrl: String, channelType: SBDChannelType)
-  {
-    // When a channel has been deleted
-  }
-  
-  func channel(_ sender: SBDBaseChannel, messageWasDeleted messageId: Int64)
-  {
-    // When a message has been deleted
-  }
 }
-
-
-

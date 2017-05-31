@@ -32,21 +32,6 @@ class GameInfoDetailVC: UIViewController
   {
     self.navigationController?.popViewController(animated: true)
   }
-
-//  override func viewDidAppear(_ animated: Bool) {
-//    super.viewDidAppear(animated)
-//    
-//    let blurView = UIView(frame: screenshotImage.frame)
-//    blurView.alpha = 0
-//    blurView.backgroundColor = .black
-//    view.addSubview(blurView)
-//    
-//    UIView.animate(withDuration: 0.1)
-//    {
-//      blurView.alpha = 0.6
-//    }
-//  }
-
   
   override func viewDidLoad()
   { super.viewDidLoad()
@@ -63,12 +48,7 @@ class GameInfoDetailVC: UIViewController
     let messageDateString = dateFormatter.string(from: messageCreatedDate)
     releaseDate.text = messageDateString
     
-//    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: Int(2.5))!)
-//    let blurView = UIVisualEffectView(effect: blurEffect)
-//    blurView.frame = screenshotImage.bounds
-//    screenshotImage.addSubview(blurView)
-    
-    if let img  = imageCache[aGame.coverUrl] // use alamofire image cache to store then clean up old images.
+    if let img  = imageCache[aGame.coverUrl]
     {
       coverImage.image = img
     }
@@ -123,7 +103,6 @@ class GameInfoDetailVC: UIViewController
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-     
   }
   
   func joinOrCreateChannel()
@@ -160,15 +139,12 @@ class GameInfoDetailVC: UIViewController
         fatalError("channel couldn't be created and doesn't exist")
       }
       
-      // Successfully fetched the channel.
-      // Do something with openChannel.
     }
   }
 
   func create(completion:@escaping (_ success: Bool) -> Void)
   {
     let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
-    
     var request = URLRequest(url: URL(string: createChannelUrl)!)
     request.httpMethod = "POST"
     let requestJson = "{\"channel_url\": \"\(aGame.id)\", \"name\": \"\(aGame.name)\"}"
@@ -205,7 +181,7 @@ class GameInfoDetailVC: UIViewController
     }
     else
     {
-        //error
+    
     }
   }
 

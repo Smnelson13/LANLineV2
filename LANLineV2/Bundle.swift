@@ -49,6 +49,3 @@ extension UIColor
   }
 }
 
-//extension UIFont {
-//  static func primaryFont(
-//}

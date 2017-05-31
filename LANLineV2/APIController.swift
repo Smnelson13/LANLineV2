@@ -38,11 +38,9 @@ class APIController
   }
   
   func getGameInfo(searchTerm: String)
-  { // to get more from this call add something after the name separated by a comma/ change release_date.date to popularity or others
+  {
     let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=10&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
-
     // DONT FORGET TO FILTER RELEVANCE. https://igdb.github.io/api/references/filters/
-    
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     
@@ -71,7 +69,6 @@ class APIController
             print("Rate Limit Reached")
           }
         }
-        
         
       } else {
         
@@ -85,7 +82,6 @@ class APIController
   func getTappedGameInfo(gameId: String)
   { 
     let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/\(gameId)?fields=*")
-
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     let task = defaultSession.dataTask(with: request) { data, response, error in
@@ -113,7 +109,6 @@ class APIController
             print("Rate Limit Reached")
           }
         }
-        
         
       } else {
         
@@ -178,7 +173,6 @@ class APIController
           }
         }
         
-        
       } else {
         
         print("requestError")
@@ -190,8 +184,4 @@ class APIController
   
 
   
-
-  
-
 }
-

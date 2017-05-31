@@ -15,10 +15,8 @@ class OpenChannelListTVC: UITableViewController
   
   override func viewDidLoad()
   {
-      super.viewDidLoad()
-    
-    self.refreshChannelList()//change this to load channels refresh isnt good to keep calling
-    
+    super.viewDidLoad()
+    self.refreshChannelList()
     
     let addButton = self.navigationItem.rightBarButtonItem!
     addButton.target = self
@@ -35,34 +33,28 @@ class OpenChannelListTVC: UITableViewController
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   // MARK: - Table view data source
-
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      
       return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    
       return channels.count
   }
   
   private func refreshChannelList()
   {
     self.channels.removeAll()
-    
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }
     
     self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
     self.openChannelListQuery?.limit = 20
-    
     self.openChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
       if error != nil {
         DispatchQueue.main.async {
@@ -91,20 +83,16 @@ class OpenChannelListTVC: UITableViewController
     })
   }
 
-
   // MARK: - Cell For Row At
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    
-      let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListCell", for: indexPath) as! OpenChannelListCell
-   
+    let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListCell", for: indexPath) as! OpenChannelListCell
     let aChannel = channels[indexPath.row]
-    
     cell.channelNameLabel.text = aChannel.name
     
-      return cell
+    return cell
   }
-  // Mark: - Prepare For Segue
+  // MARK: - Prepare For Segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "EnterChatSegue"
@@ -114,9 +102,7 @@ class OpenChannelListTVC: UITableViewController
       let indexPath = tableView.indexPath(for: selectedCell)!
       let aChannel = channels[indexPath.row]
       chatVC.channel = aChannel
-      //chatVC = channels[indexPath.row]
     }
   }
-
 
 }

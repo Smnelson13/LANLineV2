@@ -15,9 +15,10 @@ class CreateChannelPopoverViewController: UITableViewController
 {
   @IBOutlet weak var textField: UITextField?
   
-  static func instantiateFromStoryboard() -> CreateChannelPopoverViewController {
+  static func instantiateFromStoryboard() -> CreateChannelPopoverViewController
+  {
     let createChannelPopoverViewController = UIStoryboard(name: "CreateChannelPopoverViewController", bundle: nil)
-      .instantiateInitialViewController() as! CreateChannelPopoverViewController
+    .instantiateInitialViewController() as! CreateChannelPopoverViewController
     
     createChannelPopoverViewController.setupPopoverStuff()
     return createChannelPopoverViewController
@@ -35,7 +36,8 @@ class CreateChannelPopoverViewController: UITableViewController
     }
   }
   
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+  {
     switch indexPath.row {
     case 1: createChannelButtonWasPressed()
     default: break
@@ -48,13 +50,12 @@ class CreateChannelPopoverViewController: UITableViewController
       if let channelName = self.textField?.text, channelName != ""
       {
         view.endEditing(true)
-  
         SVProgressHUD.show(withStatus: "Creating channel...")
         SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
-          SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(channelName)\"")
-  
-          SVProgressHUD.dismiss(after: 1, completion: {
-            self.dismiss(animated: true, completion: nil)
+        SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(channelName)\"")
+        SVProgressHUD.dismiss(after: 1, completion: {
+        
+          self.dismiss(animated: true, completion: nil)
           })
   
           if error != nil
@@ -63,13 +64,11 @@ class CreateChannelPopoverViewController: UITableViewController
             return
           }
   
-          // ...
         })
       }
       tableView.reloadData()
     }
 }
-
 
 
 extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate

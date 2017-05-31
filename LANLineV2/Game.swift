@@ -32,7 +32,6 @@ class Game
       self.summary =  summary
     }
     
-    
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
       if let url = coverDictionary["url"] as? String
@@ -63,6 +62,4 @@ class Game
   }
 
 }
-
-
 

@@ -23,7 +23,6 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
   {
     super.viewDidLoad()
     enterChannel(); loadPreviousMessages(); tableViewCellSetup()
-    
     SBDMain.add(self as SBDChannelDelegate, identifier: "GameChatChannel")
 
     for identifier in [kIncomingMessageCellIdentifier, kUserMessageCellIdentifier]
@@ -47,11 +46,8 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
       dateFormatter.timeStyle = .short
       dateFormatter.dateStyle = .short
       let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
-      //print("\(createdAtSeconds)--------------")
       let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
-      //print("\(messageCreatedDate)--------------")
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
-      //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
       cell.userNameLabel.text = userMsg.sender?.userId ?? ""
       return cell
@@ -65,11 +61,8 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
       dateFormatter.timeStyle = .short
       dateFormatter.dateStyle = .short
       let createdAtSeconds = Double(userMsg.createdAt) / 1000.0
-      //print("\(createdAtSeconds)--------------")
       let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
-      //print("\(messageCreatedDate)--------------")
       let messageDateString = dateFormatter.string(from: messageCreatedDate)
-      //print(messageDateString+"--------------")
       cell.dateLabel.text = messageDateString
       cell.userNameLabel.text = userMsg.sender?.userId ?? ""
       return cell
@@ -103,13 +96,13 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   func enterChannel()
   {
     SBDOpenChannel.getWithUrl(aGameChannelUrl) { (channel, error) in
-      if error != nil {
+      if error != nil
+      {
         NSLog("Error: %@", error!)
         return
       }
@@ -121,13 +114,10 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
           NSLog("Error: %@", error!)
           return
         }
-        
-        // ...
         print("channel entered successfully")
       })
     }
   }
-
 
   func sendMessage(message: String)
   {
@@ -159,17 +149,14 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
           self.tableView?.reloadData()
         }
       }
-      
     })
   }
-
   
   func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
   {
     baseMessages.insert(message, at: 0)
     self.tableView?.reloadData()
   }
-  
   
   deinit
   {

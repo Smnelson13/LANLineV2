@@ -30,7 +30,6 @@ class Debouncer
   }
 }
 
-
 class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
 {
   var imageCache = [String: UIImage]()
@@ -42,9 +41,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   override func viewDidLoad()
   {
     self.tableView.separatorColor = UIColor.lightGray
-    
     super.viewDidLoad(); searchBarSetup()
-
     apiController = APIController(delegate: self)
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
   }
@@ -56,7 +53,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   
   override func viewWillLayoutSubviews()
   {
-    print("will layout subviews-------------------")
     let zContentInsets = UIEdgeInsets.zero
     tableView.contentInset = zContentInsets
     tableView.scrollIndicatorInsets = zContentInsets
@@ -65,20 +61,17 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   // MARK: - Table view data source
 
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      // #warning Incomplete implementation, return the number of sections
       return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-      // #warning Incomplete implementation, return the number of rows
       return games.count
   }
 
@@ -108,14 +101,11 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchBar.text = nil
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
-    //tableView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
-    //tableView.reloadData()
   }
 
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
   {
     print("searchText \(searchText)")
-   // searchDebouncer.call()
   }
   
   func updateSearchResults(for searchController: UISearchController)
@@ -150,15 +140,12 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     }
   }
 
-  //Displays the title and a image
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-       
     let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
     let aGame = games[indexPath.row]
     cell.gameTitleLabel.text = aGame.name
     cell.gameCoverImage.image = #imageLiteral(resourceName: "blank-66")
-    
     
     if let img  = imageCache[aGame.coverUrl]
     {
@@ -183,7 +170,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       }
     }
 
-
     return cell
   }
   
@@ -195,12 +181,9 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       let selectedCell = sender as! SearchedGameCell
       let indexPath = tableView.indexPath(for: selectedCell)!
       gameInfoVC.aGame = games[indexPath.row]
-      
-
     }
   }
   
- 
 }
 
 extension SearchGameTVC: APIControllerProtocol
@@ -210,8 +193,6 @@ extension SearchGameTVC: APIControllerProtocol
     let queue = DispatchQueue.main
     queue.async {
       self.games = results
-      
-  //    self.tableView.contentInset = UIEdgeInsets.zero
       self.tableView.reloadData()
     }
   }
