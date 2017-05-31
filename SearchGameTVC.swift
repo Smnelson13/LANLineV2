@@ -41,7 +41,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
-    self.tableView.separatorColor = UIColor.lightGray
+    tableView.tableFooterView = UIView()
     super.viewDidLoad(); searchBarSetup()
     apiController = APIController(delegate: self)
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
