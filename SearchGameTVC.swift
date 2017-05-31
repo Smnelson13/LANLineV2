@@ -32,6 +32,7 @@ class Debouncer
 
 class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
 {
+  let blurRadius = 4
   var imageCache = [String: UIImage]()
   var games = [Game]()
   let searchController = UISearchController(searchResultsController: nil)
@@ -81,8 +82,11 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   }
   
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
-  { // blur the cells 
+  {
     searchBar.showsCancelButton = true
+    games.removeAll()
+    tableView.reloadData()
+    searchBar.text = "" 
   }
   
   func searchBarSetup()

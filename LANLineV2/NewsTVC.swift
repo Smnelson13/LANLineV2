@@ -11,7 +11,7 @@ import SafariServices
 
 class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewControllerDelegate
 {
-  let blurRadius: CGFloat = 4
+  let blurRadius: CGFloat = 6
   var imageCache = [String: UIImage]()
   var pulses = [Pulse]()
   var apiController: APIController!
@@ -64,7 +64,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     let newsCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
     let messageDateString = dateFormatter.string(from: newsCreatedDate)
     cell.dateLabel.text = messageDateString
-    
+  
 
   
     if let img = imageCache[aPulse.image]
@@ -82,9 +82,10 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
           if error == nil
             {
               let image = UIImage(data: data!)
-              self.imageCache[(aPulse.image)] = image
+              let blurredImage = image?.applyBlur(withRadius: self.blurRadius, tintColor: UIColor(white: 0.3, alpha: 0.4), saturationDeltaFactor: 1.8, maskImage: nil)
+              self.imageCache[(aPulse.image)] = blurredImage
               DispatchQueue.main.sync {
-                 let blurredImage = image?.applyBlur(withRadius: self.blurRadius, tintColor: UIColor(white: 0.5, alpha: 0.2), saturationDeltaFactor: 1.8, maskImage: nil)
+                
                 cell.backGroundImage.image = blurredImage
               }
           }
