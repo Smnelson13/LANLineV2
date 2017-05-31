@@ -81,7 +81,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   }
   
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
-  {
+  { // blur the cells 
     searchBar.showsCancelButton = true
   }
   

@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="-1209" y="-207"/>
         </scene>
-        <!--Open Channel ListTVC-->
+        <!--Open Channels-->
         <scene sceneID="xrY-ep-wa2">
             <objects>
                 <tableViewController id="SRd-0H-dGT" customClass="OpenChannelListTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +152,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="bRT-rH-Ufv">
+                    <navigationItem key="navigationItem" title="Open Channels" id="bRT-rH-Ufv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mE5-Xm-bTJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="-505" y="-207"/>
         </scene>
-        <!--Search GameTVC-->
+        <!--Search for a game-->
         <scene sceneID="eKg-BW-LFw">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Z02-cY-72s" customClass="SearchGameTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -252,7 +252,7 @@
                             <outlet property="delegate" destination="Z02-cY-72s" id="bkd-Yc-qYl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="q1j-4B-e5K"/>
+                    <navigationItem key="navigationItem" title="Search for a game" id="q1j-4B-e5K"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0AM-vc-6AF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +380,7 @@
             </objects>
             <point key="canvasLocation" x="2414" y="-207"/>
         </scene>
-        <!--NewsTVC-->
+        <!--Game News-->
         <scene sceneID="2IW-wh-jHm">
             <objects>
                 <tableViewController id="WkW-5d-qAk" customClass="NewsTVC" customModule="LANLineV2" customModuleProvider="target" sceneMemberID="viewController">
@@ -449,7 +449,7 @@
                             <outlet property="delegate" destination="WkW-5d-qAk" id="uQo-Iz-yKz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="e34-Wt-cVC"/>
+                    <navigationItem key="navigationItem" title="Game News" id="e34-Wt-cVC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dA2-1M-QCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
