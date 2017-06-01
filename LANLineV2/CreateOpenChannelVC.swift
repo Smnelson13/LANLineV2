@@ -10,13 +10,14 @@ import UIKit
 import SendBirdSDK
 import SVProgressHUD
 
-protocol didCreateChannelProtocol
+protocol DidCreateChannelProtocol
 {
   func createChannelButtonTapped()
 }
 
 class CreateChannelPopoverViewController: UITableViewController
 {
+  var createdChannelDelegate: DidCreateChannelProtocol?
   @IBOutlet weak var textField: UITextField?
   
   static func instantiateFromStoryboard() -> CreateChannelPopoverViewController
@@ -70,7 +71,7 @@ class CreateChannelPopoverViewController: UITableViewController
   
         })
       }
-      tableView.reloadData()
+      self.createdChannelDelegate?.createChannelButtonTapped()
     }
 }
 

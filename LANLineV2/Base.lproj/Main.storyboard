@@ -277,7 +277,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz3-vj-fYZ">
-                                <rect key="frame" x="123" y="217" width="130" height="22"/>
+                                <rect key="frame" x="123.5" y="217" width="130" height="22"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -413,8 +413,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-xh-bze">
-                                            <rect key="frame" x="15" y="15" width="38.5" height="22"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <rect key="frame" x="15" y="15" width="32" height="20"/>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>

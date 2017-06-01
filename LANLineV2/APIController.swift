@@ -21,6 +21,7 @@ protocol APIPulseControllerProtocol
 
 class APIController
 {
+  var platform = [Platform]()
   var pulse = [Pulse]()
   var games = [Game]()
   let defaultSession = URLSession.shared
@@ -139,6 +140,48 @@ class APIController
       print(error)
       return nil
     }
+  }
+  
+  func getPlatforms()
+  {
+    let platformSearch = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/platforms/?fields=name")
+    var request = URLRequest(url: platformSearch!)
+    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
+  
+    let task = defaultSession.dataTask(with: request) { data, response, error in
+      if let error = error {
+        print( "DataTask Error: " + error.localizedDescription + "\n")
+      } else if let data = data {
+        if let httpResponse = response as? HTTPURLResponse
+        {
+          if httpResponse.statusCode == 200 // Ok
+          {
+            if let array = self.parseJSON(data)
+            {
+              var platform = [Platform]()
+              for platformDictionary in array
+              {
+                let aPlatform = Platform(platformDictionary: platformDictionary)
+                platform.append(aPlatform)
+              }
+              
+              self.pulseDelegate?.didRecievePulseInfo(results: self.pulse)
+            }
+          }
+          else if httpResponse.statusCode == 429 // Rate limit reached
+          {
+            print("Rate Limit Reached")
+          }
+        }
+        
+      } else {
+        
+        print("requestError")
+      }
+    }
+    task.resume()
+    print(request)
+
   }
 
   func getPulse()
