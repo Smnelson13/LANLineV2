@@ -41,6 +41,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
+   // apiController.getPlatforms()
     tableView.tableFooterView = UIView()
     super.viewDidLoad(); searchBarSetup()
     apiController = APIController(delegate: self)

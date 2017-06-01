@@ -18,6 +18,7 @@ class GameInfoDetailVC: UIViewController
   var aGame: Game!
   //let aGame = games[indexPath.row]
   
+  @IBOutlet weak var developerLabel: UILabel!
   @IBOutlet weak var releaseDate: UILabel!
   @IBOutlet weak var screenshotImage: UIImageView!
   @IBOutlet weak var coverImage: UIImageView!

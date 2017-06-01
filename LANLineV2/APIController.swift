@@ -144,7 +144,7 @@ class APIController
   
   func getPlatforms()
   {
-    let platformSearch = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/platforms/?fields=name")
+    let platformSearch = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/platforms/?fields=name&limit=50&offset=0")
     var request = URLRequest(url: platformSearch!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
   
@@ -164,8 +164,6 @@ class APIController
                 let aPlatform = Platform(platformDictionary: platformDictionary)
                 platform.append(aPlatform)
               }
-              
-              self.pulseDelegate?.didRecievePulseInfo(results: self.pulse)
             }
           }
           else if httpResponse.statusCode == 429 // Rate limit reached
