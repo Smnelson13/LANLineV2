@@ -72,8 +72,7 @@ class GameInfoDetailVC: UIViewController
     
     
     
-    
-    
+
     if let img  = imageCache[aGame.coverUrl]
     {
            coverImage.image = img
