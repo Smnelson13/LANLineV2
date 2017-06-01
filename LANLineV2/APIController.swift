@@ -87,12 +87,16 @@ class APIController
   }
 
   func getTappedGameInfo(gameId: String)
-  { 
+  {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    
     let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/\(gameId)?fields=*")
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     let task = defaultSession.dataTask(with: request) { data, response, error in
-      if let error = error {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = false
+      if let error = error
+      {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
         if let httpResponse = response as? HTTPURLResponse
@@ -151,11 +155,14 @@ class APIController
   
   func getPulse()
   {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    
     let pulseSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?fields=*")
     var request = URLRequest(url: pulseSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     
     let task = defaultSession.dataTask(with: request) { data, response, error in
+       UIApplication.shared.isNetworkActivityIndicatorVisible = false
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
