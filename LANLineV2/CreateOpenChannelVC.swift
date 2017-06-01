@@ -28,6 +28,12 @@ class CreateChannelPopoverViewController: UITableViewController
     createChannelPopoverViewController.setupPopoverStuff()
     return createChannelPopoverViewController
   }
+  
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    textField?.delegate = self
+  }
 
   func setupPopoverStuff()
   {
@@ -58,10 +64,10 @@ class CreateChannelPopoverViewController: UITableViewController
         SVProgressHUD.show(withStatus: "Creating channel...")
         SBDOpenChannel.createChannel(withName: channelName, coverUrl: nil, data: nil, operatorUserIds: nil, completionHandler: { (channel, error) in
         SVProgressHUD.showSuccess(withStatus: "Successfully created channel \"\(channelName)\"")
+        self.createdChannelDelegate?.createChannelButtonTapped()
         SVProgressHUD.dismiss(after: 1, completion: {
-        
           self.dismiss(animated: true, completion: nil)
-          })
+        })
   
           if error != nil
           {
@@ -71,7 +77,6 @@ class CreateChannelPopoverViewController: UITableViewController
   
         })
       }
-      self.createdChannelDelegate?.createChannelButtonTapped()
     }
 }
 
@@ -81,6 +86,15 @@ extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDel
   func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
   {
     return .none
+  }
+}
+
+extension CreateChannelPopoverViewController: UITextFieldDelegate
+{
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  {
+    createChannelButtonWasPressed()
+    return textField.text != ""
   }
 }
 

@@ -327,9 +327,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-mr-7ue">
-                                <rect key="frame" x="16" y="243" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-mr-7ue">
+                                <rect key="frame" x="15" y="243" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -346,6 +345,7 @@
                             <constraint firstItem="m0o-pD-bup" firstAttribute="top" secondItem="Cbr-0R-L3Q" secondAttribute="bottom" constant="-37" id="19u-JW-9Or"/>
                             <constraint firstAttribute="trailing" secondItem="4Ik-XT-ap2" secondAttribute="trailing" id="1YJ-Sn-Smr"/>
                             <constraint firstItem="Cbr-0R-L3Q" firstAttribute="leading" secondItem="sHo-eh-YcM" secondAttribute="trailing" constant="-237" id="1ed-uh-rPe"/>
+                            <constraint firstItem="xKq-mr-7ue" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" constant="15" id="2yX-XK-41b"/>
                             <constraint firstItem="3N9-wA-Rvw" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" constant="19" id="8bg-qS-vaa"/>
                             <constraint firstItem="Hz3-vj-fYZ" firstAttribute="centerX" secondItem="XAz-nD-wRk" secondAttribute="centerX" id="9oB-c8-g61"/>
                             <constraint firstAttribute="trailing" secondItem="4Ik-XT-ap2" secondAttribute="trailing" id="9s6-ei-hY6"/>
@@ -356,10 +356,12 @@
                             <constraint firstItem="dmc-PY-7K3" firstAttribute="top" secondItem="4Ik-XT-ap2" secondAttribute="bottom" id="N8b-kh-P1l"/>
                             <constraint firstAttribute="trailing" secondItem="yTi-O8-O4s" secondAttribute="trailing" constant="15" id="NT5-xM-ubO"/>
                             <constraint firstAttribute="trailing" secondItem="4Ik-XT-ap2" secondAttribute="trailing" id="PfF-2P-AtF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xKq-mr-7ue" secondAttribute="trailing" constant="318" id="Pfy-Ux-A9A"/>
                             <constraint firstAttribute="trailing" secondItem="Cbr-0R-L3Q" secondAttribute="trailing" id="QY1-yW-NU9"/>
                             <constraint firstItem="3N9-wA-Rvw" firstAttribute="top" secondItem="6QA-yu-cAa" secondAttribute="bottom" constant="2" id="SoR-7k-fKY"/>
                             <constraint firstItem="4Ik-XT-ap2" firstAttribute="top" secondItem="hH4-hi-HfS" secondAttribute="bottom" constant="20" id="TUo-yO-8Pz"/>
                             <constraint firstItem="sHo-eh-YcM" firstAttribute="leading" secondItem="6QA-yu-cAa" secondAttribute="trailing" constant="19" id="U7q-n2-Ldv"/>
+                            <constraint firstItem="xKq-mr-7ue" firstAttribute="top" secondItem="Hz3-vj-fYZ" secondAttribute="bottom" constant="4" id="VlR-gn-boP"/>
                             <constraint firstItem="sHo-eh-YcM" firstAttribute="centerX" secondItem="Cbr-0R-L3Q" secondAttribute="centerX" id="dE0-mv-YOT"/>
                             <constraint firstItem="4Ik-XT-ap2" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="gYy-Pw-pLf"/>
                             <constraint firstItem="Cbr-0R-L3Q" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="oJL-EM-maR"/>
@@ -389,6 +391,7 @@
                         <outlet property="developerLabel" destination="m0o-pD-bup" id="6A9-7b-2Ug"/>
                         <outlet property="gameSummary" destination="4Ik-XT-ap2" id="VIM-8R-W4s"/>
                         <outlet property="gameTitle" destination="Hz3-vj-fYZ" id="cRm-Wh-hZS"/>
+                        <outlet property="platformsLabel" destination="xKq-mr-7ue" id="Tie-hL-dn3"/>
                         <outlet property="releaseDate" destination="6QA-yu-cAa" id="WDs-RA-v2z"/>
                         <outlet property="screenshotImage" destination="Cbr-0R-L3Q" id="6xU-HC-hCa"/>
                         <segue destination="9Ga-xX-Agm" kind="show" identifier="ShowGameChatVC" id="YA5-QJ-P85"/>
@@ -509,7 +512,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="xca-Dn-Mnc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xca-Dn-Mnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -552,7 +555,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="OFj-hD-buO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="OFj-hD-buO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,7 +597,7 @@
                         </connections>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="8Pa-4t-aAd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Pa-4t-aAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.2274509804" green="0.20784313730000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>

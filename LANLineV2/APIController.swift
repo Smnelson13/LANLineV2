@@ -8,6 +8,7 @@
 
 import Foundation
 
+var platforms = [Int: String]()
 
 protocol APIControllerProtocol
 {
@@ -40,12 +41,18 @@ class APIController
   
   func getGameInfo(searchTerm: String)
   {
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    
     let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=10&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
     // DONT FORGET TO FILTER RELEVANCE. https://igdb.github.io/api/references/filters/
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     
     let task = defaultSession.dataTask(with: request) { data, response, error in
+      defer {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+      }
+      
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
@@ -101,6 +108,10 @@ class APIController
                 let game = Game(gameDictionary: gameDictionary)
                 games.append(game)
               }
+              for platform in games
+              {
+                
+              }
               
               self.delegate?.didReceiveGameInfo(results: games)
             }
@@ -149,6 +160,8 @@ class APIController
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
   
     let task = defaultSession.dataTask(with: request) { data, response, error in
+      
+      
       if let error = error {
         print( "DataTask Error: " + error.localizedDescription + "\n")
       } else if let data = data {
@@ -158,12 +171,23 @@ class APIController
           {
             if let array = self.parseJSON(data)
             {
-              var platform = [Platform]()
+
+              
               for platformDictionary in array
               {
-                let aPlatform = Platform(platformDictionary: platformDictionary)
-                platform.append(aPlatform)
+                let id = platformDictionary["id"] as! Int
+                let name = platformDictionary["name"] as! String
+                platforms[id] = name
               }
+ 
+ 
+ 
+//              var platform = [Platform]()
+//              for platformDictionary in array
+//              {
+//                let aPlatform = Platform(platformDictionary: platformDictionary)
+//                platform.append(aPlatform)
+//              }
             }
           }
           else if httpResponse.statusCode == 429 // Rate limit reached

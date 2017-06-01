@@ -15,6 +15,7 @@ enum SerializationError: Error
 
 class Game
 {
+  let platforms: [Int]?
   let release_date: Int
   let id: Int
   let name: String
@@ -24,6 +25,7 @@ class Game
  
   init(gameDictionary: [String: Any])
   {
+    self.platforms = gameDictionary["platform"] as? [Int]
     if let release = gameDictionary["first_release_date"] as? Int
     {
       self.release_date = release

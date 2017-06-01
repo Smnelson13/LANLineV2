@@ -16,8 +16,10 @@ class GameInfoDetailVC: UIViewController
   var imageCache = [String: UIImage]()
   var games = [Game]()
   var aGame: Game!
-  //let aGame = games[indexPath.row]
+//  var platforms = [Platform]()
+  var aPlatform: Platform!
   
+  @IBOutlet weak var platformsLabel: UILabel!
   @IBOutlet weak var developerLabel: UILabel!
   @IBOutlet weak var releaseDate: UILabel!
   @IBOutlet weak var screenshotImage: UIImageView!
@@ -43,12 +45,34 @@ class GameInfoDetailVC: UIViewController
     coverImage.image = #imageLiteral(resourceName: "blank-66")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
     let dateFormatter = DateFormatter()
-  //dateFormatter.timeStyle = .short
     dateFormatter.dateStyle = .short
     let createdAtSeconds = Double(aGame.release_date) / 1000.0
     let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
     let messageDateString = dateFormatter.string(from: messageCreatedDate)
     releaseDate.text = messageDateString
+    
+//    platformsLabel.text
+    
+    var platformNames = [String]()
+    
+    print(platforms.first)
+    print(aGame.platforms?.first)
+    
+    if let aGamePlatforms = aGame.platforms {
+      for int in aGamePlatforms {
+        if let platformName = platforms[int] {
+          platformNames.append(platformName)
+        }
+      }
+    }
+    
+    print(platformNames.first)
+    
+    platformsLabel.text = platformNames.joined(separator: ", ")
+    
+    
+    
+    
     
     if let img  = imageCache[aGame.coverUrl]
     {
@@ -98,9 +122,7 @@ class GameInfoDetailVC: UIViewController
           }.resume()
         }
       }
-      
     }
-    
   }
 
   override func didReceiveMemoryWarning()

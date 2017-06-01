@@ -17,6 +17,8 @@ class Session
   var user: SBDUser?
 }
 
+let kUsername = "LANLineV2.keys.username"
+
 class SignInVC: UIViewController, UITextFieldDelegate
 {
   @IBOutlet weak var connectButton: UIButton!
@@ -25,6 +27,8 @@ class SignInVC: UIViewController, UITextFieldDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    userIdTextField.text = UserDefaults.standard.string(forKey: kUsername)
     
     userIdTextField.tintColor = UIColor.primaryPurple
     connectButton.layer.cornerRadius = 4
@@ -54,6 +58,8 @@ class SignInVC: UIViewController, UITextFieldDelegate
       SVProgressHUD.show(withStatus: "Logging in...")
       SBDMain.connect(withUserId: text, completionHandler: { (user, error) in
         let success = (user != nil)
+        
+        UserDefaults.standard.set(text, forKey: kUsername)
         
         if success {
           SVProgressHUD.showSuccess(withStatus: "Logged in!")
