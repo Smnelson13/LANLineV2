@@ -153,11 +153,15 @@ extension OpenChannelListTVC: UISearchBarDelegate
 {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
-    if let text = searchBar.text, text != "" {
+    if let text = searchBar.text, text != ""
+    {
       refreshAll(keyword: text)
-    } else {
+    } else
+    {
       refreshAll()
     }
+    searchBar.text = ""
+    searchBar.resignFirstResponder()
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
