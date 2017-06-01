@@ -12,6 +12,7 @@ class OpenChannelListTVC: UITableViewController
 {
   private var channels: [SBDOpenChannel] = []
   private var openChannelListQuery: SBDOpenChannelListQuery?
+  let searchBar = UISearchBar()
   
   override func viewDidLoad()
   {
@@ -21,6 +22,15 @@ class OpenChannelListTVC: UITableViewController
     let addButton = self.navigationItem.rightBarButtonItem!
     addButton.target = self
     addButton.action = #selector(self.addButtonWasTapped(sender:))
+    
+    searchBar.setup()
+    searchBar.showsCancelButton = true
+    searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44)
+    searchBar.delegate = self
+    tableView.delegate = self
+    tableView.dataSource = self
+    
+    tableView.tableHeaderView = searchBar
   }
   
   func addButtonWasTapped(sender: UIBarButtonItem)
@@ -47,18 +57,22 @@ class OpenChannelListTVC: UITableViewController
       return channels.count
   }
   
-  fileprivate func refreshAll() {
+  fileprivate func refreshAll(keyword: String? = nil) {
     self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
     self.channels.removeAll()
     self.tableView.reloadData()
     
-    loadNextPage()
+    loadNextPage(keyword: keyword)
   }
   
-  fileprivate func loadNextPage()
+  fileprivate func loadNextPage(keyword: String? = nil)
   {
     guard let query = self.openChannelListQuery, !query.isLoading() else { return }
     query.limit = 20
+    
+    if let keyword = keyword {
+      query.nameKeyword = keyword
+    }
     
     query.loadNextPage(completionHandler: { (channels, error) in
       defer {
@@ -135,6 +149,21 @@ extension OpenChannelListTVC: DidCreateChannelProtocol
   }
 }
 
-
-
-
+extension OpenChannelListTVC: UISearchBarDelegate
+{
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+  {
+    if let text = searchBar.text, text != "" {
+      refreshAll(keyword: text)
+    } else {
+      refreshAll()
+    }
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+  {
+    searchBar.resignFirstResponder()
+    refreshAll()
+    searchBar.text = ""
+  }
+}

@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension UISearchBar {
+  func setup() {
+    tintColor = UIColor.primaryPurple
+    let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    backgroundColor = UIColor.primaryPurple
+    barTintColor = UIColor.primaryPurple
+  }
+}
+
 class Debouncer
 {
   private var delay: TimeInterval
@@ -102,7 +112,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.dimsBackgroundDuringPresentation = false
     definesPresentationContext = true
     searchController.searchBar.delegate = self
-
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
