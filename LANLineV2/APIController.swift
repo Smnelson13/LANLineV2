@@ -22,7 +22,6 @@ protocol APIPulseControllerProtocol
 
 class APIController
 {
-  var platform = [Platform]()
   var pulse = [Pulse]()
   var games = [Game]()
   let defaultSession = URLSession.shared
@@ -108,10 +107,6 @@ class APIController
                 let game = Game(gameDictionary: gameDictionary)
                 games.append(game)
               }
-              for platform in games
-              {
-                
-              }
               
               self.delegate?.didReceiveGameInfo(results: games)
             }
@@ -153,59 +148,7 @@ class APIController
     }
   }
   
-  func getPlatforms()
-  {
-    let platformSearch = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/platforms/?fields=name&limit=50&offset=0")
-    var request = URLRequest(url: platformSearch!)
-    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
   
-    let task = defaultSession.dataTask(with: request) { data, response, error in
-      
-      
-      if let error = error {
-        print( "DataTask Error: " + error.localizedDescription + "\n")
-      } else if let data = data {
-        if let httpResponse = response as? HTTPURLResponse
-        {
-          if httpResponse.statusCode == 200 // Ok
-          {
-            if let array = self.parseJSON(data)
-            {
-
-              
-              for platformDictionary in array
-              {
-                let id = platformDictionary["id"] as! Int
-                let name = platformDictionary["name"] as! String
-                platforms[id] = name
-              }
- 
- 
- 
-//              var platform = [Platform]()
-//              for platformDictionary in array
-//              {
-//                let aPlatform = Platform(platformDictionary: platformDictionary)
-//                platform.append(aPlatform)
-//              }
-            }
-          }
-          else if httpResponse.statusCode == 429 // Rate limit reached
-          {
-            print("Rate Limit Reached")
-          }
-        }
-        
-      } else {
-        
-        print("requestError")
-      }
-    }
-    task.resume()
-    print(request)
-
-  }
-
   func getPulse()
   {
     let pulseSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?fields=*")

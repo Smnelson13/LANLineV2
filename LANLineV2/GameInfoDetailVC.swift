@@ -16,11 +16,7 @@ class GameInfoDetailVC: UIViewController
   var imageCache = [String: UIImage]()
   var games = [Game]()
   var aGame: Game!
-//  var platforms = [Platform]()
-  var aPlatform: Platform!
-  
-  @IBOutlet weak var platformsLabel: UILabel!
-  @IBOutlet weak var developerLabel: UILabel!
+
   @IBOutlet weak var releaseDate: UILabel!
   @IBOutlet weak var screenshotImage: UIImageView!
   @IBOutlet weak var coverImage: UIImageView!
@@ -50,29 +46,7 @@ class GameInfoDetailVC: UIViewController
     let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
     let messageDateString = dateFormatter.string(from: messageCreatedDate)
     releaseDate.text = messageDateString
-    
-//    platformsLabel.text
-    
-    var platformNames = [String]()
-    
-    print(platforms.first)
-    print(aGame.platforms?.first)
-    
-    if let aGamePlatforms = aGame.platforms {
-      for int in aGamePlatforms {
-        if let platformName = platforms[int] {
-          platformNames.append(platformName)
-        }
-      }
-    }
-    
-    print(platformNames.first)
-    
-    platformsLabel.text = platformNames.joined(separator: ", ")
-    
-    
-    
-
+ 
     if let img  = imageCache[aGame.coverUrl]
     {
            coverImage.image = img

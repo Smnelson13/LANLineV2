@@ -12,7 +12,6 @@
 		902253AE1EDA413F00661A8C /* Pulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902253AD1EDA413F00661A8C /* Pulse.swift */; };
 		9060C8591EDEF72E009476FA /* gamecuben.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90789EAA1EDE4FD1002BC87E /* gamecuben.ttf */; };
 		9060C85D1EDF0F21009476FA /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9060C85B1EDF0F21009476FA /* UIImage+ImageEffects.m */; };
-		9060C8651EE053B0009476FA /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9060C8641EE053B0009476FA /* Platform.swift */; };
 		9075925B1ED35C7B003E8019 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925A1ED35C7B003E8019 /* SignInVC.swift */; };
 		9075925D1ED36A68003E8019 /* OpenChannelListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */; };
 		9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */; };
@@ -67,7 +66,6 @@
 		9060C85A1EDF0F20009476FA /* LANLineV2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LANLineV2-Bridging-Header.h"; sourceTree = "<group>"; };
 		9060C85B1EDF0F21009476FA /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		9060C85C1EDF0F21009476FA /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		9060C8641EE053B0009476FA /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		9075925A1ED35C7B003E8019 /* SignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		9075925C1ED36A68003E8019 /* OpenChannelListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChannelListTVC.swift; sourceTree = "<group>"; };
 		9075925E1ED36E93003E8019 /* CreateOpenChannelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOpenChannelVC.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				90B52C241ECAA0A1008AF6E2 /* AppDelegate.swift */,
 				9075925A1ED35C7B003E8019 /* SignInVC.swift */,
 				90B52C581ECAA4A6008AF6E2 /* APIController.swift */,
-				9060C8641EE053B0009476FA /* Platform.swift */,
 				90B52C281ECAA0A1008AF6E2 /* Main.storyboard */,
 				9060C8611EDF26CC009476FA /* NewsPulse */,
 				907592591ED35B78003E8019 /* GameSearch */,
@@ -560,7 +557,6 @@
 				90C45CAF1ED8C23D0030A641 /* GameChatViewController.swift in Sources */,
 				90C45CB81EDA151E0030A641 /* NewsTVC.swift in Sources */,
 				902253AC1EDA3D1E00661A8C /* GameNewsCell.swift in Sources */,
-				9060C8651EE053B0009476FA /* Platform.swift in Sources */,
 				90B52C251ECAA0A1008AF6E2 /* AppDelegate.swift in Sources */,
 				90B52C5B1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift in Sources */,
 				9075925F1ED36E93003E8019 /* CreateOpenChannelVC.swift in Sources */,
