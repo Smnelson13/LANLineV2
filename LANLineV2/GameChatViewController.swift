@@ -33,6 +33,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
 
   }
   
+  //MARK: - cell setup
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     guard let userMsg = baseMessages[indexPath.row] as? SBDUserMessage else { return UITableViewCell() }
@@ -69,6 +70,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     }
   }
 
+  //MARK:-= did press right button AKA send.
   override func didPressRightButton(_ sender: Any?)
   {
     if let messageString = textView.text, messageString != ""
@@ -78,6 +80,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     }
   }
   
+  //MARK: tableview setup
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
     return baseMessages.count
@@ -98,6 +101,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
       super.didReceiveMemoryWarning()
   }
 
+  //MARK: - enter open channel
   func enterChannel()
   {
     SBDOpenChannel.getWithUrl(aGameChannelUrl) { (channel, error) in
@@ -119,6 +123,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     }
   }
 
+  //MARK: - send message
   func sendMessage(message: String)
   {
     channel.sendUserMessage(message, data: nil, completionHandler: { (userMessage, error) in
@@ -134,6 +139,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     })
   }
   
+  //MARK: - load previous messages
   func loadPreviousMessages()
   {
     let previousMessageQuery = self.channel?.createPreviousMessageListQuery()
@@ -152,6 +158,7 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     })
   }
   
+  //MARK: message insert
   func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage)
   {
     baseMessages.insert(message, at: 0)

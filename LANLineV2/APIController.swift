@@ -38,6 +38,7 @@ class APIController
     self.pulseDelegate = pulseDelegate
   }
   
+  //MARK: get searched gamed info.
   func getGameInfo(searchTerm: String)
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -86,6 +87,7 @@ class APIController
     print(request)
   }
 
+  //MARK: - get tapped game info.
   func getTappedGameInfo(gameId: String)
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -129,30 +131,8 @@ class APIController
     task.resume()
     print(request)
   }
-
-  func parseJSON(_ data: Data) -> [[String: Any]]?
-  {
-    do
-    {
-      let json = try JSONSerialization.jsonObject(with: data, options: [])
-      if let array = json as? [[String: Any]]
-      {
-        print(array)
-        return array
-      }
-      else
-      {
-        return nil
-      }
-    }
-    catch
-    {
-      print(error)
-      return nil
-    }
-  }
   
-  
+  //MARK:- get pulse
   func getPulse()
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -197,6 +177,28 @@ class APIController
     print(request)
   }
   
-
+  //MARK: - ParseJSON
+  func parseJSON(_ data: Data) -> [[String: Any]]?
+  {
+    do
+    {
+      let json = try JSONSerialization.jsonObject(with: data, options: [])
+      if let array = json as? [[String: Any]]
+      {
+        print(array)
+        return array
+      }
+      else
+      {
+        return nil
+      }
+    }
+    catch
+    {
+      print(error)
+      return nil
+    }
+  }
+  
   
 }

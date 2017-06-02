@@ -41,6 +41,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     return pulses.count
   }
   
+  //MARK: - did recieve pulse info.
   func didRecievePulseInfo(results: [Pulse])
   {
     let queue = DispatchQueue.main
@@ -50,6 +51,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     }
   }
 
+  //MARK: - cell setup
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GameNewsCell", for: indexPath) as! GameNewsCell
@@ -64,8 +66,6 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
     let newsCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
     let messageDateString = dateFormatter.string(from: newsCreatedDate)
     cell.dateLabel.text = ("Published: " + messageDateString)
-  
-
   
     if let img = imageCache[aPulse.image]
     {

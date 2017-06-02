@@ -57,6 +57,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
   }
   
+  // MARK: - Table view data source
   override var preferredStatusBarStyle: UIStatusBarStyle
   {
     return .lightContent
@@ -73,8 +74,6 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   {
       super.didReceiveMemoryWarning()
   }
-
-  // MARK: - Table view data source
 
   override func numberOfSections(in tableView: UITableView) -> Int
   {
@@ -99,6 +98,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchBar.text = "" 
   }
   
+  //MARK: - search bar setup
   func searchBarSetup()
   {
     searchController.searchBar.tintColor = UIColor.primaryPurple
@@ -113,6 +113,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     searchController.searchBar.delegate = self
   }
   
+  //MARK: - cancel button clicked
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
   {
     searchBar.text = nil
@@ -130,6 +131,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     
   }
 
+  //MARK: - search button clicked
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
     if let text = searchController.searchBar.text, text != ""
@@ -157,6 +159,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     }
   }
 
+  //MARK: - cell setup
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
@@ -190,6 +193,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     return cell
   }
   
+  //MARK: - prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "ShowGameDetailsSegue"
@@ -203,6 +207,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   
 }
 
+//MARK: - APIController extension
 extension SearchGameTVC: APIControllerProtocol
 {
   func didReceiveGameInfo(results: [Game])

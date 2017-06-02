@@ -35,6 +35,7 @@ class CreateChannelPopoverViewController: UITableViewController
     textField?.delegate = self
   }
 
+  //MARK: - setup popover
   func setupPopoverStuff()
   {
     preferredContentSize = CGSize(width: 200, height: 88)
@@ -47,6 +48,7 @@ class CreateChannelPopoverViewController: UITableViewController
     }
   }
   
+  //MARK: - createa channel button pressesd
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
   {
     switch indexPath.row {
@@ -55,7 +57,7 @@ class CreateChannelPopoverViewController: UITableViewController
     }
   }
   
-    //MARK: - Create Channel, this will create a new channel.
+    //MARK: - Create new opwn Channel
     func createChannelButtonWasPressed()
     {
       if let channelName = self.textField?.text, channelName != ""
@@ -80,7 +82,7 @@ class CreateChannelPopoverViewController: UITableViewController
     }
 }
 
-
+//MARK: - extension createa channel popever
 extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDelegate
 {
   func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
@@ -89,6 +91,7 @@ extension CreateChannelPopoverViewController: UIPopoverPresentationControllerDel
   }
 }
 
+//MARK: - extensionn popover textfield delegate
 extension CreateChannelPopoverViewController: UITextFieldDelegate
 {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool

@@ -33,6 +33,7 @@ class OpenChannelListTVC: UITableViewController
     tableView.tableHeaderView = searchBar
   }
   
+  //MARK: - add channel button presses.
   func addButtonWasTapped(sender: UIBarButtonItem)
   {
     let popover = CreateChannelPopoverViewController.instantiateFromStoryboard()
@@ -57,7 +58,8 @@ class OpenChannelListTVC: UITableViewController
       return channels.count
   }
   
-  fileprivate func refreshAll(keyword: String? = nil) {
+  fileprivate func refreshAll(keyword: String? = nil)
+  {
     self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
     self.channels.removeAll()
     self.tableView.reloadData()
@@ -128,6 +130,7 @@ class OpenChannelListTVC: UITableViewController
     }
   }
 
+  //MARK: - scroll view
   override func scrollViewDidScroll(_ scrollView: UIScrollView)
   {
     let smoothLoadingOffset: CGFloat = 100
@@ -141,6 +144,7 @@ class OpenChannelListTVC: UITableViewController
   }
 }
 
+//MARK: - eextension did create channel delegate
 extension OpenChannelListTVC: DidCreateChannelProtocol
 {
   func createChannelButtonTapped()
@@ -149,6 +153,7 @@ extension OpenChannelListTVC: DidCreateChannelProtocol
   }
 }
 
+//MARK: - extension searchbar delegate
 extension OpenChannelListTVC: UISearchBarDelegate
 {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)

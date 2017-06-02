@@ -111,6 +111,7 @@ class OpenChatVC: SLKTextViewController
     
   }
   
+  //MARK: - did press right button  AKA send
   override func didPressRightButton(_ sender: Any?)
   {
     if let messageString = textView.text, messageString != ""

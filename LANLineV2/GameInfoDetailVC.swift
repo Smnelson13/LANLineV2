@@ -69,7 +69,7 @@ class GameInfoDetailVC: UIViewController
         }.resume()
       }
     }
-
+    //MARK: - get a random screenshot
     if aGame.screenshotUrls.count > 0
     {
       if let screenshotIMG = imageCache[aGame.screenshotUrls[Int(arc4random_uniform(UInt32(aGame.screenshotUrls.count)))]]
@@ -103,6 +103,7 @@ class GameInfoDetailVC: UIViewController
       super.didReceiveMemoryWarning()
   }
   
+  //MARK: - join or create channel
   func joinOrCreateChannel()
   {
     let value: Int = aGame.id
@@ -140,6 +141,7 @@ class GameInfoDetailVC: UIViewController
     }
   }
 
+  //MARK: - create channel
   func create(completion:@escaping (_ success: Bool) -> Void)
   {
     let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
@@ -155,7 +157,9 @@ class GameInfoDetailVC: UIViewController
     }.resume()
   }
   
-  func joinChannel(channel: SBDOpenChannel) {
+  //MARK: - join channel
+  func joinChannel(channel: SBDOpenChannel)
+  {
     channel.enter(completionHandler: { (error) in
       if error != nil
       {
@@ -167,6 +171,7 @@ class GameInfoDetailVC: UIViewController
     })
   }
   
+  //MARK: - prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "ShowGameChatVC",
