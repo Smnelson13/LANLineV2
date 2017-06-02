@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-u5-DKk">
-                                <rect key="frame" x="100" y="150.66666666666666" width="214" height="30"/>
+                                <rect key="frame" x="100" y="146.33333333333334" width="214" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwm-XY-ZaX">
-                                <rect key="frame" x="100" y="202.66666666666666" width="214" height="30"/>
+                                <rect key="frame" x="100" y="198.33333333333334" width="214" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Connect">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +73,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LANLine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx5-E3-x5j">
-                                <rect key="frame" x="24" y="42.000000000000007" width="366" height="62.666666666666679"/>
+                                <rect key="frame" x="24" y="41.999999999999993" width="366" height="58.333333333333321"/>
                                 <fontDescription key="fontDescription" name="GAMECUBENDualSet" family="GAMECUBEN" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -130,8 +130,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-tw-gfo">
-                                            <rect key="frame" x="15" y="11" width="384" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="15" y="9.6666666666666643" width="384" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -279,7 +279,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz3-vj-fYZ">
-                                <rect key="frame" x="86.666666666666686" y="6" width="241" height="36"/>
+                                <rect key="frame" x="87" y="0.0" width="241" height="138"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -337,11 +337,12 @@
                             <constraint firstItem="Hz3-vj-fYZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XAz-nD-wRk" secondAttribute="leading" constant="15" id="ST3-cA-3GD"/>
                             <constraint firstItem="hH4-hi-HfS" firstAttribute="bottom" secondItem="sHo-eh-YcM" secondAttribute="bottom" id="Upd-nx-B0d"/>
                             <constraint firstItem="3N9-wA-Rvw" firstAttribute="top" secondItem="6QA-yu-cAa" secondAttribute="bottom" constant="4" id="WQh-MN-WKH"/>
+                            <constraint firstItem="sHo-eh-YcM" firstAttribute="top" secondItem="Hz3-vj-fYZ" secondAttribute="bottom" constant="3" id="WmM-g7-qSx"/>
                             <constraint firstItem="Hz3-vj-fYZ" firstAttribute="centerX" secondItem="XAz-nD-wRk" secondAttribute="centerX" id="ZXu-b7-ctV"/>
-                            <constraint firstItem="Cbr-0R-L3Q" firstAttribute="top" secondItem="Hz3-vj-fYZ" secondAttribute="bottom" constant="-42" id="a17-dG-mAE"/>
                             <constraint firstItem="hH4-hi-HfS" firstAttribute="top" secondItem="Cbr-0R-L3Q" secondAttribute="bottom" constant="12" id="lfP-0I-d9y"/>
                             <constraint firstItem="4Ik-XT-ap2" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="n4U-q2-MSj"/>
                             <constraint firstItem="6QA-yu-cAa" firstAttribute="leading" secondItem="sHo-eh-YcM" secondAttribute="trailing" constant="15" id="oCZ-gv-KdT"/>
+                            <constraint firstItem="Hz3-vj-fYZ" firstAttribute="top" secondItem="wXL-ip-YSr" secondAttribute="bottom" id="oDc-BR-bJn"/>
                             <constraint firstItem="Cbr-0R-L3Q" firstAttribute="leading" secondItem="XAz-nD-wRk" secondAttribute="leading" id="oJL-EM-maR"/>
                             <constraint firstItem="Cbr-0R-L3Q" firstAttribute="leading" secondItem="sHo-eh-YcM" secondAttribute="trailing" constant="-116" id="rVJ-PX-m2g"/>
                             <constraint firstItem="dmc-PY-7K3" firstAttribute="top" secondItem="4Ik-XT-ap2" secondAttribute="bottom" id="tP3-pY-xxZ"/>
@@ -367,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S47-bc-631" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="-208.24587706146929"/>
+            <point key="canvasLocation" x="1875.3623188405797" y="-208.69565217391306"/>
         </scene>
         <!--Game Chat View Controller-->
         <scene sceneID="noA-hW-9IG">
@@ -462,11 +463,11 @@
             </objects>
             <point key="canvasLocation" x="262" y="487"/>
         </scene>
-        <!--Search-->
+        <!--Game Search-->
         <scene sceneID="zJf-wf-v1c">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="efB-M7-SWt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="Search-50" selectedImage="Search Filled-75" id="3N9-Pw-HXO" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Game Search" image="Search-50" selectedImage="Search Filled-75" id="3N9-Pw-HXO" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>

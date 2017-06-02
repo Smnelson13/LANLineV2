@@ -165,7 +165,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
     let aGame = games[indexPath.row]
     cell.gameTitleLabel.text = aGame.name
-    cell.gameCoverImage.image = #imageLiteral(resourceName: "blank-66")
+    cell.gameCoverImage.image = #imageLiteral(resourceName: "DefaultCoverPhoto")
     
     if let img  = imageCache[aGame.coverUrl]
     {

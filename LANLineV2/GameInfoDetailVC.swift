@@ -38,7 +38,7 @@ class GameInfoDetailVC: UIViewController
     
     gameTitle.text = aGame.name
     gameSummary.text = aGame.summary
-    coverImage.image = #imageLiteral(resourceName: "blank-66")
+    coverImage.image = #imageLiteral(resourceName: "DefaultCoverPhoto")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = .short
