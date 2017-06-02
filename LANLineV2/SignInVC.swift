@@ -27,12 +27,9 @@ class SignInVC: UIViewController, UITextFieldDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    
     userIdTextField.text = UserDefaults.standard.string(forKey: kUsername)
-    
     userIdTextField.tintColor = UIColor.primaryPurple
     connectButton.layer.cornerRadius = 4
-    
   }
 
   override func didReceiveMemoryWarning()
