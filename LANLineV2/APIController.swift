@@ -137,7 +137,7 @@ class APIController
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    let pulseSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?fields=*")
+    let pulseSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?fields=*&order=published_at:desc&limit=20")
     var request = URLRequest(url: pulseSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     

@@ -25,9 +25,23 @@ class Pulse
     self.id = pulseDictionary["id"] as! Int
     self.title = pulseDictionary["title"] as! String
     self.summary = pulseDictionary["summary"] as! String
-    self.image = pulseDictionary["image"] as! String
+    if let image = pulseDictionary["image"] as? String
+    {
+      self.image = image
+    }
+    else
+    {
+      image = ""
+    }
     self.url = pulseDictionary["url"] as! String
-    self.author = pulseDictionary["author"] as! String
+    if let author = pulseDictionary["author"] as? String
+    {
+      self.author = author
+    }
+    else
+    {
+      author = "" 
+    }
   }
   
   convenience init(dictionary: NSDictionary)

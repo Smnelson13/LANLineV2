@@ -56,7 +56,7 @@ class NewsTVC: UITableViewController, APIPulseControllerProtocol, SFSafariViewCo
   {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GameNewsCell", for: indexPath) as! GameNewsCell
     let aPulse = pulses[indexPath.row]
-    cell.backGroundImage.image = #imageLiteral(resourceName: "blank-66")
+    cell.backGroundImage.image = #imageLiteral(resourceName: "No image available")
     cell.titleLabel.text = aPulse.title
     cell.authorLabel.text = ("Author: " + aPulse.author)
     let dateFormatter = DateFormatter()
