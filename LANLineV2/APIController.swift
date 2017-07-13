@@ -43,7 +43,7 @@ class APIController
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=10&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
+    let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=20&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
     // DONT FORGET TO FILTER RELEVANCE. https://igdb.github.io/api/references/filters/
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")

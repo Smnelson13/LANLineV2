@@ -33,6 +33,11 @@ class GameInfoDetailVC: UIViewController
     self.navigationController?.popViewController(animated: true)
   }
   
+  override func viewDidLayoutSubviews()
+  {
+    self.gameSummary.setContentOffset(.zero, animated: false)
+  }
+  
   override func viewDidLoad()
   { super.viewDidLoad()
     
@@ -101,6 +106,7 @@ class GameInfoDetailVC: UIViewController
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
+      imageCache.removeAll()
   }
   
   //MARK: - join or create channel

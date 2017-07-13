@@ -73,6 +73,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
+      imageCache.removeAll()
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int

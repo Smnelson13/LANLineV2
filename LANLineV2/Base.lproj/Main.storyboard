@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whx-kQ-m2I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whx-kQ-m2I">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -221,13 +221,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-7m-Dws">
-                                            <rect key="frame" x="6" y="0.0" width="90" height="127.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="127.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="90" id="oee-ia-8jT"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-fs-pxM">
-                                            <rect key="frame" x="111" y="53" width="194" height="21"/>
+                                            <rect key="frame" x="105" y="53" width="200" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -239,7 +239,7 @@
                                         <constraint firstItem="xVl-7m-Dws" firstAttribute="top" secondItem="VbZ-fC-b4h" secondAttribute="top" id="PJZ-fs-Yob"/>
                                         <constraint firstAttribute="trailing" secondItem="Tf5-fs-pxM" secondAttribute="trailing" constant="15" id="VaO-pk-PSr"/>
                                         <constraint firstItem="Tf5-fs-pxM" firstAttribute="centerY" secondItem="VbZ-fC-b4h" secondAttribute="centerY" id="qaO-Xi-fnj"/>
-                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" constant="6" id="r1x-MM-tDp"/>
+                                        <constraint firstItem="xVl-7m-Dws" firstAttribute="leading" secondItem="VbZ-fC-b4h" secondAttribute="leading" id="r1x-MM-tDp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

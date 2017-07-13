@@ -179,8 +179,8 @@
 			children = (
 				90C45CAE1ED8C23D0030A641 /* GameChatViewController.swift */,
 				90B52C521ECAA131008AF6E2 /* SearchGameTVC.swift */,
-				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
 				90B52C541ECAA19E008AF6E2 /* SearchedGameCell.swift */,
+				90B52C5A1ECCB5D0008AF6E2 /* GameInfoDetailVC.swift */,
 				90B52C561ECAA2A2008AF6E2 /* Game.swift */,
 			);
 			name = GameSearch;
