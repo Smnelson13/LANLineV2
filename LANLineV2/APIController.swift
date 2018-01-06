@@ -98,7 +98,7 @@ class APIController
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     let gameSearchURL = URL(string: "https://api-2445582011268.apicast.io/games\(gameId)/?fields=*")
     var request = URLRequest(url: gameSearchURL!)
-    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
+    request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")
     let task = defaultSession.dataTask(with: request) { data, response, error in
       UIApplication.shared.isNetworkActivityIndicatorVisible = false
       if let error = error
@@ -140,10 +140,11 @@ class APIController
   func getPulse()
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    //https://api-2445582011268.apicast.io/games/?fields=*&order=published_at:desc&limit=20
     
-    let pulseSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/pulses/?fields=*&order=published_at:desc&limit=20")
+    let pulseSearchURL = URL(string: "https://api-2445582011268.apicast.io/pulses/?fields=*&order=published_at:desc&limit=20")
     var request = URLRequest(url: pulseSearchURL!)
-    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
+    request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")
     
     let task = defaultSession.dataTask(with: request) { data, response, error in
        UIApplication.shared.isNetworkActivityIndicatorVisible = false
