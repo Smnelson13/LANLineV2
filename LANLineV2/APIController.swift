@@ -43,10 +43,14 @@ class APIController
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
-    let  gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=20&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
+//    "https://igdbcom-internet-game-database-v1.p.mashape.com/games/?fields=*&limit=20&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
+    
+//    "https://api-2445582011268.apicast.io/games/?search=\(searchTerm.replacingOccurrences(of: " ", with: "%20)&fields=name,publishers"
+    
+    let  gameSearchURL = URL(string: "https://api-2445582011268.apicast.io/games/?fields=*&limit=20&offset=0&order=popularity%3Adesc&search=\(searchTerm.replacingOccurrences(of: " ", with: "%20"))")
     // DONT FORGET TO FILTER RELEVANCE. https://igdb.github.io/api/references/filters/
     var request = URLRequest(url: gameSearchURL!)
-    request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
+    request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")
     
     let task = defaultSession.dataTask(with: request) { data, response, error in
       defer {
@@ -87,12 +91,12 @@ class APIController
     print(request)
   }
 
-  //MARK: - get tapped game info.
+  //MARK: - get tapped game info.  /games/1942?fields=*
+  //https://igdbcom-internet-game-database-v1.p.mashape.com/games/\(gameId)?fields=*")
   func getTappedGameInfo(gameId: String)
   {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    
-    let gameSearchURL = URL(string: "https://igdbcom-internet-game-database-v1.p.mashape.com/games/\(gameId)?fields=*")
+    let gameSearchURL = URL(string: "https://api-2445582011268.apicast.io/games\(gameId)/?fields=*")
     var request = URLRequest(url: gameSearchURL!)
     request.setValue("O00cNpvM31mshvqfuQ9JmsGw9hu0p1pAGLSjsnthxuO2oNLR9o", forHTTPHeaderField: "X-Mashape-Key")
     let task = defaultSession.dataTask(with: request) { data, response, error in
