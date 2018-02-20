@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension UISearchBar {
+  func setup() {
+    tintColor = UIColor.primaryPurple
+    let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    backgroundColor = UIColor.primaryPurple
+    barTintColor = UIColor.primaryPurple
+  }
+}
+
 class Debouncer
 {
   private var delay: TimeInterval
@@ -30,9 +40,9 @@ class Debouncer
   }
 }
 
-
 class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating
 {
+  let blurRadius = 4
   var imageCache = [String: UIImage]()
   var games = [Game]()
   let searchController = UISearchController(searchResultsController: nil)
@@ -41,37 +51,38 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
 
   override func viewDidLoad()
   {
-    self.tableView.separatorColor = UIColor.black
-    
-    super.viewDidLoad()
-    tableView.tableHeaderView = searchController.searchBar
-    searchController.searchResultsUpdater = self
-    searchController.dimsBackgroundDuringPresentation = false
-    definesPresentationContext = true
-    searchController.searchBar.delegate = self
-    //didRecieve(results: searchBar.text)
+    tableView.tableFooterView = UIView()
+    super.viewDidLoad(); searchBarSetup()
     apiController = APIController(delegate: self)
-    
     searchDebouncer = Debouncer(delay: 0.25, callback: self.search)
+  }
+  
+  // MARK: - Table view data source
+  override var preferredStatusBarStyle: UIStatusBarStyle
+  {
+    return .lightContent
+  }
+  
+  override func viewWillLayoutSubviews()
+  {
+    let zContentInsets = UIEdgeInsets.zero
+    tableView.contentInset = zContentInsets
+    tableView.scrollIndicatorInsets = zContentInsets
   }
 
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+      imageCache.removeAll()
   }
-
-  // MARK: - Table view data source
 
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      // #warning Incomplete implementation, return the number of sections
       return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-      // #warning Incomplete implementation, return the number of rows
       return games.count
   }
 
@@ -83,22 +94,37 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
   {
     searchBar.showsCancelButton = true
+    games.removeAll()
+    tableView.reloadData()
+    searchBar.text = "" 
   }
   
+  //MARK: - search bar setup
+  func searchBarSetup()
+  {
+    searchController.searchBar.tintColor = UIColor.primaryPurple
+    let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+    UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
+    searchController.searchBar.backgroundColor = UIColor.primaryPurple
+    searchController.searchBar.barTintColor = UIColor.primaryPurple
+    tableView.tableHeaderView = searchController.searchBar
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    definesPresentationContext = true
+    searchController.searchBar.delegate = self
+  }
   
+  //MARK: - cancel button clicked
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
   {
     searchBar.text = nil
     searchBar.showsCancelButton = false
     searchBar.endEditing(true)
-    //tableView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
-    //tableView.reloadData()
   }
 
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
   {
     print("searchText \(searchText)")
-   // searchDebouncer.call()
   }
   
   func updateSearchResults(for searchController: UISearchController)
@@ -106,6 +132,7 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     
   }
 
+  //MARK: - search button clicked
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
   {
     if let text = searchController.searchBar.text, text != ""
@@ -133,15 +160,13 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
     }
   }
 
-  //Displays the title and a image
+  //MARK: - cell setup
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-       
     let cell = tableView.dequeueReusableCell(withIdentifier: "SearchedGameCell", for: indexPath) as! SearchedGameCell
     let aGame = games[indexPath.row]
     cell.gameTitleLabel.text = aGame.name
-    cell.gameCoverImage.image = #imageLiteral(resourceName: "blank-66")
-    
+    cell.gameCoverImage.image = #imageLiteral(resourceName: "DefaultCoverPhoto")
     
     if let img  = imageCache[aGame.coverUrl]
     {
@@ -166,10 +191,10 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       }
     }
 
-
     return cell
   }
   
+  //MARK: - prepare for segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "ShowGameDetailsSegue"
@@ -178,21 +203,19 @@ class SearchGameTVC: UITableViewController, UISearchBarDelegate, UISearchResults
       let selectedCell = sender as! SearchedGameCell
       let indexPath = tableView.indexPath(for: selectedCell)!
       gameInfoVC.aGame = games[indexPath.row]
-      
-
     }
   }
   
- 
 }
 
-extension SearchGameTVC: APIControllerProtocol {
-  func didReceiveGameInfo(results: [Game]) {
+//MARK: - APIController extension
+extension SearchGameTVC: APIControllerProtocol
+{
+  func didReceiveGameInfo(results: [Game])
+  {
     let queue = DispatchQueue.main
     queue.async {
       self.games = results
-      
-  //    self.tableView.contentInset = UIEdgeInsets.zero
       self.tableView.reloadData()
     }
   }

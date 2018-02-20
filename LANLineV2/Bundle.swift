@@ -29,6 +29,7 @@ extension Bundle
   }
 }
 
+//MARK: - extension progress HUD
 extension SVProgressHUD
 {
   static func dismiss(after delay: TimeInterval, completion:@escaping() -> Void = {})
@@ -41,14 +42,16 @@ extension SVProgressHUD
   }
 }
 
+//MARK: - extension custom colors
 extension UIColor
 {
+  static var banananaGold: UIColor
+  {
+    return UIColor(red:0.92, green:0.85, blue:0.30, alpha:1.0)
+  }
   static var primaryPurple: UIColor
   {
     return UIColor(red:0.23, green:0.21, blue:0.38, alpha:1.00)
   }
 }
 
-//extension UIFont {
-//  static func primaryFont(
-//}

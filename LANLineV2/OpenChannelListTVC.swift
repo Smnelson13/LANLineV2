@@ -12,21 +12,32 @@ class OpenChannelListTVC: UITableViewController
 {
   private var channels: [SBDOpenChannel] = []
   private var openChannelListQuery: SBDOpenChannelListQuery?
+  let searchBar = UISearchBar()
   
   override func viewDidLoad()
   {
-      super.viewDidLoad()
-    
-    self.refreshChannelList()//change this to load channels refresh isnt good to keep calling
-    
+    super.viewDidLoad()
+    self.refreshAll()
     
     let addButton = self.navigationItem.rightBarButtonItem!
     addButton.target = self
     addButton.action = #selector(self.addButtonWasTapped(sender:))
+    
+    searchBar.setup()
+    searchBar.showsCancelButton = true
+    searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 44)
+    searchBar.delegate = self
+    tableView.delegate = self
+    tableView.dataSource = self
+    
+    tableView.tableHeaderView = searchBar
   }
   
-  func addButtonWasTapped(sender: UIBarButtonItem) {
+  //MARK: - add channel button presses.
+  func addButtonWasTapped(sender: UIBarButtonItem)
+  {
     let popover = CreateChannelPopoverViewController.instantiateFromStoryboard()
+    popover.createdChannelDelegate = self
     popover.popoverPresentationController?.barButtonItem = sender
     present(popover, animated: true, completion: nil)
   }
@@ -34,40 +45,46 @@ class OpenChannelListTVC: UITableViewController
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
   }
 
   // MARK: - Table view data source
-
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      
       return 1
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    
       return channels.count
   }
   
-  private func refreshChannelList()
+  fileprivate func refreshAll(keyword: String? = nil)
   {
+    self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
     self.channels.removeAll()
+    self.tableView.reloadData()
     
-    DispatchQueue.main.async {
-      self.tableView.reloadData()
+    loadNextPage(keyword: keyword)
+  }
+  
+  fileprivate func loadNextPage(keyword: String? = nil)
+  {
+    guard let query = self.openChannelListQuery, !query.isLoading() else { return }
+    query.limit = 20
+    
+    if let keyword = keyword {
+      query.nameKeyword = keyword
     }
     
-    self.openChannelListQuery = SBDOpenChannel.createOpenChannelListQuery()
-    self.openChannelListQuery?.limit = 20
-    
-    self.openChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
-      if error != nil {
+    query.loadNextPage(completionHandler: { (channels, error) in
+      defer {
         DispatchQueue.main.async {
           self.refreshControl?.endRefreshing()
         }
-        
+      }
+      
+      
+      if error != nil {
         let vc = UIAlertController(title: Bundle.sbLocalizedStringForKey(key: "ErrorTitle"), message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
         let closeAction = UIAlertAction(title: Bundle.sbLocalizedStringForKey(key: "CloseButton"), style: UIAlertActionStyle.cancel, handler: nil)
         vc.addAction(closeAction)
@@ -78,32 +95,29 @@ class OpenChannelListTVC: UITableViewController
         return
       }
       
-      for channel in channels!
+      guard let channels = channels else { return }
+      
+      for channel in channels
       {
         self.channels.append(channel)
       }
       
       DispatchQueue.main.async {
-        self.refreshControl?.endRefreshing()
         self.tableView.reloadData()
       }
     })
   }
 
-
   // MARK: - Cell For Row At
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    
-      let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListCell", for: indexPath) as! OpenChannelListCell
-   
+    let cell = tableView.dequeueReusableCell(withIdentifier: "OpenChannelListCell", for: indexPath) as! OpenChannelListCell
     let aChannel = channels[indexPath.row]
-    
     cell.channelNameLabel.text = aChannel.name
     
-      return cell
+    return cell
   }
-  // Mark: - Prepare For Segue
+  // MARK: - Prepare For Segue
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if segue.identifier == "EnterChatSegue"
@@ -113,9 +127,52 @@ class OpenChannelListTVC: UITableViewController
       let indexPath = tableView.indexPath(for: selectedCell)!
       let aChannel = channels[indexPath.row]
       chatVC.channel = aChannel
-      //chatVC = channels[indexPath.row]
     }
   }
 
+  //MARK: - scroll view
+  override func scrollViewDidScroll(_ scrollView: UIScrollView)
+  {
+    let smoothLoadingOffset: CGFloat = 100
+    let loadingThreshold = ((scrollView.contentSize.height - scrollView.frame.size.height) - smoothLoadingOffset)
 
+    if scrollView.contentOffset.y >= loadingThreshold
+    {
+      // get the next 20
+      loadNextPage()
+    }
+  }
+}
+
+//MARK: - eextension did create channel delegate
+extension OpenChannelListTVC: DidCreateChannelProtocol
+{
+  func createChannelButtonTapped()
+  {
+    refreshAll()
+  }
+}
+
+//MARK: - extension searchbar delegate
+extension OpenChannelListTVC: UISearchBarDelegate
+{
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+  {
+    if let text = searchBar.text, text != ""
+    {
+      refreshAll(keyword: text)
+    } else
+    {
+      refreshAll()
+    }
+    searchBar.text = ""
+    searchBar.resignFirstResponder()
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+  {
+    searchBar.resignFirstResponder()
+    refreshAll()
+    searchBar.text = ""
+  }
 }

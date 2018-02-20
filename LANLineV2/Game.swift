@@ -15,24 +15,31 @@ enum SerializationError: Error
 
 class Game
 {
+  let platforms: [Int]?
+  let release_date: Int
   let id: Int
   let name: String
   var coverUrl: String = ""
   var screenshotUrls = [String]()
   var summary = ""
  
-  
-  
-  
   init(gameDictionary: [String: Any])
   {
+    self.platforms = gameDictionary["platform"] as? [Int]
+    if let release = gameDictionary["first_release_date"] as? Int
+    {
+      self.release_date = release
+    }
+    else
+    {
+      self.release_date = 0
+    }
     self.id = gameDictionary["id"] as! Int
     self.name = gameDictionary["name"] as! String
     if let summary = gameDictionary["summary"] as? String
     {
       self.summary =  summary
     }
-    
     
     if let coverDictionary = gameDictionary["cover"] as? [String: Any]
     {
@@ -64,6 +71,4 @@ class Game
   }
 
 }
-
-
 

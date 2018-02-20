@@ -1,18 +1,21 @@
 PODS:
+  - RAMAnimatedTabBarController (2.2.0)
   - SendBirdSDK (3.0.53)
   - SlackTextViewController (1.9.5)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
+  - RAMAnimatedTabBarController
   - SendBirdSDK
   - SlackTextViewController
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  RAMAnimatedTabBarController: 4904a0ec08f2a4e935d0d3a5824551a77390b965
   SendBirdSDK: 87e3746e3ace9b0b3633ff39d808428c0b0b4a88
   SlackTextViewController: fbcdadbb8090673f604484ff5b6eb8d77baed42a
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: d8b17621bbb81a815b6759c3fd85923edc670526
+PODFILE CHECKSUM: 4212d952eda272981f9b7f67824ab44abba036a9
 
 COCOAPODS: 1.2.1

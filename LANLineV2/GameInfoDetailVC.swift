@@ -8,14 +8,16 @@
 
 import UIKit
 import SendBirdSDK
+import SVProgressHUD
 
 class GameInfoDetailVC: UIViewController
 {
+  let blurRadius: CGFloat = 4
   var imageCache = [String: UIImage]()
   var games = [Game]()
   var aGame: Game!
-  //let aGame = games[indexPath.row]
-  
+
+  @IBOutlet weak var releaseDate: UILabel!
   @IBOutlet weak var screenshotImage: UIImageView!
   @IBOutlet weak var coverImage: UIImageView!
   @IBOutlet weak var gameTitle: UILabel!
@@ -30,38 +32,29 @@ class GameInfoDetailVC: UIViewController
   {
     self.navigationController?.popViewController(animated: true)
   }
-
-//  override func viewDidAppear(_ animated: Bool) {
-//    super.viewDidAppear(animated)
-//    
-//    let blurView = UIView(frame: screenshotImage.frame)
-//    blurView.alpha = 0
-//    blurView.backgroundColor = .black
-//    view.addSubview(blurView)
-//    
-//    UIView.animate(withDuration: 0.1)
-//    {
-//      blurView.alpha = 0.6
-//    }
-//  }
-
+  
+  override func viewDidLayoutSubviews()
+  {
+    self.gameSummary.setContentOffset(.zero, animated: false)
+  }
   
   override func viewDidLoad()
   { super.viewDidLoad()
     
     gameTitle.text = aGame.name
     gameSummary.text = aGame.summary
-    coverImage.image = #imageLiteral(resourceName: "blank-66")
+    coverImage.image = #imageLiteral(resourceName: "DefaultCoverPhoto")
     screenshotImage.image = #imageLiteral(resourceName: "Blank_Screenshot")
-    
-//    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.init(rawValue: Int(2.5))!)
-//    let blurView = UIVisualEffectView(effect: blurEffect)
-//    blurView.frame = screenshotImage.bounds
-//    screenshotImage.addSubview(blurView)
-    
-    if let img  = imageCache[aGame.coverUrl] // use alamofire image cache to store then clean up old images.
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .short
+    let createdAtSeconds = Double(aGame.release_date) / 1000.0
+    let messageCreatedDate = Date(timeIntervalSince1970: createdAtSeconds)
+    let messageDateString = dateFormatter.string(from: messageCreatedDate)
+    releaseDate.text = messageDateString
+ 
+    if let img  = imageCache[aGame.coverUrl]
     {
-      coverImage.image = img
+           coverImage.image = img
     }
     else
     {
@@ -81,7 +74,7 @@ class GameInfoDetailVC: UIViewController
         }.resume()
       }
     }
-
+    //MARK: - get a random screenshot
     if aGame.screenshotUrls.count > 0
     {
       if let screenshotIMG = imageCache[aGame.screenshotUrls[Int(arc4random_uniform(UInt32(aGame.screenshotUrls.count)))]]
@@ -100,23 +93,23 @@ class GameInfoDetailVC: UIViewController
               let image = UIImage(data: data!)
               self.imageCache[(self.aGame.coverUrl)] = image
               DispatchQueue.main.async {
-                self.screenshotImage.image = image
+                let blurredImage = image?.applyBlur(withRadius: self.blurRadius, tintColor: UIColor(white: 0.5, alpha: 0.2), saturationDeltaFactor: 1.8, maskImage: nil)
+                self.screenshotImage.image = blurredImage
               }
             }
           }.resume()
         }
       }
-      
     }
-    
   }
 
   override func didReceiveMemoryWarning()
   {
       super.didReceiveMemoryWarning()
-     
+      imageCache.removeAll()
   }
   
+  //MARK: - join or create channel
   func joinOrCreateChannel()
   {
     let value: Int = aGame.id
@@ -125,37 +118,90 @@ class GameInfoDetailVC: UIViewController
     SBDOpenChannel.getWithUrl(channelId) { (openChannel, error) in
       if let error = error as NSError?
       {
-        if error.code == 400201
+        switch error.code
         {
-          self.create
+        case 400201:
+          self.create(completion: { success in
+            if success
             {
-            // join channel
-          }
-        }
-        else
-        {
-          //join channel
+              print("SUCCESS--------------------")
+              self.joinOrCreateChannel()
+            } else {
+              SVProgressHUD.showError(withStatus: "Could not create channel")
+            }
+          })
+          
+        case 1, 2, 3, 4:
+          break
+          // other errors
+        default:
+          break
         }
         return
+      } else if let channel = openChannel {
+        self.joinChannel(channel: channel)
+      } else {
+        fatalError("channel couldn't be created and doesn't exist")
       }
       
-      // Successfully fetched the channel.
-      // Do something with openChannel.
     }
   }
 
-  func create(completion:@escaping () -> Void)
+  //MARK: - create channel
+  func create(completion:@escaping (_ success: Bool) -> Void)
   {
     let createChannelUrl = "https://api.sendbird.com/v3/open_channels"
-    
     var request = URLRequest(url: URL(string: createChannelUrl)!)
     request.httpMethod = "POST"
     let requestJson = "{\"channel_url\": \"\(aGame.id)\", \"name\": \"\(aGame.name)\"}"
     request.httpBody = requestJson.data(using: .utf8)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("b0208a8138659ed9a752fa268ab5fdf025d3614a", forHTTPHeaderField: "Api-Token")
-    // create data task to create game
     
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      completion(error == nil)
+    }.resume()
+  }
+  
+  //MARK: - join channel
+  func joinChannel(channel: SBDOpenChannel)
+  {
+    channel.enter(completionHandler: { (error) in
+      if error != nil
+      {
+        NSLog("Error: %@", error!)
+        return
+      }
+      
+      self.performSegue(withIdentifier: "ShowGameChatVC", sender: channel)
+    })
+  }
+  
+  //MARK: - prepare for segue
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+    if segue.identifier == "ShowGameChatVC",
+      let gameChatVC = segue.destination as? GameChatViewController,
+      let channel = sender as? SBDOpenChannel
+    {
+      let channelId = "\(aGame.id)"
+      gameChatVC.aGameChannelUrl = channelId
+      gameChatVC.channel = channel
+    }
+    else
+    {
+    
+    }
   }
 
 }
+
+
+
+
+
+
+
+
+
+
