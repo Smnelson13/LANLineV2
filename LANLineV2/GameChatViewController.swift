@@ -178,4 +178,6 @@ class GameChatViewController: SLKTextViewController, SBDChannelDelegate
     tableView?.estimatedRowHeight = 140
   }
   
+  
+  
 }
